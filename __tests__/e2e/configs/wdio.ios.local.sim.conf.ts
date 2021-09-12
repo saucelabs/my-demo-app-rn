@@ -22,7 +22,8 @@ config.capabilities = [
     'appium:automationName': 'XCUITest',
     // The path to the app
     'appium:app': join(
-      process.cwd(),
+      __dirname,
+      '../../../',
       './ios/Build/Products/Debug-iphonesimulator/MyRNDemoApp.app',
     ),
     // Read the reset strategies very well, they differ per platform, see

@@ -184,19 +184,8 @@ android {
         }
     }
     // Added to change the output name
-//     applicationVariants.debug { output ->
-//         output.outputFileName = "${appName}.${variant.versionName}.apk"
-//     }
-//
-//     applicationVariants.release { variant ->
-//         output.outputFileName = "${appName}.${variant.versionName}.build-${variant.versionCode}.apk"
-//     }
-
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
-            println '========================='
-            println variant.name
-            println '========================='
             if (variant.name == 'debug'){
                 output.outputFileName = "${appName}.${variant.versionName}.apk"
             } else {
