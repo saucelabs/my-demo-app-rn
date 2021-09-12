@@ -16,13 +16,9 @@ The latest version of the iOS and Android app can be found [here](https://github
 1. [Different languages](#different-languages)
 1. [QR code scanner](#qr-code-scanner)
 1. [Gestures](#gestures)
-    1. [Drag and Drop](#drag-and-drop)
-    1. [Pinch and Zoom](#pinch-zoom)
-    1. [Swiping](#swiping)
 1. [Geo Location](#geo-location)
 1. [Drawing](#drawing)
 1. [Contributing to the app](#contributing-to-the-app)
-1. [Test-automation](#test-automation)
 1. [FAQ](#faq)
 1. [TODO](#todo)
 
