@@ -1,5 +1,6 @@
 import {join} from 'path';
 import config from './wdio.shared.local.appium.conf';
+import {version} from '../../../package.json';
 
 // ============
 // Capabilities
@@ -21,8 +22,9 @@ config.capabilities = [
     'appium:automationName': 'UiAutomator2',
     // The path to the app
     'appium:app': join(
-      process.cwd(),
-      './android/app/build/outputs/apk/debug/app-debug.apk',
+      __dirname,
+      '../../../',
+      `./android/app/build/outputs/apk/debug/Android-MyDemoAppRN.${version}.apk`,
     ),
     // @ts-ignore
     'appium:appWaitActivity': 'com.saucelabs.mydemoapp.rn.MainActivity',

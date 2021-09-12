@@ -122,6 +122,11 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+/**
+ * Name of an debug/release build
+ */
+def appName = "Android-MyDemoAppRN"
+
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -136,7 +141,7 @@ android {
         applicationId "com.saucelabs.mydemoapp.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 113
+        versionCode 122
         versionName "1.0.0"
         // For the QR-code scanner
         missingDimensionStrategy 'react-native-camera', 'general'
@@ -178,22 +183,43 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    // Added to change the output name
+//     applicationVariants.debug { output ->
+//         output.outputFileName = "${appName}.${variant.versionName}.apk"
+//     }
+//
+//     applicationVariants.release { variant ->
+//         output.outputFileName = "${appName}.${variant.versionName}.build-${variant.versionCode}.apk"
+//     }
 
-    // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
-            // For each separate APK per architecture, set a unique version code as described here:
-            // https://developer.android.com/studio/build/configure-apk-splits.html
-            // Example: versionCode 1 will generate 1001 for armeabi-v7a, 1002 for x86, etc.
-            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
-            def abi = output.getFilter(OutputFile.ABI)
-            if (abi != null) {  // null for the universal-debug, universal-release variants
-                output.versionCodeOverride =
-                        defaultConfig.versionCode * 1000 + versionCodes.get(abi)
+            println '========================='
+            println variant.name
+            println '========================='
+            if (variant.name == 'debug'){
+                output.outputFileName = "${appName}.${variant.versionName}.apk"
+            } else {
+                output.outputFileName = "${appName}.${variant.versionName}.build-${variant.versionCode}.apk"
             }
-
         }
     }
+
+//     // applicationVariants are e.g. debug, release
+//     applicationVariants.all { variant ->
+//         variant.outputs.each { output ->
+//             // For each separate APK per architecture, set a unique version code as described here:
+//             // https://developer.android.com/studio/build/configure-apk-splits.html
+//             // Example: versionCode 1 will generate 1001 for armeabi-v7a, 1002 for x86, etc.
+//             def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
+//             def abi = output.getFilter(OutputFile.ABI)
+//             if (abi != null) {  // null for the universal-debug, universal-release variants
+//                 output.versionCodeOverride =
+//                         defaultConfig.versionCode * 1000 + versionCodes.get(abi)
+//             }
+//
+//         }
+//     }
 }
 
 dependencies {
