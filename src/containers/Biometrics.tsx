@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import {Alert, ScrollView, StyleSheet, Switch, Text, View} from 'react-native';
-import ReactNativeBiometrics from 'react-native-biometrics';
+import * as LocalAuthentication from 'expo-local-authentication';
 import ContainerHeader from '../components/ContainerHeader';
 import I18n from '../config/I18n';
 import {Colors} from '../styles/Colors';
@@ -11,6 +11,7 @@ import {MenuStackParamList} from '../navigation/types';
 import {ROUTES} from '../navigation/Routes';
 import {StoreContext} from '../store/Store';
 import {
+  BiometryType,
   enableBiometrics,
   updateBiometricSettings,
 } from '../store/actions/AuthenticationActions';
@@ -35,30 +36,46 @@ const BiometricsScreen = ({navigation}: BiometricsProps) => {
   // Check on every page load
   useEffect(
     () =>
-      navigation.addListener('focus', () =>
-        ReactNativeBiometrics.isSensorAvailable().then(
-          ({available, biometryType}) =>
-            dispatch(updateBiometricSettings(biometryType, available)),
-        ),
-      ),
+      navigation.addListener('focus', async () => {
+        const types: number[] =
+          await LocalAuthentication.supportedAuthenticationTypesAsync();
+        const isAvailable = await LocalAuthentication.isEnrolledAsync();
+
+        let type: BiometryType;
+        switch (types[0]) {
+          case 1:
+            type = 'FINGERPRINT';
+            break;
+          case 2:
+            type = 'FACIAL_RECOGNITION';
+            break;
+          case 3:
+            type = 'IRIS';
+            break;
+          default:
+            type = 'BIOMETRICS';
+        }
+        dispatch(updateBiometricSettings(type, isAvailable));
+      }),
     [navigation, dispatch],
   );
   let containerHeader;
-  const sensorType = !isBiometricsAvailable
-    ? I18n.t('biometrics.defaultHeader')
-    : IS_IOS
-    ? biometricsType
-    : I18n.t('biometrics.androidHeader');
   if (isBiometricsAvailable) {
     containerHeader =
-      biometricsType === ReactNativeBiometrics.TouchID
+      biometricsType === 'FINGERPRINT' && IS_IOS
         ? 'biometrics.iOSTouchIdHeader'
-        : biometricsType === ReactNativeBiometrics.FaceID
+        : biometricsType === 'FINGERPRINT' && !IS_IOS
+        ? 'biometrics.androidHeader'
+        : biometricsType === 'FACIAL_RECOGNITION'
         ? 'biometrics.iOSFaceIdHeader'
-        : 'biometrics.androidHeader';
+        : 'biometrics.defaultHeader';
   } else {
     containerHeader = 'biometrics.defaultHeader';
   }
+  const sensorTypeText = !isBiometricsAvailable
+    ? 'biometrics.defaultHeader'
+    : containerHeader;
+  const sensorType = I18n.t(sensorTypeText);
   useEffect(() => {
     if (!isBiometricsAvailable) {
       Alert.alert(

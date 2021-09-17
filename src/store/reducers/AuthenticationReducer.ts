@@ -2,8 +2,8 @@ import {
   AuthenticationActionEnum,
   AuthenticationActionEnum as ACTIONS,
   AuthenticationActionType,
+  BiometryType,
 } from '../actions/AuthenticationActions';
-import {BiometryType} from 'react-native-biometrics';
 
 export interface AuthenticationInterface {
   biometricsType: BiometryType | undefined;

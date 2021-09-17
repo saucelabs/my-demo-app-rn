@@ -1,5 +1,6 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import * as LocalAuthentication from 'expo-local-authentication';
 import {ROUTES} from '../navigation/Routes';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
@@ -24,7 +25,6 @@ import {RouteProp} from '@react-navigation/native';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 import BiometricsButton from '../components/BiometricsButton';
-import ReactNativeBiometrics from 'react-native-biometrics';
 
 type LoginProps = {
   navigation: StackNavigationProp<CartStackParamList, ROUTES.LOGIN>;
@@ -32,22 +32,6 @@ type LoginProps = {
 };
 
 const LoginPage = ({route, navigation}: LoginProps) => {
-  useEffect(() => {
-    const handleKeys = async () => {
-      try {
-        const {keysExist} = await ReactNativeBiometrics.biometricKeysExist();
-        if (keysExist) {
-          await ReactNativeBiometrics.deleteKeys();
-        }
-        await ReactNativeBiometrics.createKeys();
-      } catch (error) {
-        console.log(
-          `Something went wrong creating the Biometric key, please check the error. ${error}`,
-        );
-      }
-    };
-    handleKeys();
-  }, []);
   const {
     state: {
       authentication: {
@@ -111,12 +95,10 @@ const LoginPage = ({route, navigation}: LoginProps) => {
   }, [dispatch, route, navigation, username]);
   const handleBiometrics = useCallback(async () => {
     resetErrorState();
-    let epochTimeSeconds = Math.round(new Date().getTime() / 1000).toString();
-    let payload = `${epochTimeSeconds} some message`;
     try {
-      const {success} = await ReactNativeBiometrics.createSignature({
+      const {success} = await LocalAuthentication.authenticateAsync({
         promptMessage: 'Sign in',
-        payload: payload,
+        disableDeviceFallback: true,
       });
       if (success) {
         await successfullyLogin();
