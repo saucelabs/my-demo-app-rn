@@ -26,9 +26,8 @@ import {
 } from './reducers/AuthenticationReducer';
 import {
   AuthenticationActionType,
-  updateBiometricSettings,
+  getBiometricsData,
 } from './actions/AuthenticationActions';
-import ReactNativeBiometrics from 'react-native-biometrics';
 
 interface InitialStoreStateInterface {
   authentication: AuthenticationInterface;
@@ -38,7 +37,7 @@ interface InitialStoreStateInterface {
   cardDetails: CardDetailsInterface;
 }
 
-type DispatchType = React.Dispatch<any>;
+export type DispatchType = React.Dispatch<any>;
 
 const initialState: InitialStoreStateInterface = {
   authentication: initialAuthenticationState,
@@ -84,12 +83,8 @@ const mainReducer = (
 const StoreProvider: React.FC = ({children}) => {
   const [state, dispatch] = useReducer(mainReducer, initialState);
   useEffect(() => {
-    ReactNativeBiometrics.isSensorAvailable().then(
-      ({available, biometryType}) =>
-        // @ts-ignore
-        dispatch(updateBiometricSettings(biometryType, available)),
-    );
-  }, []);
+    (async () => await getBiometricsData(dispatch))();
+  }, [dispatch]);
 
   return (
     <StoreContext.Provider value={{state, dispatch}}>

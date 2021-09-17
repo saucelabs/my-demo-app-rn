@@ -34,7 +34,6 @@
     "i18n-js": "^3.8.0",
     "react": "17.0.1",
     "react-native": "0.64.1",
-    "react-native-biometrics": "^2.1.4",
     "react-native-bootsplash": "^3.2.5",
     "react-native-camera": "^4.0.0",
     "react-native-fs": "^2.18.0",

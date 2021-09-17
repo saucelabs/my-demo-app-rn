@@ -24,15 +24,12 @@ import {resetCardDetails} from '../store/actions/CardDetailsActions';
 import {resetShippingAddress} from '../store/actions/ShippingAddressActions';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
+import {getBiometricsLabel} from '../containers/Biometrics';
 
 const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
   const {
     state: {
-      authentication: {
-        biometricsType,
-        isBiometricsAvailable,
-        isBiometricsEnabled,
-      },
+      authentication: {biometricsType, isBiometricsEnabled},
     },
     dispatch,
   } = useContext(StoreContext);
@@ -118,15 +115,7 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {
       screen: ROUTES.BIOMETRICS,
     });
-  const biometricsLabel = !isBiometricsAvailable
-    ? 'biometrics.defaultHeader'
-    : biometricsType === 'FINGERPRINT' && IS_IOS
-    ? 'biometrics.iOSTouchIdHeader'
-    : biometricsType === 'FINGERPRINT' && !IS_IOS
-    ? 'biometrics.androidHeader'
-    : biometricsType === 'FACIAL_RECOGNITION'
-    ? 'biometrics.iOSFaceIdHeader'
-    : 'biometrics.defaultHeader';
+  const biometricsLabel = getBiometricsLabel(biometricsType);
   const menuItems = [
     {
       borderBottom: IS_IOS,

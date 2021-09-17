@@ -1,5 +1,6 @@
-import {AuthenticationInterface} from '../reducers/AuthenticationReducer';
-import {BiometryType} from '../../containers/Biometrics';
+import {BIOMETRICS_TYPE, BiometryType} from '../../containers/Biometrics';
+import * as LocalAuthentication from 'expo-local-authentication';
+import {DispatchType} from '../Store';
 
 enum AuthenticationActionEnum {
   LOGIN = 'LOGIN',
@@ -10,7 +11,7 @@ enum AuthenticationActionEnum {
 
 export type AuthenticationActionType =
   | {
-      isLoggedIn: AuthenticationInterface;
+      isLoggedIn: boolean;
       type: AuthenticationActionEnum.LOGIN;
       username: AuthenticationActionEnum;
     }
@@ -59,9 +60,32 @@ function enableBiometrics(isBiometricsEnabled: boolean) {
   };
 }
 
+async function getBiometricsData(dispatch: DispatchType): Promise<void> {
+  const types: number[] =
+    await LocalAuthentication.supportedAuthenticationTypesAsync();
+  const isAvailable = await LocalAuthentication.isEnrolledAsync();
+
+  let type: BiometryType;
+  switch (types[0]) {
+    case 1:
+      type = BIOMETRICS_TYPE.FINGERPRINT;
+      break;
+    case 2:
+      type = BIOMETRICS_TYPE.FACIAL_RECOGNITION;
+      break;
+    case 3:
+      type = BIOMETRICS_TYPE.IRIS;
+      break;
+    default:
+      type = BIOMETRICS_TYPE.BIOMETRICS;
+  }
+  dispatch(updateBiometricSettings(type, isAvailable));
+}
+
 export {
   AuthenticationActionEnum,
   enableBiometrics,
+  getBiometricsData,
   login,
   logout,
   updateBiometricSettings,

@@ -1,6 +1,5 @@
 import React, {useContext, useEffect} from 'react';
 import {Alert, ScrollView, StyleSheet, Switch, Text, View} from 'react-native';
-import * as LocalAuthentication from 'expo-local-authentication';
 import ContainerHeader from '../components/ContainerHeader';
 import I18n from '../config/I18n';
 import {Colors} from '../styles/Colors';
@@ -12,7 +11,7 @@ import {ROUTES} from '../navigation/Routes';
 import {StoreContext} from '../store/Store';
 import {
   enableBiometrics,
-  updateBiometricSettings,
+  getBiometricsData,
 } from '../store/actions/AuthenticationActions';
 
 type BiometricsProps = {
@@ -25,7 +24,7 @@ export type BiometryType =
   | 'FACIAL_RECOGNITION'
   | 'IRIS';
 
-const getBiometricsLabel = (biometricsType: BiometryType) => {
+const getBiometricsLabel = (biometricsType: BiometryType | undefined) => {
   const i18nLabel =
     biometricsType === 'FINGERPRINT' && IS_IOS
       ? 'biometrics.iOSTouchIdHeader'
@@ -43,6 +42,7 @@ const BIOMETRICS_TYPE: {[key: string]: BiometryType} = {
   IRIS: 'IRIS',
   BIOMETRICS: 'BIOMETRICS',
 };
+
 const BiometricsScreen = ({navigation}: BiometricsProps) => {
   const {
     state: {
@@ -59,27 +59,7 @@ const BiometricsScreen = ({navigation}: BiometricsProps) => {
   // Check on every page load
   useEffect(
     () =>
-      navigation.addListener('focus', async () => {
-        const types: number[] =
-          await LocalAuthentication.supportedAuthenticationTypesAsync();
-        const isAvailable = await LocalAuthentication.isEnrolledAsync();
-
-        let type: BiometryType;
-        switch (types[0]) {
-          case 1:
-            type = BIOMETRICS_TYPE.FINGERPRINT;
-            break;
-          case 2:
-            type = BIOMETRICS_TYPE.FACIAL_RECOGNITION;
-            break;
-          case 3:
-            type = BIOMETRICS_TYPE.IRIS;
-            break;
-          default:
-            type = BIOMETRICS_TYPE.BIOMETRICS;
-        }
-        dispatch(updateBiometricSettings(type, isAvailable));
-      }),
+      navigation.addListener('focus', async () => getBiometricsData(dispatch)),
     [navigation, dispatch],
   );
   let containerHeader;
@@ -170,4 +150,4 @@ const styles = StyleSheet.create({
 });
 
 export default BiometricsScreen;
-export {getBiometricsLabel};
+export {BIOMETRICS_TYPE, getBiometricsLabel};
