@@ -2,8 +2,8 @@ import {
   AuthenticationActionEnum,
   AuthenticationActionEnum as ACTIONS,
   AuthenticationActionType,
-  BiometryType,
 } from '../actions/AuthenticationActions';
+import {BiometryType} from '../../containers/Biometrics';
 
 export interface AuthenticationInterface {
   biometricsType: BiometryType | undefined;

@@ -25,6 +25,7 @@ import {RouteProp} from '@react-navigation/native';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 import BiometricsButton from '../components/BiometricsButton';
+import {getBiometricsLabel} from './Biometrics';
 
 type LoginProps = {
   navigation: StackNavigationProp<CartStackParamList, ROUTES.LOGIN>;
@@ -36,6 +37,7 @@ const LoginPage = ({route, navigation}: LoginProps) => {
     state: {
       authentication: {
         username: stateUsername,
+        isBiometricsAvailable,
         isBiometricsEnabled,
         biometricsType,
       },
@@ -96,9 +98,14 @@ const LoginPage = ({route, navigation}: LoginProps) => {
   const handleBiometrics = useCallback(async () => {
     resetErrorState();
     try {
+      const sensorType =
+        !isBiometricsAvailable || !biometricsType
+          ? 'biometrics.defaultHeader'
+          : getBiometricsLabel(biometricsType);
       const {success} = await LocalAuthentication.authenticateAsync({
-        promptMessage: 'Sign in',
+        promptMessage: I18n.t('biometrics.promptMessage', {sensorType}),
         disableDeviceFallback: true,
+        cancelLabel: I18n.t('biometrics.cancelButton'),
       });
       if (success) {
         await successfullyLogin();
@@ -106,7 +113,7 @@ const LoginPage = ({route, navigation}: LoginProps) => {
     } catch (error) {
       console.log('error = ', error);
     }
-  }, [successfullyLogin]);
+  }, [successfullyLogin, biometricsType, isBiometricsAvailable]);
 
   useEffect(() => {
     if (isBiometricsEnabled) {

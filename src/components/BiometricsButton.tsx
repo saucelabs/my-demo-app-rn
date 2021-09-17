@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Colors} from '../styles/Colors';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
-import {BiometryType} from '../store/actions/AuthenticationActions';
+import {BiometryType} from '../containers/Biometrics';
 
 const BiometricsButton = ({
   containerStyle = {},

@@ -1,4 +1,5 @@
 import {AuthenticationInterface} from '../reducers/AuthenticationReducer';
+import {BiometryType} from '../../containers/Biometrics';
 
 enum AuthenticationActionEnum {
   LOGIN = 'LOGIN',
@@ -6,16 +7,6 @@ enum AuthenticationActionEnum {
   UPDATE_BIOMETRICS = 'UPDATE_BIOMETRICS',
   ENABLE_BIOMETRICS = 'ENABLE_BIOMETRICS',
 }
-
-export type BiometryType =
-  | 'TouchID'
-  | 'FaceID'
-  | 'Biometrics'
-  // For the expo module
-  | 'BIOMETRICS'
-  | 'FINGERPRINT'
-  | 'FACIAL_RECOGNITION'
-  | 'IRIS';
 
 export type AuthenticationActionType =
   | {

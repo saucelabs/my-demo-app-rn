@@ -11,7 +11,6 @@ import {MenuStackParamList} from '../navigation/types';
 import {ROUTES} from '../navigation/Routes';
 import {StoreContext} from '../store/Store';
 import {
-  BiometryType,
   enableBiometrics,
   updateBiometricSettings,
 } from '../store/actions/AuthenticationActions';
@@ -20,6 +19,30 @@ type BiometricsProps = {
   navigation: StackNavigationProp<MenuStackParamList, ROUTES.BIOMETRICS>;
 };
 
+export type BiometryType =
+  | 'BIOMETRICS'
+  | 'FINGERPRINT'
+  | 'FACIAL_RECOGNITION'
+  | 'IRIS';
+
+const getBiometricsLabel = (biometricsType: BiometryType) => {
+  const i18nLabel =
+    biometricsType === 'FINGERPRINT' && IS_IOS
+      ? 'biometrics.iOSTouchIdHeader'
+      : biometricsType === 'FINGERPRINT' && !IS_IOS
+      ? 'biometrics.androidHeader'
+      : biometricsType === 'FACIAL_RECOGNITION'
+      ? 'biometrics.iOSFaceIdHeader'
+      : 'biometrics.defaultHeader';
+
+  return I18n.t(i18nLabel);
+};
+const BIOMETRICS_TYPE: {[key: string]: BiometryType} = {
+  FINGERPRINT: 'FINGERPRINT',
+  FACIAL_RECOGNITION: 'FACIAL_RECOGNITION',
+  IRIS: 'IRIS',
+  BIOMETRICS: 'BIOMETRICS',
+};
 const BiometricsScreen = ({navigation}: BiometricsProps) => {
   const {
     state: {
@@ -44,38 +67,31 @@ const BiometricsScreen = ({navigation}: BiometricsProps) => {
         let type: BiometryType;
         switch (types[0]) {
           case 1:
-            type = 'FINGERPRINT';
+            type = BIOMETRICS_TYPE.FINGERPRINT;
             break;
           case 2:
-            type = 'FACIAL_RECOGNITION';
+            type = BIOMETRICS_TYPE.FACIAL_RECOGNITION;
             break;
           case 3:
-            type = 'IRIS';
+            type = BIOMETRICS_TYPE.IRIS;
             break;
           default:
-            type = 'BIOMETRICS';
+            type = BIOMETRICS_TYPE.BIOMETRICS;
         }
         dispatch(updateBiometricSettings(type, isAvailable));
       }),
     [navigation, dispatch],
   );
   let containerHeader;
-  if (isBiometricsAvailable) {
-    containerHeader =
-      biometricsType === 'FINGERPRINT' && IS_IOS
-        ? 'biometrics.iOSTouchIdHeader'
-        : biometricsType === 'FINGERPRINT' && !IS_IOS
-        ? 'biometrics.androidHeader'
-        : biometricsType === 'FACIAL_RECOGNITION'
-        ? 'biometrics.iOSFaceIdHeader'
-        : 'biometrics.defaultHeader';
+  if (isBiometricsAvailable && biometricsType) {
+    containerHeader = getBiometricsLabel(biometricsType);
   } else {
     containerHeader = 'biometrics.defaultHeader';
   }
-  const sensorTypeText = !isBiometricsAvailable
-    ? 'biometrics.defaultHeader'
-    : containerHeader;
-  const sensorType = I18n.t(sensorTypeText);
+  const sensorType =
+    !isBiometricsAvailable || !biometricsType
+      ? 'biometrics.defaultHeader'
+      : getBiometricsLabel(biometricsType);
   useEffect(() => {
     if (!isBiometricsAvailable) {
       Alert.alert(
@@ -91,7 +107,7 @@ const BiometricsScreen = ({navigation}: BiometricsProps) => {
       {...testProperties(I18n.t('biometrics.testId'))}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <ContainerHeader
-          title={I18n.t(containerHeader)}
+          title={containerHeader}
           containerStyle={styles.containerHeader}
         />
         <View style={styles.content}>
@@ -154,3 +170,4 @@ const styles = StyleSheet.create({
 });
 
 export default BiometricsScreen;
+export {getBiometricsLabel};
