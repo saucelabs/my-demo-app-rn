@@ -25,6 +25,7 @@ export default {
     testId: 'biometrics screen',
     switchTestId: 'biometrics switch',
     cancelButton: 'Cancel',
+    biometricsButtonTestId: 'biometrics-button',
     promptMessage: 'Sign in with {{sensorType}}',
   },
   cart: {

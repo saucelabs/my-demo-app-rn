@@ -169,7 +169,7 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
     {
       borderBottom: IS_IOS,
       icon: false,
-      label: I18n.t(biometricsLabel),
+      label: biometricsLabel,
       testId: I18n.t('drawer.biometrics.testId'),
       onPress: navigateToBiometrics,
     },

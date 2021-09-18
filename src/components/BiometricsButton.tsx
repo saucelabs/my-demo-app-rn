@@ -33,7 +33,7 @@ const BiometricsButton = ({
         paddingHorizontal ? {paddingHorizontal} : {},
         containerStyle ? containerStyle : {},
       ]}
-      {...testProperties(`${sensorType} ${I18n.t('button.testId')}`)}>
+      {...testProperties(`${I18n.t('biometrics.biometricsButtonTestId')}`)}>
       <Icon name={icon} style={styles.icon} />
     </TouchableOpacity>
   );

@@ -62,16 +62,8 @@ const BiometricsScreen = ({navigation}: BiometricsProps) => {
       navigation.addListener('focus', async () => getBiometricsData(dispatch)),
     [navigation, dispatch],
   );
-  let containerHeader;
-  if (isBiometricsAvailable && biometricsType) {
-    containerHeader = getBiometricsLabel(biometricsType);
-  } else {
-    containerHeader = 'biometrics.defaultHeader';
-  }
-  const sensorType =
-    !isBiometricsAvailable || !biometricsType
-      ? 'biometrics.defaultHeader'
-      : getBiometricsLabel(biometricsType);
+  const containerHeader = getBiometricsLabel(biometricsType);
+  const sensorType = getBiometricsLabel(biometricsType);
   useEffect(() => {
     if (!isBiometricsAvailable) {
       Alert.alert(

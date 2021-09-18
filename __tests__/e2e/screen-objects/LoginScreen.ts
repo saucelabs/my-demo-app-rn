@@ -5,6 +5,7 @@ import {
   locatorStrategy,
 } from '../helpers/utils';
 import {findElementBySwipe} from '../helpers/gestures';
+import {DEFAULT_PIN, INCORRECT_PIN} from '../configs/constants';
 
 class LoginScreen extends AppScreen {
   constructor() {
@@ -45,7 +46,7 @@ class LoginScreen extends AppScreen {
   }
 
   private get biometricButton() {
-    return $(locatorStrategy('Biometrics button'));
+    return $(locatorStrategy('biometrics-button'));
   }
 
   private get loginButton() {
@@ -53,7 +54,41 @@ class LoginScreen extends AppScreen {
   }
 
   private get androidBiometricModal() {
-    return $("//android.widget.TextView[contains(@text,'Sign in')]");
+    const selector = "//android.widget.TextView[contains(@text,'Sign in')]";
+
+    return $(selector);
+  }
+
+  private get biometricsModal() {
+    const iosSelector =
+      '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeStaticText[`label == "Face ID"`]';
+    const androidSelector =
+      '//*[@resource-id="com.android.systemui:id/dialog"]';
+
+    return $(driver.isIOS ? iosSelector : androidSelector);
+  }
+
+  private get tryAgainBiometricsModal() {
+    const selector =
+      '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeButton[`label CONTAINS "Try" AND label CONTAINS "Again"`]';
+
+    return $(selector);
+  }
+
+  private get biometricsCancelButton() {
+    const iosSelector =
+      '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeButton[`label == "Cancel"`]';
+    const androidSelector = "//android.widget.Button[contains(@text,'Cancel')]";
+
+    return $(driver.isIOS ? iosSelector : androidSelector);
+  }
+
+  private get biometricsNotEnabledModal() {
+    const iosSelector =
+      '-ios class chain:**/XCUIElementTypeAlert[`label == "Biometrics"`]';
+    const androidSelector = '//*[@resource-id="android:id/alertTitle"]';
+
+    return $(driver.isIOS ? iosSelector : androidSelector);
   }
 
   async getUsernameErrorMessage(): Promise<string> {
@@ -72,10 +107,38 @@ class LoginScreen extends AppScreen {
     await this.biometricButton.click();
   }
 
+  async waitForBiometricsModal() {
+    await this.biometricsModal.waitForDisplayed();
+  }
+
+  async waitForBiometricsFailureModal() {
+    // Android DOES NOT have a new failure screen, iOS has
+    if (driver.isIOS) {
+      await this.tryAgainBiometricsModal.waitForDisplayed();
+    } else {
+      await this.biometricsModal.waitForDisplayed();
+    }
+  }
+
+  async waitForBiometricsNotEnabledModal() {
+    await this.biometricsNotEnabledModal.waitForDisplayed();
+  }
+
+  async cancelBiometrics() {
+    // iOS does not have cancel button, this should be done by sending a negative
+    // face/touchId
+    if (driver.isIOS) {
+      await this.submitBiometrics(false);
+      await this.waitForBiometricsFailureModal();
+    }
+
+    await this.biometricsCancelButton.click();
+  }
+
   async submitBiometrics(match: boolean) {
     if (driver.isAndroid) {
       await this.androidBiometricModal.waitForDisplayed();
-      return driver.fingerPrint(match ? 1 : 0);
+      return driver.fingerPrint(match ? DEFAULT_PIN : INCORRECT_PIN);
     }
 
     return driver.touchId(match);
