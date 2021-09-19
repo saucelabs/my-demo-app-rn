@@ -60,10 +60,14 @@ class LoginScreen extends AppScreen {
   }
 
   private get biometricsModal() {
-    const iosSelector =
-      '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeStaticText[`label == "Face ID"`]';
-    const androidSelector =
-      '//*[@resource-id="com.android.systemui:id/dialog"]';
+    const iosSelector = process.env.RDC
+      ? // On RDC we have a different selector
+        '-ios class chain:**/XCUIElementTypeStaticText[`label CONTAINS "Touch ID Verification" OR label CONTAINS "Face ID Verification"`]'
+      : '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeStaticText[`label == "Face ID"`]';
+    const androidSelector = process.env.RDC
+      ? // On RDC we have a different selector
+        '//android.widget.TextView[contains(@text,"Sign in with FingerPrint")]'
+      : '//android.widget.TextView[@resource-id="com.android.systemui:id/dialog"]';
 
     return $(driver.isIOS ? iosSelector : androidSelector);
   }
@@ -78,7 +82,9 @@ class LoginScreen extends AppScreen {
   private get biometricsCancelButton() {
     const iosSelector =
       '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeButton[`label == "Cancel"`]';
-    const androidSelector = "//android.widget.Button[contains(@text,'Cancel')]";
+    // On RDC the text is uppercase for the cancel button
+    const androidSelector =
+      "//android.widget.Button[contains(@text,'Cancel') or contains(@text,'CANCEL')]";
 
     return $(driver.isIOS ? iosSelector : androidSelector);
   }
@@ -107,8 +113,8 @@ class LoginScreen extends AppScreen {
     await this.biometricButton.click();
   }
 
-  async waitForBiometricsModal() {
-    await this.biometricsModal.waitForDisplayed();
+  async waitForBiometricsModal(isShown = true) {
+    await this.biometricsModal.waitForDisplayed({reverse: !isShown});
   }
 
   async waitForBiometricsFailureModal() {
@@ -129,6 +135,11 @@ class LoginScreen extends AppScreen {
     // face/touchId
     if (driver.isIOS) {
       await this.submitBiometrics(false);
+      // On RDC the biometrics modal will disappear after a failure
+      // so wait for it
+      if (process.env.RDC) {
+        return this.waitForBiometricsModal(false);
+      }
       await this.waitForBiometricsFailureModal();
     }
 
@@ -136,11 +147,17 @@ class LoginScreen extends AppScreen {
   }
 
   async submitBiometrics(match: boolean) {
+    // On the Sauce Labs RDC cloud we need to send the following command
+    if (process.env.RDC) {
+      return driver.execute(`sauce:biometrics-authenticate=${match}`);
+    }
+    // Android emulators need to have this
     if (driver.isAndroid) {
       await this.androidBiometricModal.waitForDisplayed();
       return driver.fingerPrint(match ? DEFAULT_PIN : INCORRECT_PIN);
     }
 
+    // And this is for iOS simulators
     return driver.touchId(match);
   }
 

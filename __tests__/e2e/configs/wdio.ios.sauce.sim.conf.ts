@@ -20,7 +20,7 @@ config.capabilities = [
     orientation: 'PORTRAIT',
     automationName: 'XCUITest',
     // The path to the app
-    app: 'storage:filename=iOS.SauceLabs.Sample.DemoApp.zip',
+    app: 'storage:filename=iOS.MyDemoAppRN.zip',
     // Read the reset strategies very well, they differ per platform, see
     // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
     noReset: true,
