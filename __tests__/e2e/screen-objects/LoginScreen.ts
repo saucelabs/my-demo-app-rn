@@ -12,15 +12,6 @@ class LoginScreen extends AppScreen {
     super(locatorStrategy('login screen'));
   }
 
-  // Biometrics injected by RDC
-  ////
-  // Text: Sign in
-  // element: android.widget.TextView
-  ////
-  // Text: CANCEL
-  // element: android.widget.Button
-  //
-
   private get containerHeader() {
     return $(locatorStrategy('container header'));
   }
