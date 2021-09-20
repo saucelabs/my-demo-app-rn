@@ -19,6 +19,7 @@ config.capabilities = [
     // The name of the App in the Sauce Labs storage, for more info see
     // https://docs.saucelabs.com/mobile-apps/app-storage/
     app: 'storage:filename=Android.MyDemoAppRN.apk',
+    appWaitActivity: 'com.saucelabs.mydemoapp.rn.MainActivity',
     build: buildName,
     newCommandTimeout: 240,
     // Select only phone devices

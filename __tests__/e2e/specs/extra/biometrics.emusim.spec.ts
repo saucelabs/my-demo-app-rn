@@ -6,6 +6,10 @@ import {restartApp} from '../../helpers/utils';
 import AndroidSettings from '../../screen-objects/AndroidSettings';
 
 describe('Biometrics for Emulators and Simulators', () => {
+  /**
+   * A generic function that will check if biometrics has been enabled on the emulator/simulator
+   * if not, it will enable it
+   */
   async function prepareBiometrics(): Promise<void> {
     let biometricsDisabled = true;
 
@@ -29,14 +33,19 @@ describe('Biometrics for Emulators and Simulators', () => {
     // Biometrics is disabled, so enable it
     if (biometricsDisabled) {
       if (driver.isIOS) {
+        // iOS can easily be enabled, see also this Appium Command
+        // https://appium.io/docs/en/commands/device/simulator/toggle-touch-id-enrollment/
+        // When it has been enabled, restart the app and see if we can now enable biomerics in the app
         await driver.toggleEnrollTouchId(true);
         return prepareBiometrics();
       }
       // Android is more verbose, we need to enabled it when we are on an emulator
+      // This is a verbose and complex procedure. Please check this method to see what happens
       await AndroidSettings.enableBiometricLogin();
       return prepareBiometrics();
     }
 
+    // Now enable biometrics in the app
     return BiometricsScreen.enableBiometrics();
   }
 
@@ -46,6 +55,8 @@ describe('Biometrics for Emulators and Simulators', () => {
     // Go to the login
     await Menu.openMenu();
     await Menu.openLogin();
+    // It could be that on iOS we need to allow that biometrics is being used
+    await LoginScreen.allowBiometrics();
     // Biometrics login will automatically be triggered.
     await LoginScreen.waitForBiometricsModal();
     // Open the biometrics option
@@ -60,6 +71,8 @@ describe('Biometrics for Emulators and Simulators', () => {
     // Go to the login
     await Menu.openMenu();
     await Menu.openLogin();
+    // It could be that on iOS we need to allow that biometrics is being used
+    await LoginScreen.allowBiometrics();
     // Biometrics login will automatically be triggered.
     await LoginScreen.waitForBiometricsModal();
     // Provide an incorrect biometrics signal
@@ -76,6 +89,8 @@ describe('Biometrics for Emulators and Simulators', () => {
     // Go to the login
     await Menu.openMenu();
     await Menu.openLogin();
+    // It could be that on iOS we need to allow that biometrics is being used
+    await LoginScreen.allowBiometrics();
     // Biometrics login will automatically be triggered.
     await LoginScreen.waitForBiometricsModal();
     // Cancel biometrics option

@@ -63,7 +63,7 @@ class LoginScreen extends AppScreen {
     const iosSelector = process.env.RDC
       ? // On RDC we have a different selector
         '-ios class chain:**/XCUIElementTypeStaticText[`label CONTAINS "Touch ID Verification" OR label CONTAINS "Face ID Verification"`]'
-      : '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeStaticText[`label == "Face ID"`]';
+      : '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeStaticText[`label CONTAINS "Face ID" or label CONTAINS "Touch ID"`]';
     const androidSelector = process.env.RDC
       ? // On RDC we have a different selector
         '//android.widget.TextView[contains(@text,"Sign in with FingerPrint")]'
@@ -74,7 +74,7 @@ class LoginScreen extends AppScreen {
 
   private get tryAgainBiometricsModal() {
     const selector =
-      '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeButton[`label CONTAINS "Try" AND label CONTAINS "Again"`]';
+      '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeButton[`(label CONTAINS "Try" AND label CONTAINS "Again") OR label CONTAINS "Enter Password"`]';
 
     return $(selector);
   }
@@ -97,6 +97,18 @@ class LoginScreen extends AppScreen {
     return $(driver.isIOS ? iosSelector : androidSelector);
   }
 
+  private get allowBiometricsModal() {
+    const iosSelector =
+      '-ios class chain:**/XCUIElementTypeStaticText[`label CONTAINS "Do you want to allow"`]';
+
+    return $(iosSelector);
+  }
+
+  private get allowBiometricsButton() {
+    // The selector is an accessibility selector, we can select on the `OK`-text
+    return $('~OK');
+  }
+
   async getUsernameErrorMessage(): Promise<string> {
     return getTextOfElement(await this.usernameErrorMessage);
   }
@@ -111,6 +123,21 @@ class LoginScreen extends AppScreen {
 
   async openBiometricsModal() {
     await this.biometricButton.click();
+  }
+
+  async allowBiometrics() {
+    // Android does not have this permission modal
+    if (driver.isIOS) {
+      try {
+        // Only wait 3 seconds for it, then it will not slow down if it's not there
+        await this.allowBiometricsModal.waitForDisplayed({timeout: 3000});
+        await this.allowBiometricsButton.click();
+      } catch (ign) {
+        // Do nothing
+      }
+    }
+
+    return;
   }
 
   async waitForBiometricsModal(isShown = true) {
