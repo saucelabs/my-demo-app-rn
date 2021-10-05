@@ -3,8 +3,8 @@ import {StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Colors} from '../styles/Colors';
 import {testProperties} from '../config/TestProperties';
-import ReactNativeBiometrics, {BiometryType} from 'react-native-biometrics';
 import I18n from '../config/I18n';
+import {BIOMETRICS_TYPE, BiometryType} from '../containers/Biometrics';
 
 const BiometricsButton = ({
   containerStyle = {},
@@ -20,7 +20,7 @@ const BiometricsButton = ({
   sensorType: BiometryType;
 }) => {
   const icon =
-    sensorType === ReactNativeBiometrics.FaceID
+    sensorType === BIOMETRICS_TYPE.FACIAL_RECOGNITION
       ? 'face-recognition'
       : 'fingerprint';
 
@@ -33,7 +33,7 @@ const BiometricsButton = ({
         paddingHorizontal ? {paddingHorizontal} : {},
         containerStyle ? containerStyle : {},
       ]}
-      {...testProperties(`${sensorType} ${I18n.t('button.testId')}`)}>
+      {...testProperties(`${I18n.t('biometrics.biometricsButtonTestId')}`)}>
       <Icon name={icon} style={styles.icon} />
     </TouchableOpacity>
   );

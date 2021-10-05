@@ -17,7 +17,11 @@
     "start": "yarn version.apps && react-native start",
     "test.unit": "jest",
     "test.e2e.android.local.emu": "npx wdio __tests__/e2e/configs/wdio.android.local.emu.conf.ts",
+    "test.e2e.android.sauce.rdc.eu": "RDC=true REGION=eu npx wdio __tests__/e2e/configs/wdio.android.sauce.rdc.conf.ts",
+    "test.e2e.android.sauce.rdc.us": "RDC=true npx wdio __tests__/e2e/configs/wdio.android.sauce.rdc.conf.ts",
     "test.e2e.ios.local.sim": "npx wdio __tests__/e2e/configs/wdio.ios.local.sim.conf.ts",
+    "test.e2e.ios.sauce.rdc.eu": "RDC=true REGION=eu npx wdio __tests__/e2e/configs/wdio.ios.sauce.rdc.conf.ts",
+    "test.e2e.ios.sauce.rdc.us": "RDC=true npx wdio __tests__/e2e/configs/wdio.ios.sauce.rdc.conf.ts",
     "test.e2e.ios.sauce.sim.eu": "REGION=eu npx wdio __tests__/e2e/configs/wdio.ios.sauce.sim.conf.ts",
     "test.e2e.ios.sauce.sim.us": "npx wdio __tests__/e2e/configs/wdio.ios.sauce.sim.conf.ts",
     "version.apps": "npx react-native-version --never-amend"
@@ -30,10 +34,10 @@
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
     "card-validator": "^8.1.1",
+    "expo-local-authentication": "^11.1.1",
     "i18n-js": "^3.8.0",
     "react": "17.0.1",
     "react-native": "0.64.1",
-    "react-native-biometrics": "^2.1.4",
     "react-native-bootsplash": "^3.2.5",
     "react-native-camera": "^4.0.0",
     "react-native-fs": "^2.18.0",
@@ -48,10 +52,18 @@
     "react-native-screens": "^3.4.0",
     "react-native-signature-canvas": "^4.2.0",
     "react-native-testfairy": "^2.51.1",
+    "react-native-unimodules": "^0.14.8",
     "react-native-vector-icons": "^8.1.0",
     "react-native-version-number": "^0.3.6",
     "react-native-webview": "^11.6.5",
     "rn-fetch-blob": "^0.12.0"
+  },
+  "react-native-unimodules": {
+    "ios": {
+      "modulesPaths": [
+        "./node_modules"
+      ]
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

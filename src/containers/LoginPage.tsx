@@ -1,5 +1,6 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import * as LocalAuthentication from 'expo-local-authentication';
 import {ROUTES} from '../navigation/Routes';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
@@ -24,7 +25,7 @@ import {RouteProp} from '@react-navigation/native';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 import BiometricsButton from '../components/BiometricsButton';
-import ReactNativeBiometrics from 'react-native-biometrics';
+import {getBiometricsLabel} from './Biometrics';
 
 type LoginProps = {
   navigation: StackNavigationProp<CartStackParamList, ROUTES.LOGIN>;
@@ -32,26 +33,11 @@ type LoginProps = {
 };
 
 const LoginPage = ({route, navigation}: LoginProps) => {
-  useEffect(() => {
-    const handleKeys = async () => {
-      try {
-        const {keysExist} = await ReactNativeBiometrics.biometricKeysExist();
-        if (keysExist) {
-          await ReactNativeBiometrics.deleteKeys();
-        }
-        await ReactNativeBiometrics.createKeys();
-      } catch (error) {
-        console.log(
-          `Something went wrong creating the Biometric key, please check the error. ${error}`,
-        );
-      }
-    };
-    handleKeys();
-  }, []);
   const {
     state: {
       authentication: {
         username: stateUsername,
+        isBiometricsAvailable,
         isBiometricsEnabled,
         biometricsType,
       },
@@ -111,12 +97,15 @@ const LoginPage = ({route, navigation}: LoginProps) => {
   }, [dispatch, route, navigation, username]);
   const handleBiometrics = useCallback(async () => {
     resetErrorState();
-    let epochTimeSeconds = Math.round(new Date().getTime() / 1000).toString();
-    let payload = `${epochTimeSeconds} some message`;
     try {
-      const {success} = await ReactNativeBiometrics.createSignature({
-        promptMessage: 'Sign in',
-        payload: payload,
+      const sensorType =
+        !isBiometricsAvailable || !biometricsType
+          ? 'biometrics.defaultHeader'
+          : getBiometricsLabel(biometricsType);
+      const {success} = await LocalAuthentication.authenticateAsync({
+        promptMessage: I18n.t('biometrics.promptMessage', {sensorType}),
+        disableDeviceFallback: true,
+        cancelLabel: I18n.t('biometrics.cancelButton'),
       });
       if (success) {
         await successfullyLogin();
@@ -124,7 +113,7 @@ const LoginPage = ({route, navigation}: LoginProps) => {
     } catch (error) {
       console.log('error = ', error);
     }
-  }, [successfullyLogin]);
+  }, [successfullyLogin, biometricsType, isBiometricsAvailable]);
 
   useEffect(() => {
     if (isBiometricsEnabled) {

@@ -24,16 +24,12 @@ import {resetCardDetails} from '../store/actions/CardDetailsActions';
 import {resetShippingAddress} from '../store/actions/ShippingAddressActions';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
-import ReactNativeBiometrics from 'react-native-biometrics';
+import {getBiometricsLabel} from '../containers/Biometrics';
 
 const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
   const {
     state: {
-      authentication: {
-        biometricsType,
-        isBiometricsAvailable,
-        isBiometricsEnabled,
-      },
+      authentication: {biometricsType, isBiometricsEnabled},
     },
     dispatch,
   } = useContext(StoreContext);
@@ -119,13 +115,7 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {
       screen: ROUTES.BIOMETRICS,
     });
-  const biometricsLabel = isBiometricsAvailable
-    ? biometricsType === ReactNativeBiometrics.TouchID
-      ? 'drawer.biometrics.iOSTouchIdLabel'
-      : biometricsType === ReactNativeBiometrics.FaceID
-      ? 'drawer.biometrics.iOSFaceIdLabel'
-      : 'drawer.biometrics.androidLabel'
-    : 'drawer.biometrics.defaultHeader';
+  const biometricsLabel = getBiometricsLabel(biometricsType);
   const menuItems = [
     {
       borderBottom: IS_IOS,
@@ -179,7 +169,7 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
     {
       borderBottom: IS_IOS,
       icon: false,
-      label: I18n.t(biometricsLabel),
+      label: biometricsLabel,
       testId: I18n.t('drawer.biometrics.testId'),
       onPress: navigateToBiometrics,
     },

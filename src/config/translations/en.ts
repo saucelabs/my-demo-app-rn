@@ -24,6 +24,9 @@ export default {
       'Biometrics is or not supported or not enabled on your device. Please check your device or your settings.',
     testId: 'biometrics screen',
     switchTestId: 'biometrics switch',
+    cancelButton: 'Cancel',
+    biometricsButtonTestId: 'biometrics-button',
+    promptMessage: 'Sign in with {{sensorType}}',
   },
   cart: {
     emptyCartHeader: 'No Items',
