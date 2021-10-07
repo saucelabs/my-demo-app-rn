@@ -56,8 +56,10 @@ const CartPage = ({navigation, route}: CartProps) => {
     dispatch(removeProductFromCart(cartItem));
 
   return (
-    <View style={styles.container} {...testProperties(I18n.t('cart.testId'))}>
-      <ScrollView style={styles.scrollContainer}>
+    <View style={styles.container}>
+      <ScrollView
+        style={styles.scrollContainer}
+        {...testProperties(I18n.t('cart.testId'))}>
         {cartContent.totalAmount > 0 ? (
           <View>
             <ContainerHeader

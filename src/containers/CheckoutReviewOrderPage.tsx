@@ -25,10 +25,10 @@ const CheckoutReviewOrderPage = ({navigation}: CheckoutReviewOrderProps) => {
   const totalCosts = cartContent.totalPrice + deliveryCosts;
 
   return (
-    <View
-      style={styles.container}
-      {...testProperties(I18n.t('checkoutReviewOrder.testId'))}>
-      <ScrollView style={styles.scrollContainer}>
+    <View style={styles.container}>
+      <ScrollView
+        style={styles.scrollContainer}
+        {...testProperties(I18n.t('checkoutReviewOrder.testId'))}>
         <ContainerHeader
           title={I18n.t('checkoutReviewOrder.header')}
           containerStyle={styles.containerHeader}

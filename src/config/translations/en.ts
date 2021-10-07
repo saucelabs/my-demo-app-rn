@@ -107,7 +107,7 @@ export default {
     },
     cvcTooltip: 'CVV is the last three digits on the back of your credit card.',
     billingAddress: 'My billing address is the same as my shipping address.',
-    testId: 'review order screen',
+    testId: 'checkout payment screen',
   },
   checkoutReviewOrder: {
     header: 'Checkout',

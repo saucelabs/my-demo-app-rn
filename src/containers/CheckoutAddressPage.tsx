@@ -111,10 +111,10 @@ const CheckoutAddressPage = ({navigation}: CheckoutAddressProps) => {
   };
 
   return (
-    <View
-      style={styles.container}
-      {...testProperties(I18n.t('checkoutAddress.testId'))}>
-      <KeyboardAwareScrollView style={styles.scrollContainer}>
+    <View style={styles.container}>
+      <KeyboardAwareScrollView
+        style={styles.scrollContainer}
+        {...testProperties(I18n.t('checkoutAddress.testId'))}>
         <ContainerHeader
           title={I18n.t('checkoutAddress.header')}
           containerStyle={styles.containerHeader}

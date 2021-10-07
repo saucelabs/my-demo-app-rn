@@ -269,10 +269,10 @@ const CheckoutPaymentPage = ({navigation}: CheckoutPaymentProps) => {
   const showHideTooltip = () => setIsCvcTooltipShown(!isCvcTooltipShown);
 
   return (
-    <View
-      style={styles.container}
-      {...testProperties(I18n.t('checkoutPayment.testId'))}>
-      <KeyboardAwareScrollView style={styles.scrollContainer}>
+    <View style={styles.container}>
+      <KeyboardAwareScrollView
+        style={styles.scrollContainer}
+        {...testProperties(I18n.t('checkoutPayment.testId'))}>
         <ContainerHeader
           title={I18n.t('checkoutPayment.header')}
           containerStyle={styles.containerHeader}
