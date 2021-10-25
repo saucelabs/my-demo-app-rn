@@ -22,6 +22,7 @@ const screens = {
         },
       },
       [ROUTES.LOGIN]: 'login',
+      [ROUTES.CHECKOUT_ADDRESS]: 'checkout-address',
     },
   },
   [ROUTES.MENU_STACK_NAVIGATOR]: {

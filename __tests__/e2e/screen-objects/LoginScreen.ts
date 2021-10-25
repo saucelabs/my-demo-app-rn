@@ -12,10 +12,6 @@ class LoginScreen extends AppScreen {
     super(locatorStrategy('login screen'));
   }
 
-  private get containerHeader() {
-    return $(locatorStrategy('container header'));
-  }
-
   private get usernameField() {
     return $(locatorStrategy('Username input field'));
   }
@@ -180,14 +176,12 @@ class LoginScreen extends AppScreen {
   }
 
   async submitLogin({username = '', password = ''}) {
-    const containerHeader = await this.containerHeader;
-
     await this.usernameField.addValue(username);
     // Fail save to always see the next field
-    await hideKeyboard(containerHeader);
+    await hideKeyboard();
     await this.passwordField.addValue(password);
     // Fail save to always see the button
-    await hideKeyboard(containerHeader);
+    await hideKeyboard();
     await this.loginButton.click();
     // Wait for animation to be done
     await driver.pause(750);

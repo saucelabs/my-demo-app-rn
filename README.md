@@ -67,6 +67,7 @@ The prefix deep link is `mydemoapprn://` and the following screens (with their a
 | Cart| `cart/{products}` | A *optional* string like this `id=2&amount=2&color=black,id=2&amount=5&color=gray`, the `id` is mandatory, the rest will be defaulted if it's not/incorrect provided |
 | Login | `login` |  |
 | Webview | `webview` |  |
+| Checkout Address | `checkout-address` |  |
 | QR Code Scanner | `qr-code-scanner` |  |
 | Geo Location | `geo-locations` |  |
 | Drawing | `drawing` |  |

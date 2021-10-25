@@ -12,6 +12,7 @@ import {ROUTES} from './Routes';
 import LoginPage from '../containers/LoginPage';
 import {StoreContext} from '../store/Store';
 
+// @TODO: How to push screens into the history
 const CartStackNavigation = () => {
   const {
     state: {
@@ -28,28 +29,23 @@ const CartStackNavigation = () => {
         header: () => <AppHeader navigation={navigation} />,
       })}>
       <Cart.Screen name={ROUTES.CART} component={CartPage} />
-      {!isLoggedIn ? (
-        <Cart.Screen name={ROUTES.LOGIN} component={LoginPage} />
-      ) : (
-        <>
-          <Cart.Screen
-            name={ROUTES.CHECKOUT_ADDRESS}
-            component={CheckoutAddressPage}
-          />
-          <Cart.Screen
-            name={ROUTES.CHECKOUT_PAYMENT}
-            component={CheckoutPaymentPage}
-          />
-          <Cart.Screen
-            name={ROUTES.CHECKOUT_REVIEW_ORDER}
-            component={CheckoutReviewOrderPage}
-          />
-          <Cart.Screen
-            name={ROUTES.CHECKOUT_COMPLETE}
-            component={CheckoutCompletePage}
-          />
-        </>
-      )}
+      {!isLoggedIn && <Cart.Screen name={ROUTES.LOGIN} component={LoginPage} />}
+      <Cart.Screen
+        name={ROUTES.CHECKOUT_ADDRESS}
+        component={CheckoutAddressPage}
+      />
+      <Cart.Screen
+        name={ROUTES.CHECKOUT_PAYMENT}
+        component={CheckoutPaymentPage}
+      />
+      <Cart.Screen
+        name={ROUTES.CHECKOUT_REVIEW_ORDER}
+        component={CheckoutReviewOrderPage}
+      />
+      <Cart.Screen
+        name={ROUTES.CHECKOUT_COMPLETE}
+        component={CheckoutCompletePage}
+      />
     </Cart.Navigator>
   );
 };

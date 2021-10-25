@@ -1,5 +1,5 @@
 export default class AppScreen {
-  private selector: string;
+  private readonly selector: string;
 
   constructor(selector: string) {
     this.selector = selector;

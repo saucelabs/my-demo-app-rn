@@ -8,6 +8,7 @@ export enum ROUTES {
   // Cart Stack Navigator
   CART_STACK_NAVIGATOR = 'CartStackNavigator',
   CART = 'Cart',
+  LOGIN = 'Login',
   CHECKOUT_ADDRESS = 'CheckoutAddress',
   CHECKOUT_PAYMENT = 'CheckoutPayment',
   CHECKOUT_REVIEW_ORDER = 'CheckoutReviewOrder',
@@ -16,7 +17,6 @@ export enum ROUTES {
   // Extra screens for testing purposes
   MENU_STACK_NAVIGATOR = 'MenuStackNavigator',
   MENU = 'Menu',
-  LOGIN = 'Login',
   BIOMETRICS = 'biometrics',
   WEBVIEW_SELECTION = 'WebviewSelectionPage',
   WEBVIEW = 'WebviewPage',

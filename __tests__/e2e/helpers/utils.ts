@@ -31,27 +31,49 @@ const restartApp = async () => {
   // Set the firstAppstart to false to say that the following test can be reset
   (driver.config as MobileConfig).firstAppStart = false;
 };
-const hideKeyboard = async (element?: WebdriverIO.Element) => {
+const hideKeyboard = async () => {
   // The hideKeyboard is not working on ios devices, so take a different approach
   if (!(await driver.isKeyboardShown())) {
     return;
   }
 
   if (driver.isIOS) {
-    return driver.touchAction({
-      action: 'tap',
-      // x: 0,
-      // y: -40,
-      element,
-    });
+    await $('id=Return').click();
+  } else {
+    try {
+      await driver.hideKeyboard('pressKey', 'Done');
+    } catch (e) {
+      // Fallback
+      await driver.back();
+    }
   }
 
-  try {
-    return driver.hideKeyboard('pressKey', 'Done');
-  } catch (e) {
-    // Fallback
-    return driver.back();
+  // Wait for the keyboard animation to be done
+  return driver.pause(750);
+};
+const hideNumericKeyboard = async () => {
+  // The hideKeyboard is not working on ios devices, so take a different approach
+  if (!(await driver.isKeyboardShown())) {
+    return;
   }
+
+  if (driver.isIOS) {
+    await driver.execute('mobile: tap', {
+      element: await $('id=1'),
+      x: 0,
+      y: -100,
+    });
+  } else {
+    try {
+      await driver.hideKeyboard('pressKey', 'Done');
+    } catch (e) {
+      // Fallback
+      await driver.back();
+    }
+  }
+
+  // Wait for the keyboard animation to be done
+  return driver.pause(750);
 };
 const openDeepLinkUrl = (url: string): Promise<void | string> => {
   const prefix = 'mydemoapprn://';
@@ -71,6 +93,7 @@ const openDeepLinkUrl = (url: string): Promise<void | string> => {
 export {
   getTextOfElement,
   hideKeyboard,
+  hideNumericKeyboard,
   locatorStrategy,
   openDeepLinkUrl,
   restartApp,

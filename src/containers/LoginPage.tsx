@@ -17,10 +17,7 @@ import Button from '../components/Button';
 import InputField from '../components/InputField';
 import {isLockedOutUser, verifyCredentials} from '../utils/Credentials';
 import {StoreContext} from '../store/Store';
-import {
-  AuthenticationActionEnum,
-  login,
-} from '../store/actions/AuthenticationActions';
+import {login} from '../store/actions/AuthenticationActions';
 import {RouteProp} from '@react-navigation/native';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
@@ -79,11 +76,7 @@ const LoginPage = ({route, navigation}: LoginProps) => {
     setGenericErrorMessage('');
   };
   const successfullyLogin = useCallback(async () => {
-    await dispatch(
-      login(
-        (username as AuthenticationActionEnum) || USERNAMES_ENUM.STANDARD_USER,
-      ),
-    );
+    await dispatch(login(username || USERNAMES_ENUM.STANDARD_USER));
 
     if (route?.params && route.params.screen && route.params.stack) {
       const {screen, stack} = route?.params;

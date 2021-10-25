@@ -28,7 +28,7 @@ export type AuthenticationActionType =
       type: AuthenticationActionEnum.ENABLE_BIOMETRICS;
     };
 
-function login(username: AuthenticationActionEnum) {
+function login(username: string) {
   return {
     isLoggedIn: true,
     type: AuthenticationActionEnum.LOGIN,
