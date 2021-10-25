@@ -88,6 +88,10 @@ class CheckoutAddressScreen extends AppScreen {
     await hideKeyboard();
   }
 
+  async tapOnPaymentButton() {
+    await this.paymentButton.click();
+  }
+
   async getFullNameErrorMessage(): Promise<string> {
     return this.getElementText(
       await this.fullNameField,
@@ -172,7 +176,7 @@ class CheckoutAddressScreen extends AppScreen {
       await this.addValueToField(await this.countryField, country);
     }
 
-    await this.paymentButton.click();
+    await this.tapOnPaymentButton();
   }
 }
 

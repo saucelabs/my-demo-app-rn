@@ -68,6 +68,7 @@ The prefix deep link is `mydemoapprn://` and the following screens (with their a
 | Login | `login` |  |
 | Webview | `webview` |  |
 | Checkout Address | `checkout-address` |  |
+| Checkout Payment | `checkout-payment` |  |
 | QR Code Scanner | `qr-code-scanner` |  |
 | Geo Location | `geo-locations` |  |
 | Drawing | `drawing` |  |

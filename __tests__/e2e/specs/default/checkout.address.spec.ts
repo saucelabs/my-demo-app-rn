@@ -31,8 +31,6 @@ describe('Checkout Address Page', () => {
     await expect(await CheckoutAddressScreen.getCountryErrorMessage()).toEqual(
       'Please provide your country.',
     );
-
-    await driver.pause(5000);
   });
 
   it('should be able to submit minimal data', async () => {
