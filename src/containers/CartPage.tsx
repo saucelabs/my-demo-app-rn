@@ -20,7 +20,7 @@ import {MUSEO_SANS_300} from '../utils/Constants';
 import Button from '../components/Button';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
-import {parseDeepLinkData} from '../utils/DeepLinking';
+import {parseDeepLinkProductData} from '../utils/DeepLinking';
 
 type CartProps = {
   navigation: StackNavigationProp<CartStackParamList, ROUTES.CART>;
@@ -39,11 +39,14 @@ const CartPage = ({navigation, route}: CartProps) => {
 
   useEffect(() => {
     // @ts-ignore
-    if (route.params && route.params.products) {
+    if (route.params && route.params?.products) {
       // The products will be a string like this `id=2\&amount=2\&color=black,id=\&amount=5\&color=`
       // it needs to have at least an id an the color needs to be valid
-      // @ts-ignore
-      const deepLinkItems = parseDeepLinkData(route.params.products, items);
+      const deepLinkItems = parseDeepLinkProductData(
+        // @ts-ignore
+        route.params?.products,
+        items,
+      );
       deepLinkItems.forEach(item => dispatch(addProductToCart(item)));
     }
   }, [dispatch, items, route]);

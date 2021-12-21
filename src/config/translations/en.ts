@@ -121,6 +121,10 @@ export default {
     billingAddressLabel: 'Billing Address',
     submitButtonText: 'Place Order',
     testId: 'checkout review order screen',
+    deliveryAddressTestId: 'checkout delivery address',
+    paymentInfoTestId: 'checkout payment info',
+    billingAddressTestId: 'checkout billing address',
+    deliveryDetailsTestId: 'checkout delivery details',
   },
   checkoutComplete: {
     header: 'Checkout Complete',

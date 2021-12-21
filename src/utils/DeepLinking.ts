@@ -7,7 +7,7 @@ type FoundDeepLinkItem = {
   color?: string;
 };
 
-const parseDeepLinkData = (
+const parseDeepLinkProductData = (
   // The format will look like this `id=2\&amount=2\&color=black,id=\&amount=5\&color=`
   deeplinkData: string,
   items: ItemInterface[],
@@ -78,4 +78,4 @@ const filterDeepLinkItems = (
   );
 };
 
-export {parseDeepLinkData};
+export {parseDeepLinkProductData};

@@ -24,6 +24,13 @@ const screens = {
       [ROUTES.LOGIN]: 'login',
       [ROUTES.CHECKOUT_ADDRESS]: 'checkout-address',
       [ROUTES.CHECKOUT_PAYMENT]: 'checkout-payment',
+      [ROUTES.CHECKOUT_REVIEW_ORDER]: {
+        path: 'checkout-review-order/:products/:payment?',
+        parse: {
+          products: (products: string) => `${products}`,
+        },
+      },
+      [ROUTES.CHECKOUT_COMPLETE]: 'checkout-complete',
     },
   },
   [ROUTES.MENU_STACK_NAVIGATOR]: {

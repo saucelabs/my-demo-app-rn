@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {ROUTES} from '../navigation/Routes';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -12,17 +12,74 @@ import {MUSEO_SANS_300, MUSEO_SANS_700} from '../utils/Constants';
 import Footer from '../components/Footer';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
+import {parseDeepLinkProductData} from '../utils/DeepLinking';
+import {addProductToCart} from '../store/actions/CartActions';
+import {RouteProp} from '@react-navigation/native';
+import {updateShippingAddress} from '../store/actions/ShippingAddressActions';
+import {updateCardDetails} from '../store/actions/CardDetailsActions';
 
 type CheckoutReviewOrderProps = {
-  navigation: StackNavigationProp<CartStackParamList, ROUTES.CART>;
+  navigation: StackNavigationProp<CartStackParamList, ROUTES.CHECKOUT_COMPLETE>;
+  route: RouteProp<CartStackParamList, ROUTES.CHECKOUT_REVIEW_ORDER>;
 };
 
-const CheckoutReviewOrderPage = ({navigation}: CheckoutReviewOrderProps) => {
+const CheckoutReviewOrderPage = ({
+  navigation,
+  route,
+}: CheckoutReviewOrderProps) => {
   const {
-    state: {cartContent, shippingAddress, cardDetails},
+    state: {
+      products: {items},
+      cartContent,
+      shippingAddress,
+      cardDetails,
+    },
+    dispatch,
   } = useContext(StoreContext);
   const deliveryCosts = 5.99;
   const totalCosts = cartContent.totalPrice + deliveryCosts;
+
+  useEffect(() => {
+    // @ts-ignore
+    if (route.params && route.params.products) {
+      // The products will be a string like this `id=2\&amount=2\&color=black,id=\&amount=5\&color=`
+      // it needs to have at least an id an the color needs to be valid
+      // @ts-ignore
+      const {products, payment = 'default'} = route.params;
+      const deepLinkProducts = parseDeepLinkProductData(products, items);
+      deepLinkProducts.forEach(item => dispatch(addProductToCart(item)));
+      const addressDetails = {
+        fullName: 'Rebecca Winter',
+        addressLineOne: 'Mandorley 112',
+        addressLineTwo: 'Entrance 1',
+        city: 'Truro',
+        stateRegion: 'Cornwall',
+        zipCode: '89750',
+        country: 'United Kingdom',
+      };
+      const defaultPaymentDetails = {
+        cardFullName: 'Rebecca Winter',
+        cardNumber: '5555555555554444',
+        cardExpirationDate: '0325',
+        cardSecurityCode: '123',
+        isShippingAddress: !(payment === 'different'),
+      };
+      const paymentDetails = {
+        ...defaultPaymentDetails,
+        billingAddressDetails: {
+          fullName: 'Sauce Bot',
+          addressLineOne: 'Sauce Street 5',
+          addressLineTwo: 'Building 2',
+          city: 'Sauce Lake City',
+          stateRegion: 'Sauce Dakota',
+          zipCode: '499382',
+          country: 'South Sauceland',
+        },
+      };
+      dispatch(updateShippingAddress(addressDetails));
+      dispatch(updateCardDetails(paymentDetails));
+    }
+  }, [dispatch, items, route]);
 
   return (
     <View style={styles.container}>
@@ -45,7 +102,11 @@ const CheckoutReviewOrderPage = ({navigation}: CheckoutReviewOrderProps) => {
             <Text>{I18n.t('checkoutReviewOrder.noElements')}</Text>
           </View>
         )}
-        <View style={styles.deliveryAddress}>
+        <View
+          style={styles.deliveryAddress}
+          {...testProperties(
+            I18n.t('checkoutReviewOrder.deliveryAddressTestId'),
+          )}>
           <Text style={styles.textHeader}>
             {I18n.t('checkoutReviewOrder.deliveryAddressLabel')}
           </Text>
@@ -66,20 +127,27 @@ const CheckoutReviewOrderPage = ({navigation}: CheckoutReviewOrderProps) => {
             {shippingAddress.country}, {shippingAddress.zipCode}
           </Text>
         </View>
-        <View style={styles.paymentInfo}>
+        <View
+          style={styles.paymentInfo}
+          {...testProperties(I18n.t('checkoutReviewOrder.paymentInfoTestId'))}>
           <Text style={styles.textHeader}>
             {I18n.t('checkoutReviewOrder.paymentMethodLabel')}
           </Text>
           <Text style={styles.text}>{cardDetails.cardFullName}</Text>
           <Text style={styles.text}>{cardDetails.cardNumber}</Text>
           <Text style={styles.text}>Exp: {cardDetails.cardExpirationDate}</Text>
-          {cardDetails.isShippingAddress && (
+        </View>
+        <View
+          style={styles.billingAddress}
+          {...testProperties(
+            I18n.t('checkoutReviewOrder.billingAddressTestId'),
+          )}>
+          {cardDetails.isShippingAddress ? (
             <Text style={styles.text}>
               {I18n.t('checkoutReviewOrder.billingIsShipping')}
             </Text>
-          )}
-          {!cardDetails.isShippingAddress && (
-            <View style={styles.billingAddress}>
+          ) : (
+            <>
               <Text style={styles.textHeader}>
                 {I18n.t('checkoutReviewOrder.billingAddressLabel')}
               </Text>
@@ -102,10 +170,14 @@ const CheckoutReviewOrderPage = ({navigation}: CheckoutReviewOrderProps) => {
                 {cardDetails.billingAddressDetails.country},{' '}
                 {cardDetails.billingAddressDetails.zipCode}
               </Text>
-            </View>
+            </>
           )}
         </View>
-        <View style={styles.deliveryInfo}>
+        <View
+          style={styles.deliveryInfo}
+          {...testProperties(
+            I18n.t('checkoutReviewOrder.deliveryDetailsTestId'),
+          )}>
           <View style={styles.row}>
             <Text style={styles.textHeader}>
               {I18n.t('checkoutReviewOrder.dhlLabel')}
