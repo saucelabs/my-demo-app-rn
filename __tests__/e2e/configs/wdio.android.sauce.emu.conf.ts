@@ -8,13 +8,12 @@ const buildName = `Android My React Native Demo app: ${new Date().getTime()}`;
 //
 // For all capabilities please check
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
-config.capabilities = [
-  {
+config.capabilities = ['7.1', '8.1', '9.0', '10.0', '11'].map(
+  (osVersion: string) => ({
     // The defaults you need to have in your config
     platformName: 'Android',
-    // We're using dynamic device allocation
-    // See https://docs.saucelabs.com/mobile-apps/automated-testing/appium/real-devices/#dynamic-device-allocation
-    deviceName: '(Samsung Galaxy S(7|8|9|10|20|21).*)|(Google Pixel.*)',
+    platformVersion: osVersion,
+    deviceName: 'Android GoogleAPI Emulator',
     automationName: 'UIAutomator2',
     // The name of the App in the Sauce Labs storage, for more info see
     // https://docs.saucelabs.com/mobile-apps/app-storage/
@@ -22,18 +21,21 @@ config.capabilities = [
     appWaitActivity: 'com.saucelabs.mydemoapp.rn.MainActivity',
     build: buildName,
     newCommandTimeout: 240,
-    // Select only phone devices
-    // @ts-ignore
-    phoneOnly: true,
-    // If BIOMETRICS=true has been provided from the command line it will
-    // start the driver with `allowTouchIdEnroll` enabled
-    // @ts-ignore
-    allowTouchIdEnroll: !!process.env.BIOMETRICS,
-    // This will adjust the Appium server in such a way that it will return all
-    // non visible elements so we can assert against it.
-    // @ts-ignore
-    allowInvisibleElements: true,
-  },
-];
+    appiumVersion: '1.20.2',
+    // // This doesn't seem to work with Appium 1.20.2 on the SL cloud =(
+    // // This will adjust the Appium server in such a way that it will return all
+    // // non visible elements so we can assert against it.
+    // // @ts-ignore
+    // allowInvisibleElements: true,
+  }),
+);
+
+/**
+ * Workaround for the `allowInvisibleElements: true,` cap.
+ * The setting can also be set during execution
+ */
+config.before = async () => {
+  await driver.updateSettings({allowInvisibleElements: true});
+};
 
 exports.config = config;

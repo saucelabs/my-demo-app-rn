@@ -32,6 +32,8 @@ config.capabilities = [
     // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
     'appium:noReset': true,
     'appium:newCommandTimeout': 240,
+    // This will adjust the Appium server in such a way that it will return all
+    // non visible elements so we can assert against it.
     // @ts-ignore
     'appium:allowInvisibleElements': true,
   },

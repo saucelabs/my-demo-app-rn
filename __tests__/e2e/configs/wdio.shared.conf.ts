@@ -23,7 +23,8 @@ export const config: MobileConfig = {
   bail: 0,
   baseUrl: 'http://localhost',
   waitforTimeout: 15000,
-  connectionRetryTimeout: 180000,
+  // A timeout of 5 min
+  connectionRetryTimeout: 5 * 60 * 1000,
   connectionRetryCount: 2,
   services: [],
   // Framework you want to run your specs with.
@@ -31,7 +32,8 @@ export const config: MobileConfig = {
   reporters: ['spec'],
   mochaOpts: {
     ui: 'bdd',
-    timeout: 60000,
+    // Add a 5 min timeout per test
+    timeout: 5 * 60 * 1000,
   },
 
   // =====
