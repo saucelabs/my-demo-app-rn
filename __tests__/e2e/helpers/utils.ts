@@ -98,7 +98,7 @@ const openDeepLinkUrl = async (url: string): Promise<void | string> => {
   // Check if we are a simulator
   if (
     'udid' in driver.capabilities &&
-    !simulatorRegex.test(driver.capabilities.udid as string)
+    simulatorRegex.test(driver.capabilities.udid as string)
   ) {
     await driver.url(`${prefix}${url}`);
   } else {
