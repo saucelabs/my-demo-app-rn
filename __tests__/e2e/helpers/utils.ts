@@ -75,7 +75,7 @@ const hideNumericKeyboard = async () => {
   // Wait for the keyboard animation to be done
   return driver.pause(750);
 };
-const openDeepLinkUrl = (url: string): Promise<void | string> => {
+const openDeepLinkUrl = async (url: string): Promise<void | string> => {
   const prefix = 'mydemoapprn://';
 
   if (driver.isAndroid) {
@@ -87,7 +87,19 @@ const openDeepLinkUrl = (url: string): Promise<void | string> => {
   }
 
   // This works for Simulators, not for real devices so we need to fix that
-  return driver.url(`${prefix}${url}`);
+  await driver.url(`${prefix}${url}`);
+  // try {
+  //   // Wait for the notification and accept it
+  //   const openSelector =
+  //     "type == 'XCUIElementTypeButton' && name CONTAINS 'Open'";
+  //   const openButton = await $(`-ios predicate string:${openSelector}`);
+  //   await openButton.waitForDisplayed({timeout: 6000});
+  //
+  //   return openButton.click();
+  // } catch (e) {
+  //   console.log('openDeepLinkUrl error = ', e);
+  //   return;
+  // }
 };
 
 export {

@@ -17,7 +17,7 @@ config.capabilities = [
     // http://appium.io/docs/en/writing-running-appium/caps/
     // This is `appium:` for all Appium Capabilities which can be found here
     'appium:deviceName': 'iPhone 12',
-    'appium:platformVersion': '14.5',
+    'appium:platformVersion': '15.0',
     'appium:orientation': 'PORTRAIT',
     'appium:automationName': 'XCUITest',
     // The path to the app
@@ -29,6 +29,8 @@ config.capabilities = [
     // Read the reset strategies very well, they differ per platform, see
     // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
     'appium:noReset': true,
+    // @ts-ignore
+    'appium:shouldTerminateApp': true,
     'appium:newCommandTimeout': 240,
     // @ts-ignore
     'appium:allowTouchIdEnroll': true,

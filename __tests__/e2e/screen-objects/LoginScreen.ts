@@ -176,12 +176,16 @@ class LoginScreen extends AppScreen {
   }
 
   async submitLogin({username = '', password = ''}) {
-    await this.usernameField.addValue(username);
-    // Fail save to always see the next field
-    await hideKeyboard();
-    await this.passwordField.addValue(password);
-    // Fail save to always see the button
-    await hideKeyboard();
+    if (username) {
+      await this.usernameField.addValue(username);
+      // Fail save to always see the next field
+      await hideKeyboard();
+    }
+    if (password) {
+      await this.passwordField.addValue(password);
+      // Fail save to always see the button
+      await hideKeyboard();
+    }
     await this.loginButton.click();
     // Wait for animation to be done
     await driver.pause(750);

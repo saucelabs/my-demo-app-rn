@@ -53,7 +53,7 @@ describe('Checkout Payment Page', () => {
     ).toEqual('Value looks invalid.');
 
     await CheckoutPaymentScreen.fillCardData({
-      securityCode: 12,
+      securityCode: 12345,
     });
     await expect(
       await CheckoutPaymentScreen.getSecurityCodeErrorMessage(),
