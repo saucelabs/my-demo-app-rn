@@ -1,9 +1,16 @@
 import AppScreen from './AppScreen';
 import {getTextOfElement, locatorStrategy} from '../helpers/utils';
+import {findElementBySwipe} from '../helpers/gestures';
+
+const drawerContainerSelector = 'menu item catalog';
 
 class Menu extends AppScreen {
   constructor() {
-    super(locatorStrategy('menu item catalog'));
+    super(drawerContainerSelector);
+  }
+
+  private get drawerContainer() {
+    return $(locatorStrategy(drawerContainerSelector));
   }
 
   private get openMenuButton() {
@@ -95,19 +102,39 @@ class Menu extends AppScreen {
   }
 
   async openResetApp() {
-    await this.resetAppButton.click();
+    await (
+      await findElementBySwipe({
+        element: await this.resetAppButton,
+        scrollableElement: await this.drawerContainer,
+      })
+    )?.click();
   }
 
   async openBiometrics() {
-    await this.biometricsButton.click();
+    await (
+      await findElementBySwipe({
+        element: await this.biometricsButton,
+        scrollableElement: await this.drawerContainer,
+      })
+    )?.click();
   }
 
   async openLogin() {
-    await this.loginButton.click();
+    await (
+      await findElementBySwipe({
+        element: await this.loginButton,
+        scrollableElement: await this.drawerContainer,
+      })
+    )?.click();
   }
 
   async logout() {
-    await this.logOutButton.click();
+    await (
+      await findElementBySwipe({
+        element: await this.logOutButton,
+        scrollableElement: await this.drawerContainer,
+      })
+    )?.click();
     const iosSelector = (text: string) =>
       `-ios class chain:**/XCUIElementTypeButton[\`label == "${text}"\`]`;
     const androidSelector = (text: string) =>

@@ -7,9 +7,15 @@ import {
 import {findElementBySwipe} from '../helpers/gestures';
 import {DEFAULT_PIN, INCORRECT_PIN} from '../configs/constants';
 
+const loginScreenSelector = 'login screen';
+
 class LoginScreen extends AppScreen {
   constructor() {
-    super(locatorStrategy('login screen'));
+    super(locatorStrategy(loginScreenSelector));
+  }
+
+  private get loginScreen() {
+    return $(locatorStrategy(loginScreenSelector));
   }
 
   private get usernameField() {

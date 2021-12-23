@@ -80,11 +80,12 @@ class CheckoutAddressScreen extends AppScreen {
   }
 
   private async addValueToField(element: WebdriverIO.Element, value: string) {
-    await findElementBySwipe({
-      element: await element,
-      scrollableElement: await this.checkoutAddressScrollContainer,
-    });
-    await element.addValue(value);
+    await (
+      await findElementBySwipe({
+        element: await element,
+        scrollableElement: await this.checkoutAddressScrollContainer,
+      })
+    )?.addValue(value);
     await hideKeyboard();
   }
 

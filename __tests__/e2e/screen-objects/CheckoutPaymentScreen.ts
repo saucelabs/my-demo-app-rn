@@ -122,11 +122,12 @@ class CheckoutPaymentScreen extends AppScreen {
     element: WebdriverIO.Element,
     value: string | number,
   ) {
-    await findElementBySwipe({
-      element: await element,
-      scrollableElement: await this.checkoutPaymentScrollContainer,
-    });
-    await element.addValue(value);
+    await (
+      await findElementBySwipe({
+        element: await element,
+        scrollableElement: await this.checkoutPaymentScrollContainer,
+      })
+    )?.addValue(value);
 
     if (typeof value === 'number') {
       await hideNumericKeyboard();
@@ -167,11 +168,12 @@ class CheckoutPaymentScreen extends AppScreen {
   }
 
   async tapOnBillingAddressCheckbox() {
-    await findElementBySwipe({
-      element: await this.billingAddressCheckbox,
-      scrollableElement: await this.checkoutPaymentScrollContainer,
-    });
-    await this.billingAddressCheckbox.click();
+    await (
+      await findElementBySwipe({
+        element: await this.billingAddressCheckbox,
+        scrollableElement: await this.checkoutPaymentScrollContainer,
+      })
+    )?.click();
     // Add a small pause here to be sure the elements are there
     await driver.pause(750);
   }

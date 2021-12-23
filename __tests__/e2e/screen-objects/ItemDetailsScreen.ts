@@ -1,13 +1,19 @@
 import AppScreen from './AppScreen';
 import {getTextOfElement, locatorStrategy} from '../helpers/utils';
+import {findElementBySwipe} from '../helpers/gestures';
 
 export type ColorsType = 'black' | 'blue' | 'gray' | 'red';
 
+const productScreenSelector = 'product screen';
+
 class ItemDetailsScreen extends AppScreen {
   constructor() {
-    super(locatorStrategy('product screen'));
+    super(locatorStrategy(productScreenSelector));
   }
 
+  private get productScreen() {
+    return $(locatorStrategy(productScreenSelector));
+  }
   private get containerHeader() {
     return $(locatorStrategy('container header'));
   }
@@ -33,14 +39,24 @@ class ItemDetailsScreen extends AppScreen {
   }
 
   async addItemToCart() {
-    await this.addToCartButton.click();
+    await (
+      await findElementBySwipe({
+        element: await this.addToCartButton,
+        scrollableElement: await this.productScreen,
+      })
+    )?.click();
 
     // We need to have a small pause so the internal state can be updated
     return driver.pause(750);
   }
 
   async selectColor(color: ColorsType) {
-    await this.color(color).click();
+    await (
+      await findElementBySwipe({
+        element: await this.color(color),
+        scrollableElement: await this.productScreen,
+      })
+    )?.click();
 
     // Add a hard pause so the state can be updated
     return driver.pause(750);
