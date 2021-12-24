@@ -26,6 +26,18 @@ class ItemDetailsScreen extends AppScreen {
     return $(locatorStrategy(`${color} circle`));
   }
 
+  private get lowerCounter() {
+    return $(locatorStrategy('counter minus button'));
+  }
+
+  private get counterAmount() {
+    return $(locatorStrategy('counter amount'));
+  }
+
+  private get addCounter() {
+    return $(locatorStrategy('counter plus button'));
+  }
+
   private get addToCartButton() {
     return $(locatorStrategy('Add To Cart button'));
   }
@@ -60,6 +72,34 @@ class ItemDetailsScreen extends AppScreen {
 
     // Add a hard pause so the state can be updated
     return driver.pause(750);
+  }
+
+  async counterAddOne() {
+    await (
+      await findElementBySwipe({
+        element: await this.addCounter,
+        scrollableElement: await this.productScreen,
+      })
+    )?.click();
+
+    // We need to have a small pause so the internal state can be updated
+    return driver.pause(750);
+  }
+
+  async counterLowerOne() {
+    await (
+      await findElementBySwipe({
+        element: await this.lowerCounter,
+        scrollableElement: await this.productScreen,
+      })
+    )?.click();
+
+    // We need to have a small pause so the internal state can be updated
+    return driver.pause(750);
+  }
+
+  async getCounterAmount(): Promise<number> {
+    return parseInt(await getTextOfElement(await this.counterAmount), 10);
   }
 }
 

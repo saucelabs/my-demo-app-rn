@@ -3,7 +3,6 @@ import {openDeepLinkUrl, restartApp} from '../../helpers/utils';
 import CartScreen from '../../screen-objects/CartScreen';
 import ItemDetailsScreen from '../../screen-objects/ItemDetailsScreen';
 import Menu from '../../screen-objects/Menu';
-import Counter from '../../screen-objects/CounterObject';
 import LoginScreen from '../../screen-objects/LoginScreen';
 import CheckoutAddressScreen from '../../screen-objects/CheckoutAddressScreen';
 
@@ -43,8 +42,8 @@ describe('Cart', () => {
     await expect(await CartScreen.getCheckoutFooterText()).toContain('1 item');
 
     // Remove the item with the counter
-    await expect(await Counter.getAmount()).toEqual(1);
-    await Counter.lowerOne();
+    await expect(await ItemDetailsScreen.getCounterAmount()).toEqual(1);
+    await ItemDetailsScreen.counterLowerOne();
 
     // Verify that there is one product in the items and footer
     await expect(await CartScreen.itemsAmount()).toEqual(0);
@@ -64,12 +63,12 @@ describe('Cart', () => {
     expect(checkoutText).toContain('29.99');
 
     // Add one item with the counter
-    await expect(await Counter.getAmount()).toEqual(1);
-    await Counter.addOne();
+    await expect(await ItemDetailsScreen.getCounterAmount()).toEqual(1);
+    await ItemDetailsScreen.counterAddOne();
 
     // Verify that there is:
     // - 2 items in the counter
-    await expect(await Counter.getAmount()).toEqual(2);
+    await expect(await ItemDetailsScreen.getCounterAmount()).toEqual(2);
     // - one product in the item list
     await expect(await CartScreen.itemsAmount()).toEqual(1);
     // - 2 items and an updated amount is in the counter

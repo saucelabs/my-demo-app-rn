@@ -8,27 +8,23 @@ const buildName = `iOS My Demo app: ${new Date().getTime()}`;
 //
 // For all capabilities please check
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
-config.capabilities = [
-  {
-    // The defaults you need to have in your config
-    platformName: 'iOS',
-    // For W3C the appium capabilities need to have an extension prefix
-    // http://appium.io/docs/en/writing-running-appium/caps/
-    // This is `appium:` for all Appium Capabilities which can be found here
-    deviceName: 'iPhone 12 Simulator',
-    platformVersion: '14.5',
-    orientation: 'PORTRAIT',
-    automationName: 'XCUITest',
-    // The path to the app
-    app: 'storage:filename=MyRNDemoApp.zip',
-    // Read the reset strategies very well, they differ per platform, see
-    // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
-    noReset: true,
-    build: buildName,
-    newCommandTimeout: 240,
-    // @ts-ignore
-    allowTouchIdEnroll: true,
-  },
-];
+// config.capabilities = ['12.4', '13.4', '14.5', '15.0'].map(
+config.capabilities = ['15.0'].map((osVersion: string) => ({
+  // The defaults you need to have in your config
+  platformName: 'iOS',
+  platformVersion: osVersion,
+  deviceName: 'iPhone X Simulator',
+  automationName: 'XCUITest',
+  // The name of the App in the Sauce Labs storage, for more info see
+  // https://docs.saucelabs.com/mobile-apps/app-storage/
+  app: 'storage:filename=MyRNDemoApp.zip',
+  // Read the reset strategies very well, they differ per platform, see
+  // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
+  noReset: true,
+  shouldTerminateApp: true,
+  build: buildName,
+  newCommandTimeout: 240,
+  appiumVersion: osVersion === '15.0' ? '1.22.0' : '1.21.0',
+}));
 
 exports.config = config;
