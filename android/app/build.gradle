@@ -79,7 +79,8 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    enableHermes: false,  // clean and rebuild if changing
+    // Enabled for react reanimated
+    enableHermes: true,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -137,7 +138,7 @@ android {
         applicationId "com.saucelabs.mydemoapp.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 154
+        versionCode 173
         versionName "1.0.0"
         // For the QR-code scanner
         missingDimensionStrategy 'react-native-camera', 'general'

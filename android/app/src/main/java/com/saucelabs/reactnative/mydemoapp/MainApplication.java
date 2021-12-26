@@ -21,6 +21,9 @@ import java.util.List;
 import java.util.Arrays;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;
+// For react reanimated
+import com.facebook.react.bridge.JSIModulePackage;
+import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 
 public class MainApplication extends Application implements ReactApplication {
   // Added for expo unimodules
@@ -53,6 +56,12 @@ public class MainApplication extends Application implements ReactApplication {
         @Override
         protected String getJSMainModuleName() {
           return "index";
+        }
+
+        // Added for react reanimated
+        @Override
+        protected JSIModulePackage getJSIModulePackage() {
+            return new ReanimatedJSIModulePackage();
         }
       };
 

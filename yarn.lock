@@ -999,12 +999,19 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
-"@babel/plugin-transform-object-assign@^7.0.0", "@babel/plugin-transform-object-assign@^7.10.4":
+"@babel/plugin-transform-object-assign@^7.0.0":
   version "7.14.5"
   resolved "https://registry.npmjs.org/@babel/plugin-transform-object-assign/-/plugin-transform-object-assign-7.14.5.tgz"
   integrity sha512-lvhjk4UN9xJJYB1mI5KC0/o1D5EcJXdbhVe+4fSk08D6ZN+iuAIs7LJC+71h8av9Ew4+uRq9452v9R93SFmQlQ==
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
+
+"@babel/plugin-transform-object-assign@^7.10.4":
+  version "7.16.5"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-object-assign/-/plugin-transform-object-assign-7.16.5.tgz#8d35b2fd1a4a545aed1f8289680d6d38e57d9f6e"
+  integrity sha512-KVuJ7sWf6bcXawKVH6ZDQFYcOulObt1IOvl/gvNrkNXzmFf1IdgKOy4thmVomReleXqffMbptmXXMl3zPI7zHw==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.16.5"
 
 "@babel/plugin-transform-object-super@^7.0.0", "@babel/plugin-transform-object-super@^7.12.13":
   version "7.14.5"
@@ -1247,7 +1254,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/preset-typescript@^7.1.0":
+"@babel/preset-typescript@^7.1.0", "@babel/preset-typescript@^7.16.5":
   version "7.16.5"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.16.5.tgz#b86a5b0ae739ba741347d2f58c52f52e63cf1ba1"
   integrity sha512-lmAWRoJ9iOSvs3DqOndQpj8XqXkzaiQs50VG/zESiI9D3eoZhGriU675xNCr0UwvsuXrhMAGvyk1w+EVWF3u8Q==
@@ -2067,10 +2074,10 @@
   dependencies:
     deep-assign "^3.0.0"
 
-"@react-native-community/cameraroll@^4.0.4":
-  version "4.0.4"
-  resolved "https://registry.npmjs.org/@react-native-community/cameraroll/-/cameraroll-4.0.4.tgz"
-  integrity sha512-3SY96Xh1yQjV5M7dFisl5kQmrO/K09URarZwmTN801KEalOoo/opsd/e8Vu1dwSKe0NGCK7A2u0oJQpeNbWbnA==
+"@react-native-community/cameraroll@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cameraroll/-/cameraroll-4.1.2.tgz#489c6bb6137571540d93c543d5fcf8c652b548ec"
+  integrity sha512-jkdhMByMKD2CZ/5MPeBieYn8vkCfC4MOTouPpBpps3I8N6HUYJk+1JnDdktVYl2WINnqXpQptDA2YptVyifYAg==
 
 "@react-native-community/cli-debugger-ui@^6.0.0-rc.0":
   version "6.0.0-rc.0"
@@ -2481,6 +2488,11 @@
   dependencies:
     "@types/through" "*"
     rxjs "^7.2.0"
+
+"@types/invariant@^2.2.35":
+  version "2.2.35"
+  resolved "https://registry.yarnpkg.com/@types/invariant/-/invariant-2.2.35.tgz#cd3ebf581a6557452735688d8daba6cf0bd5a3be"
+  integrity sha512-DxX1V9P8zdJPYQat1gHyY0xj3efl8gnMVjiM9iCY6y27lj+PoQWkgjt8jDqmovPqULkKVpKRg8J36iQiA+EtEg==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.3"
@@ -4358,7 +4370,7 @@ credit-card-type@^9.1.0:
 
 cross-fetch@^3.0.4:
   version "3.1.4"
-  resolved "https://registry.npmjs.org/cross-fetch/-/cross-fetch-3.1.4.tgz"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
   integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
   dependencies:
     node-fetch "2.6.1"
@@ -5417,13 +5429,13 @@ fb-watchman@^2.0.0:
 
 fbjs-css-vars@^1.0.0:
   version "1.0.2"
-  resolved "https://registry.npmjs.org/fbjs-css-vars/-/fbjs-css-vars-1.0.2.tgz"
+  resolved "https://registry.yarnpkg.com/fbjs-css-vars/-/fbjs-css-vars-1.0.2.tgz#216551136ae02fe255932c3ec8775f18e2c078b8"
   integrity sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==
 
-fbjs@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/fbjs/-/fbjs-3.0.0.tgz"
-  integrity sha512-dJd4PiDOFuhe7vk4F80Mba83Vr2QuK86FoxtgPmzBqEJahncp+13YCmfoa53KHCo6OnlXLG7eeMWPfB5CrpVKg==
+fbjs@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-3.0.2.tgz#dfae08a85c66a58372993ce2caf30863f569ff94"
+  integrity sha512-qv+boqYndjElAJHNN3NoM8XuwQZ1j2m3kEvTgdle8IDjr6oUbkEpvABWtj/rQl3vq4ew7dnElBxL4YJAwTVqQQ==
   dependencies:
     cross-fetch "^3.0.4"
     fbjs-css-vars "^1.0.0"
@@ -5431,7 +5443,7 @@ fbjs@^3.0.0:
     object-assign "^4.1.0"
     promise "^7.1.1"
     setimmediate "^1.0.5"
-    ua-parser-js "^0.7.18"
+    ua-parser-js "^0.7.30"
 
 fd-slicer@~1.1.0:
   version "1.1.0"
@@ -8170,7 +8182,7 @@ mocha@^9.0.0:
 
 mockdate@^3.0.2:
   version "3.0.5"
-  resolved "https://registry.npmjs.org/mockdate/-/mockdate-3.0.5.tgz"
+  resolved "https://registry.yarnpkg.com/mockdate/-/mockdate-3.0.5.tgz#789be686deb3149e7df2b663d2bc4392bc3284fb"
   integrity sha512-iniQP4rj1FhBdBYS/+eQv7j1tadJ9lJtdzgOpvsOHng/GbcDh2Fhdeq+ZRldrPYdXvCyfFUmFeEwEGXZB5I/AQ==
 
 ms@2.0.0:
@@ -9013,7 +9025,7 @@ progress@2.0.3, progress@^2.0.0:
 
 promise@^7.1.1:
   version "7.3.1"
-  resolved "https://registry.npmjs.org/promise/-/promise-7.3.1.tgz"
+  resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
   integrity sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg==
   dependencies:
     asap "~2.0.3"
@@ -9205,15 +9217,15 @@ react-native-geolocation-service@^5.3.0-beta.1:
   resolved "https://registry.npmjs.org/react-native-geolocation-service/-/react-native-geolocation-service-5.3.0-beta.1.tgz"
   integrity sha512-VfocBBSrUfXAdMikWYy8IY9ndzzn0uOM15ncs7DUMQvCpnayC92PJtRSZrSGKEuUubUkcXRqvZIMowZDMwHGVA==
 
-react-native-gesture-handler@^1.10.3:
-  version "1.10.3"
-  resolved "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
-  integrity sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw==
+react-native-gesture-handler@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.1.0.tgz#be7a83a7bd340a2316551a4d30d7abf06b46c1da"
+  integrity sha512-vF4yEUrV5GMBioTkvf5Le1l3N/52dSLBnNMFC+kZ4hssnRoXB0hEQ0ReUkZckRB5L3nbHBhAyjySEtFPx4nyEA==
   dependencies:
     "@egjs/hammerjs" "^2.0.17"
-    fbjs "^3.0.0"
     hoist-non-react-statics "^3.3.0"
     invariant "^2.2.4"
+    lodash "^4.17.21"
     prop-types "^15.7.2"
 
 react-native-iphone-x-helper@^1.0.3, react-native-iphone-x-helper@^1.3.0:
@@ -9253,14 +9265,17 @@ react-native-qrcode-scanner@^1.5.4:
     prop-types "^15.5.10"
     react-native-permissions "^2.0.2"
 
-react-native-reanimated@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-2.2.0.tgz"
-  integrity sha512-lOJDd+5w1gY6DHGXG2jD1dsjzQmXQ2699HUc3IztvI2WP4zUT+UAA+zSG+5JiBS5DUnTL8YhhkmUQmr1KNGO5w==
+react-native-reanimated@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.3.1.tgz#c7abad48f9e6c84610b0d5e270088ecd61750382"
+  integrity sha512-nzjVqwkB8eeyPKT2KoiA9EEz17ZMFSGMoOTC17Z9b5nE2Z4ZHjHM5EKhY0TlwzXFUuJAE9PhOfxF0wIO/maZSA==
   dependencies:
     "@babel/plugin-transform-object-assign" "^7.10.4"
-    fbjs "^3.0.0"
+    "@types/invariant" "^2.2.35"
+    invariant "^2.2.4"
+    lodash.isequal "^4.5.0"
     mockdate "^3.0.2"
+    react-native-screens "^3.4.0"
     string-hash-64 "^1.0.3"
 
 react-native-safe-area-context@^3.2.0:
@@ -9968,7 +9983,7 @@ set-value@^2.0.0, set-value@^2.0.1:
 
 setimmediate@^1.0.5:
   version "1.0.5"
-  resolved "https://registry.npmjs.org/setimmediate/-/setimmediate-1.0.5.tgz"
+  resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
   integrity sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=
 
 setprototypeof@1.1.1:
@@ -10295,7 +10310,7 @@ strict-uri-encode@^2.0.0:
 
 string-hash-64@^1.0.3:
   version "1.0.3"
-  resolved "https://registry.npmjs.org/string-hash-64/-/string-hash-64-1.0.3.tgz"
+  resolved "https://registry.yarnpkg.com/string-hash-64/-/string-hash-64-1.0.3.tgz#0deb56df58678640db5c479ccbbb597aaa0de322"
   integrity sha512-D5OKWKvDhyVWWn2x5Y9b+37NUllks34q1dCDhk/vYcso9fmhs+Tl3KR/gE4v5UNj2UA35cnX4KdVVGkG1deKqw==
 
 string-length@^4.0.1:
@@ -10817,10 +10832,10 @@ typescript@^4.3.5:
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.3.5.tgz"
   integrity sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==
 
-ua-parser-js@^0.7.18:
-  version "0.7.28"
-  resolved "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.28.tgz"
-  integrity sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==
+ua-parser-js@^0.7.30:
+  version "0.7.31"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.31.tgz#649a656b191dffab4f21d5e053e27ca17cbff5c6"
+  integrity sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==
 
 ua-parser-js@^1.0.1:
   version "1.0.2"
