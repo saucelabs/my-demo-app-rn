@@ -11,17 +11,17 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		6A09BAD8C4890EF073CA4E1F /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98BE827307FE3CDCA894F51 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */; };
+        80B1192BAFAF8D95D432A36E /* libPods-MyRNDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE4E1D6A5F10B48B144DFBD /* libPods-MyRNDemoApp.a */; };
+		81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* BootSplash.storyboard */; };
 		14F2D1FD80A442EFBEB504AA /* MuseoSans-700Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 663AEF584D8B46B1B215A37A /* MuseoSans-700Italic.otf */; };
 		1E520CD9377947348536C70F /* MuseoSans-300Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF6C9AD88D8749BC8B65F22C /* MuseoSans-300Italic.otf */; };
 		200F1AB75B614754B3CA52AF /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8F7ED128FBD4D09AAD58DA3 /* MuseoSans-100.otf */; };
-		2ADAA9A64DC3F595FF2ECE5E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA63BB4F45FEC2F6C8ACB3D /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */; };
 		7D5C39FAE15549A3BA8FFE4D /* MuseoSans-900Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3508A5CCD20246B7B92A3D8C /* MuseoSans-900Italic.otf */; };
-		81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* BootSplash.storyboard */; };
 		888AA9AF29C3432DA0838843 /* MuseoSans_500_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D000F89CC5804AAA8F0889B1 /* MuseoSans_500_Italic.otf */; };
 		969CA0F87D50470EB35EA3D4 /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B1A21EE0A7B440B8EFB1E1F /* MuseoSans_500.otf */; };
 		B8733DB0396F4398AED92798 /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42F64D07B57C4229B5A55FDA /* MuseoSans_900.otf */; };
 		D609C102A9EF4E4696B14374 /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = ECFAA071D7B54ACC8E526660 /* MuseoSans_700.otf */; };
-		DEF136CC4F9D1FA841490348 /* libPods-MyRNDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC179B7D411E6173DFD5A06A /* libPods-MyRNDemoApp.a */; };
 		EB39D6B7FDF34DE2985ADDD0 /* MuseoSans-100Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44C032AA653C40D0BCE55123 /* MuseoSans-100Italic.otf */; };
 		F3DA8B22498342A49158FAFD /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EBE9C7450AC4E95824C5113 /* MuseoSans-300.otf */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,15 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyRNDemoApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyRNDemoApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyRNDemoApp/main.m; sourceTree = "<group>"; };
-		163A1E09BE654F8C952A178E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		5BE4E1D6A5F10B48B144DFBD /* libPods-MyRNDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = MyRNDemoApp/BootSplash.storyboard; sourceTree = "<group>"; };
+		96D8609F890A53BB71A61646 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A98BE827307FE3CDCA894F51 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp-MyRNDemoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9A9EC474BA5AD3CD380367E /* Pods-MyRNDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+        ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EF914256EF30C84B8537C437 /* Pods-MyRNDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		F86F09CE8952158A9A3CEE9F /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+        81AB9BB72411601600AC10FF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = MyRNDemoApp/BootSplash.storyboard; sourceTree = "<group>"; };	163A1E09BE654F8C952A178E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		1EBE9C7450AC4E95824C5113 /* MuseoSans-300.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-300.otf"; path = "../src/assets/fonts/MuseoSans-300.otf"; sourceTree = "<group>"; };
 		2B1A21EE0A7B440B8EFB1E1F /* MuseoSans_500.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_500.otf; path = ../src/assets/fonts/MuseoSans_500.otf; sourceTree = "<group>"; };
 		3343B4A86F1645938B9C91B1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
@@ -54,30 +62,22 @@
 		3A46C97E968A482EBB2D97B7 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		42F64D07B57C4229B5A55FDA /* MuseoSans_900.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_900.otf; path = ../src/assets/fonts/MuseoSans_900.otf; sourceTree = "<group>"; };
 		44C032AA653C40D0BCE55123 /* MuseoSans-100Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-100Italic.otf"; path = "../src/assets/fonts/MuseoSans-100Italic.otf"; sourceTree = "<group>"; };
-		525A8476C7D23A1B4AD7BB9D /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		663AEF584D8B46B1B215A37A /* MuseoSans-700Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-700Italic.otf"; path = "../src/assets/fonts/MuseoSans-700Italic.otf"; sourceTree = "<group>"; };
 		74923B7D90434135A8A38441 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		7509A0DF246441BC85C8723F /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		7A52AC0362AC40CDA44FC19A /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		81A9C428591B4052A6D559C8 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = MyRNDemoApp/BootSplash.storyboard; sourceTree = "<group>"; };
 		82D59115C136413FB5E2B2D0 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		92ED620FC24B562BFFABE910 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9BA63BB4F45FEC2F6C8ACB3D /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp-MyRNDemoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A046F1B301F04739B2EABC6F /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		A0AA90216F704707B80FA5B2 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		A0DDFD9338B2C9F081C7039D /* Pods-MyRNDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A7B93BC9A9A24F49A549357B /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		B22CACF44FF74399B731D277 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		B381E232B98A4E44A159FC69 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		B8F7ED128FBD4D09AAD58DA3 /* MuseoSans-100.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-100.otf"; path = "../src/assets/fonts/MuseoSans-100.otf"; sourceTree = "<group>"; };
-		B9F00B27FD3529CCB87B3F8D /* Pods-MyRNDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB7E1582F5A14500A1CC8345 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		D000F89CC5804AAA8F0889B1 /* MuseoSans_500_Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_500_Italic.otf; path = ../src/assets/fonts/MuseoSans_500_Italic.otf; sourceTree = "<group>"; };
 		D29A9C960CCA4E3196D9C597 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		EC179B7D411E6173DFD5A06A /* libPods-MyRNDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFAA071D7B54ACC8E526660 /* MuseoSans_700.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_700.otf; path = ../src/assets/fonts/MuseoSans_700.otf; sourceTree = "<group>"; };
-		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FA2B1EE0B59441A9B8FFCE50 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		FF6C9AD88D8749BC8B65F22C /* MuseoSans-300Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-300Italic.otf"; path = "../src/assets/fonts/MuseoSans-300Italic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ADAA9A64DC3F595FF2ECE5E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */,
+				6A09BAD8C4890EF073CA4E1F /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEF136CC4F9D1FA841490348 /* libPods-MyRNDemoApp.a in Frameworks */,
+				80B1192BAFAF8D95D432A36E /* libPods-MyRNDemoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,15 +136,19 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				EC179B7D411E6173DFD5A06A /* libPods-MyRNDemoApp.a */,
-				9BA63BB4F45FEC2F6C8ACB3D /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */,
+				5BE4E1D6A5F10B48B144DFBD /* libPods-MyRNDemoApp.a */,
+				A98BE827307FE3CDCA894F51 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		30E14C9051164C80B4CF5EEE /* Resources */ = {
+		57E9C4FDB5E64FEE2DE8A0D1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				E9A9EC474BA5AD3CD380367E /* Pods-MyRNDemoApp.debug.xcconfig */,
+				EF914256EF30C84B8537C437 /* Pods-MyRNDemoApp.release.xcconfig */,
+				96D8609F890A53BB71A61646 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */,
+				F86F09CE8952158A9A3CEE9F /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */,
 				B381E232B98A4E44A159FC69 /* AntDesign.ttf */,
 				7509A0DF246441BC85C8723F /* Entypo.ttf */,
 				3A46C97E968A482EBB2D97B7 /* EvilIcons.ttf */,
@@ -172,7 +176,8 @@
 				663AEF584D8B46B1B215A37A /* MuseoSans-700Italic.otf */,
 				3508A5CCD20246B7B92A3D8C /* MuseoSans-900Italic.otf */,
 			);
-			name = Resources;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -190,7 +195,7 @@
 				00E356EF1AD99517003FC87E /* MyRNDemoAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				F4E5FF25200E8FC784152966 /* Pods */,
+				57E9C4FDB5E64FEE2DE8A0D1 /* Pods */,
 				30E14C9051164C80B4CF5EEE /* Resources */,
 			);
 			indentWidth = 2;
@@ -207,18 +212,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4E5FF25200E8FC784152966 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A0DDFD9338B2C9F081C7039D /* Pods-MyRNDemoApp.debug.xcconfig */,
-				B9F00B27FD3529CCB87B3F8D /* Pods-MyRNDemoApp.release.xcconfig */,
-				92ED620FC24B562BFFABE910 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */,
-				525A8476C7D23A1B4AD7BB9D /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,12 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MyRNDemoAppTests" */;
 			buildPhases = (
-				833954DA6C11B80686481BBC /* [CP] Check Pods Manifest.lock */,
+				86AC91CA6D17E60B395C953E /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				CDAE620C8957617183830318 /* [CP] Embed Pods Frameworks */,
-				BA5DE8A5B0DEC0E22B67B674 /* [CP] Copy Pods Resources */,
+				445A6868DD33F83D9559E370 /* [CP] Embed Pods Frameworks */,
+				0DFC8B4317CDE149C6560FBB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,14 +240,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MyRNDemoApp" */;
 			buildPhases = (
-				CA54D77853491011EDFAD098 /* [CP] Check Pods Manifest.lock */,
+				75BD64BF0C28FDB54B100F33 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				927D6DEC88E9156BBCDFBE75 /* [CP] Embed Pods Frameworks */,
-				82CAA2EEA8438784381CABD2 /* [CP] Copy Pods Resources */,
+				387429055A126A0B09BB1748 /* [CP] Embed Pods Frameworks */,
+				5EC875743E7C0EC7467475CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,63 +338,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		82CAA2EEA8438784381CABD2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		833954DA6C11B80686481BBC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MyRNDemoApp-MyRNDemoAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		927D6DEC88E9156BBCDFBE75 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA5DE8A5B0DEC0E22B67B674 /* [CP] Copy Pods Resources */ = {
+		0DFC8B4317CDE149C6560FBB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,7 +355,58 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CA54D77853491011EDFAD098 /* [CP] Check Pods Manifest.lock */ = {
+		387429055A126A0B09BB1748 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		445A6868DD33F83D9559E370 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EC875743E7C0EC7467475CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75BD64BF0C28FDB54B100F33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,21 +428,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CDAE620C8957617183830318 /* [CP] Embed Pods Frameworks */ = {
+		86AC91CA6D17E60B395C953E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyRNDemoApp-MyRNDemoAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -509,7 +502,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92ED620FC24B562BFFABE910 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */;
+			baseConfigurationReference = 96D8609F890A53BB71A61646 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
@@ -518,7 +511,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MyRNDemoAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,13 +530,13 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 525A8476C7D23A1B4AD7BB9D /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */;
+			baseConfigurationReference = F86F09CE8952158A9A3CEE9F /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
 				INFOPLIST_FILE = MyRNDemoAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -562,7 +555,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0DDFD9338B2C9F081C7039D /* Pods-MyRNDemoApp.debug.xcconfig */;
+			baseConfigurationReference = E9A9EC474BA5AD3CD380367E /* Pods-MyRNDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -570,14 +563,9 @@
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MyRNDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/usr/lib/swift",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -594,14 +582,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9F00B27FD3529CCB87B3F8D /* Pods-MyRNDemoApp.release.xcconfig */;
+			baseConfigurationReference = EF914256EF30C84B8537C437 /* Pods-MyRNDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
 				INFOPLIST_FILE = MyRNDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -667,7 +654,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -725,7 +712,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
