@@ -250,7 +250,7 @@ See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issueco
     - [x] Checkout Complete
 - [ ] Upgrade dependencies
   - [ ] Dependencies
-    - [ ] To RN `0.66.4`
+    - [x] To RN `0.66.4`
     - [ ] @react-native-community/cameraroll
     - [ ] @react-native-community/masked-view
     - [ ] @react-navigation/bottom-tabs
