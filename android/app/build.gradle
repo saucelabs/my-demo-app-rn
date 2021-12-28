@@ -138,7 +138,7 @@ android {
         applicationId "com.saucelabs.mydemoapp.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 173
+        versionCode 179
         versionName "1.0.0"
         // For the QR-code scanner
         missingDimensionStrategy 'react-native-camera', 'general'
