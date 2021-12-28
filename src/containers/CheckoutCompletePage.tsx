@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
-import {StackActions} from '@react-navigation/native';
+import {CommonActions} from '@react-navigation/native';
 import {ROUTES} from '../navigation/Routes';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {CartStackParamList} from '../navigation/types';
@@ -25,10 +25,11 @@ const CheckoutCompletePage = ({navigation}: CheckoutCompleteProps) => {
     dispatch(resetCart());
     dispatch(resetCardDetails());
     dispatch(resetShippingAddress());
-    navigation.dispatch(StackActions.popToTop());
-    // @ts-ignore
-    navigation.navigate(ROUTES.STORE_STACK_NAVIGATOR, {
-      screen: ROUTES.STORE,
+    navigation.dispatch({
+      ...CommonActions.reset({
+        index: 0,
+        routes: [{name: ROUTES.STORE_STACK_NAVIGATOR}],
+      }),
     });
   };
 

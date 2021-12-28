@@ -5,22 +5,23 @@ The latest version of the iOS and Android app can be found [here](https://github
 
 ## Table of contents
 1. [Functionalities](#functionalities)
-1. [Touch / Face ID](#touch--face-id)
+2. [Touch / Face ID](#touch--face-id)
     1. [Enabling Touch / Face ID on Android emulators](#enabling-touch--face-id-on-android-emulators)
     1. [Enabling Touch / Face ID on iOS simulators](#enabling-touch--face-id-on-ios-simulators)
-1. [Deep linking](#deep-linking)
+3. [Deep linking](#deep-linking)
    1. [Android from CLI](#android-from-cli)
    1. [Use with iOS](#use-with-ios)
       1. [iOS from CLI](#ios-from-cli)
       1. [With Safari](#with-safari)
-1. [Different languages](#different-languages)
-1. [QR code scanner](#qr-code-scanner)
-1. [Gestures](#gestures)
-1. [Geo Location](#geo-location)
-1. [Drawing](#drawing)
-1. [Contributing to the app](#contributing-to-the-app)
-1. [FAQ](#faq)
-1. [TODO](#todo)
+4. [Different languages](#different-languages)
+5. [QR code scanner](#qr-code-scanner)
+6. [Gestures](#gestures)
+7. [Geo Location](#geo-location)
+8. [Drawing](#drawing)
+9. [Contributing to the app](#contributing-to-the-app)
+10. [FAQ](#faq)
+11. [Good to know](#good-to-know)
+12. [TODO](#todo)
 
 ## Functionalities
 ### Touch / Face ID
@@ -166,6 +167,13 @@ If you want to contribute to the app and add new functionalities, please check t
 Check [this](https://stackoverflow.com/questions/61922174/react-native-on-android-cannot-run-program-node-error-2-no-such-file-or-dir)
 post.
 
+## Good to know
+### Added FBJS
+We needed to add [fbjs](https://www.npmjs.com/package/fbjs) as an extra dependency for `react-native-cameraroll`, it was
+included as a dependency of the package. There is a PR created for this, but at the time of migration this wasn't merged
+yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraroll/pull/365).
+
+
 ## TODO
 - [x] TestIds
 - [ ] TestFairy integration
@@ -202,3 +210,5 @@ post.
     - [x] Checkout Payment
     - [x] Checkout Review Order
     - [x] Checkout Complete
+- [ ] Remove dependencies
+  - [ ] Remove FBJS, see [here](#added-fbjs) 

@@ -14,15 +14,14 @@
 		14F2D1FD80A442EFBEB504AA /* MuseoSans-700Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 663AEF584D8B46B1B215A37A /* MuseoSans-700Italic.otf */; };
 		1E520CD9377947348536C70F /* MuseoSans-300Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF6C9AD88D8749BC8B65F22C /* MuseoSans-300Italic.otf */; };
 		200F1AB75B614754B3CA52AF /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8F7ED128FBD4D09AAD58DA3 /* MuseoSans-100.otf */; };
-		723A6B715C68233AEDC26B70 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C25E3425375DEE31EA7B5B43 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */; };
-		782D293DC6EB8933EA190D16 /* libPods-MyRNDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC2AEC5D70E92FF0A3CCF8F6 /* libPods-MyRNDemoApp.a */; };
+		612437CD04AF5626B0381DBA /* libPods-MyRNDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A90E40B78219E47BFB9FFF /* libPods-MyRNDemoApp.a */; };
 		7D5C39FAE15549A3BA8FFE4D /* MuseoSans-900Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3508A5CCD20246B7B92A3D8C /* MuseoSans-900Italic.otf */; };
 		81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* BootSplash.storyboard */; };
 		888AA9AF29C3432DA0838843 /* MuseoSans_500_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D000F89CC5804AAA8F0889B1 /* MuseoSans_500_Italic.otf */; };
-		88F6B33F2771C4CB00A85F42 /* libswiftWebKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F6B33E2771C4CB00A85F42 /* libswiftWebKit.tbd */; };
 		969CA0F87D50470EB35EA3D4 /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B1A21EE0A7B440B8EFB1E1F /* MuseoSans_500.otf */; };
 		B8733DB0396F4398AED92798 /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42F64D07B57C4229B5A55FDA /* MuseoSans_900.otf */; };
 		D609C102A9EF4E4696B14374 /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = ECFAA071D7B54ACC8E526660 /* MuseoSans_700.otf */; };
+		DB6171F0E35FA9B51A99DBAD /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6450E7F46591BEAF72A2A6 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */; };
 		EB39D6B7FDF34DE2985ADDD0 /* MuseoSans-100Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44C032AA653C40D0BCE55123 /* MuseoSans-100Italic.otf */; };
 		F3DA8B22498342A49158FAFD /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EBE9C7450AC4E95824C5113 /* MuseoSans-300.otf */; };
 /* End PBXBuildFile section */
@@ -41,46 +40,29 @@
 		00E356EE1AD99517003FC87E /* MyRNDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyRNDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MyRNDemoAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRNDemoAppTests.m; sourceTree = "<group>"; };
+		06A90E40B78219E47BFB9FFF /* libPods-MyRNDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0551FF8BD617D6B11230E8 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MyRNDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRNDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MyRNDemoApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = MyRNDemoApp/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyRNDemoApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyRNDemoApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyRNDemoApp/main.m; sourceTree = "<group>"; };
-		163A1E09BE654F8C952A178E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		1B8377766FBD4939525B5DF1 /* Pods-MyRNDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		1DF78E24C36DF616907F8381 /* Pods-MyRNDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		1EBE9C7450AC4E95824C5113 /* MuseoSans-300.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-300.otf"; path = "../src/assets/fonts/MuseoSans-300.otf"; sourceTree = "<group>"; };
 		2B1A21EE0A7B440B8EFB1E1F /* MuseoSans_500.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_500.otf; path = ../src/assets/fonts/MuseoSans_500.otf; sourceTree = "<group>"; };
-		3343B4A86F1645938B9C91B1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		3508A5CCD20246B7B92A3D8C /* MuseoSans-900Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-900Italic.otf"; path = "../src/assets/fonts/MuseoSans-900Italic.otf"; sourceTree = "<group>"; };
-		3A46C97E968A482EBB2D97B7 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		3E1755132D9A14215D16FB75 /* Pods-MyRNDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3FC4F57DFF70D3345730BABC /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		42F64D07B57C4229B5A55FDA /* MuseoSans_900.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_900.otf; path = ../src/assets/fonts/MuseoSans_900.otf; sourceTree = "<group>"; };
 		44C032AA653C40D0BCE55123 /* MuseoSans-100Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-100Italic.otf"; path = "../src/assets/fonts/MuseoSans-100Italic.otf"; sourceTree = "<group>"; };
+		5C6450E7F46591BEAF72A2A6 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp-MyRNDemoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		663AEF584D8B46B1B215A37A /* MuseoSans-700Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-700Italic.otf"; path = "../src/assets/fonts/MuseoSans-700Italic.otf"; sourceTree = "<group>"; };
-		74923B7D90434135A8A38441 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		7509A0DF246441BC85C8723F /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		7A52AC0362AC40CDA44FC19A /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		81A9C428591B4052A6D559C8 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = MyRNDemoApp/BootSplash.storyboard; sourceTree = "<group>"; };
-		81EE05D28F00FE0B9D39BEDC /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		82D59115C136413FB5E2B2D0 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		88F6B33E2771C4CB00A85F42 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
-		A046F1B301F04739B2EABC6F /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		A0AA90216F704707B80FA5B2 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		A7B93BC9A9A24F49A549357B /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		AC2AEC5D70E92FF0A3CCF8F6 /* libPods-MyRNDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B22CACF44FF74399B731D277 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		B381E232B98A4E44A159FC69 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		ADF90DC503FD4C6705A3870A /* Pods-MyRNDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B8F7ED128FBD4D09AAD58DA3 /* MuseoSans-100.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-100.otf"; path = "../src/assets/fonts/MuseoSans-100.otf"; sourceTree = "<group>"; };
-		C25E3425375DEE31EA7B5B43 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp-MyRNDemoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB557910AE1710ED132B2706 /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		CB7E1582F5A14500A1CC8345 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		D000F89CC5804AAA8F0889B1 /* MuseoSans_500_Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_500_Italic.otf; path = ../src/assets/fonts/MuseoSans_500_Italic.otf; sourceTree = "<group>"; };
-		D29A9C960CCA4E3196D9C597 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		ECFAA071D7B54ACC8E526660 /* MuseoSans_700.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_700.otf; path = ../src/assets/fonts/MuseoSans_700.otf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FA2B1EE0B59441A9B8FFCE50 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		FF6C9AD88D8749BC8B65F22C /* MuseoSans-300Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-300Italic.otf"; path = "../src/assets/fonts/MuseoSans-300Italic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				723A6B715C68233AEDC26B70 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */,
+				DB6171F0E35FA9B51A99DBAD /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88F6B33F2771C4CB00A85F42 /* libswiftWebKit.tbd in Frameworks */,
-				782D293DC6EB8933EA190D16 /* libPods-MyRNDemoApp.a in Frameworks */,
+				612437CD04AF5626B0381DBA /* libPods-MyRNDemoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,45 +119,23 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				88F6B33E2771C4CB00A85F42 /* libswiftWebKit.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				AC2AEC5D70E92FF0A3CCF8F6 /* libPods-MyRNDemoApp.a */,
-				C25E3425375DEE31EA7B5B43 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */,
+				06A90E40B78219E47BFB9FFF /* libPods-MyRNDemoApp.a */,
+				5C6450E7F46591BEAF72A2A6 /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		30E14C9051164C80B4CF5EEE /* Resources */ = {
+		744E263CADF667105DE3FEC4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B381E232B98A4E44A159FC69 /* AntDesign.ttf */,
-				7509A0DF246441BC85C8723F /* Entypo.ttf */,
-				3A46C97E968A482EBB2D97B7 /* EvilIcons.ttf */,
-				7A52AC0362AC40CDA44FC19A /* Feather.ttf */,
-				D29A9C960CCA4E3196D9C597 /* FontAwesome.ttf */,
-				74923B7D90434135A8A38441 /* FontAwesome5_Brands.ttf */,
-				81A9C428591B4052A6D559C8 /* FontAwesome5_Regular.ttf */,
-				163A1E09BE654F8C952A178E /* FontAwesome5_Solid.ttf */,
-				82D59115C136413FB5E2B2D0 /* Fontisto.ttf */,
-				A0AA90216F704707B80FA5B2 /* Foundation.ttf */,
-				A7B93BC9A9A24F49A549357B /* Ionicons.ttf */,
-				FA2B1EE0B59441A9B8FFCE50 /* MaterialCommunityIcons.ttf */,
-				A046F1B301F04739B2EABC6F /* MaterialIcons.ttf */,
-				CB7E1582F5A14500A1CC8345 /* Octicons.ttf */,
-				3343B4A86F1645938B9C91B1 /* SimpleLineIcons.ttf */,
-				B22CACF44FF74399B731D277 /* Zocial.ttf */,
-				D000F89CC5804AAA8F0889B1 /* MuseoSans_500_Italic.otf */,
-				2B1A21EE0A7B440B8EFB1E1F /* MuseoSans_500.otf */,
-				ECFAA071D7B54ACC8E526660 /* MuseoSans_700.otf */,
-				42F64D07B57C4229B5A55FDA /* MuseoSans_900.otf */,
-				B8F7ED128FBD4D09AAD58DA3 /* MuseoSans-100.otf */,
-				44C032AA653C40D0BCE55123 /* MuseoSans-100Italic.otf */,
-				1EBE9C7450AC4E95824C5113 /* MuseoSans-300.otf */,
-				FF6C9AD88D8749BC8B65F22C /* MuseoSans-300Italic.otf */,
-				663AEF584D8B46B1B215A37A /* MuseoSans-700Italic.otf */,
-				3508A5CCD20246B7B92A3D8C /* MuseoSans-900Italic.otf */,
+				ADF90DC503FD4C6705A3870A /* Pods-MyRNDemoApp.debug.xcconfig */,
+				1DF78E24C36DF616907F8381 /* Pods-MyRNDemoApp.release.xcconfig */,
+				0D0551FF8BD617D6B11230E8 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */,
+				3FC4F57DFF70D3345730BABC /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */,
 			);
-			name = Resources;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -194,8 +153,7 @@
 				00E356EF1AD99517003FC87E /* MyRNDemoAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				DF09F3B0D76CA9A379FB3D8E /* Pods */,
-				30E14C9051164C80B4CF5EEE /* Resources */,
+				744E263CADF667105DE3FEC4 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -211,17 +169,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DF09F3B0D76CA9A379FB3D8E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3E1755132D9A14215D16FB75 /* Pods-MyRNDemoApp.debug.xcconfig */,
-				1B8377766FBD4939525B5DF1 /* Pods-MyRNDemoApp.release.xcconfig */,
-				81EE05D28F00FE0B9D39BEDC /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */,
-				CB557910AE1710ED132B2706 /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,12 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MyRNDemoAppTests" */;
 			buildPhases = (
-				035E0FB86B44A9EB0870BC84 /* [CP] Check Pods Manifest.lock */,
+				7EE5B9A364ED73B1C0FD06FE /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				058D5EBEB0D390D5C174FF1C /* [CP] Copy Pods Resources */,
-				3208B83ABA65F569E271E501 /* [CP] Embed Pods Frameworks */,
+				FB9E890EBCE2FCCA88DA1326 /* [CP] Embed Pods Frameworks */,
+				7B0498F1E391CF696C487D64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,14 +197,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MyRNDemoApp" */;
 			buildPhases = (
-				6E57D813EE450ABFE120960A /* [CP] Check Pods Manifest.lock */,
+				E318250B1089EED7757FCF7D /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				EB4A9C09C8A4868446BE4253 /* [CP] Copy Pods Resources */,
-				6A2ED489B70D69EF8BF4AB69 /* [CP] Embed Pods Frameworks */,
+				1BE919A177E343F92AA7F21F /* [CP] Embed Pods Frameworks */,
+				C5E01BDB0E090BB5BFDB307A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -348,7 +295,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		035E0FB86B44A9EB0870BC84 /* [CP] Check Pods Manifest.lock */ = {
+		1BE919A177E343F92AA7F21F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B0498F1E391CF696C487D64 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EE5B9A364ED73B1C0FD06FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,58 +351,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		058D5EBEB0D390D5C174FF1C /* [CP] Copy Pods Resources */ = {
+		C5E01BDB0E090BB5BFDB307A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3208B83ABA65F569E271E501 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A2ED489B70D69EF8BF4AB69 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E57D813EE450ABFE120960A /* [CP] Check Pods Manifest.lock */ = {
+		E318250B1089EED7757FCF7D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -443,21 +390,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB4A9C09C8A4868446BE4253 /* [CP] Copy Pods Resources */ = {
+		FB9E890EBCE2FCCA88DA1326 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -512,7 +459,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81EE05D28F00FE0B9D39BEDC /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */;
+			baseConfigurationReference = 0D0551FF8BD617D6B11230E8 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
@@ -521,7 +468,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MyRNDemoAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,13 +487,13 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB557910AE1710ED132B2706 /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */;
+			baseConfigurationReference = 3FC4F57DFF70D3345730BABC /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
 				INFOPLIST_FILE = MyRNDemoAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +512,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E1755132D9A14215D16FB75 /* Pods-MyRNDemoApp.debug.xcconfig */;
+			baseConfigurationReference = ADF90DC503FD4C6705A3870A /* Pods-MyRNDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -573,14 +520,9 @@
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MyRNDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/usr/lib/swift",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -597,21 +539,16 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B8377766FBD4939525B5DF1 /* Pods-MyRNDemoApp.release.xcconfig */;
+			baseConfigurationReference = 1DF78E24C36DF616907F8381 /* Pods-MyRNDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
 				INFOPLIST_FILE = MyRNDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/usr/lib/swift",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -674,7 +611,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -683,6 +620,7 @@
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
+					"\"$(SDKROOT)/usr/lib/swift\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -732,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -741,6 +679,7 @@
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
+					"\"$(SDKROOT)/usr/lib/swift\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;

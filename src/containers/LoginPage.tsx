@@ -81,8 +81,6 @@ const LoginPage = ({route, navigation}: LoginProps) => {
     if (route?.params && route.params.screen && route.params.stack) {
       const {screen, stack} = route?.params;
 
-      // Remove the login from the stack
-      navigation.pop();
       return navigation.navigate(stack, {screen});
     }
 

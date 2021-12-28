@@ -6,8 +6,6 @@ require File.join(File.dirname(`node --print "require.resolve('react-native/pack
 require File.join(File.dirname(`node --print "require.resolve('@react-native-community/cli-platform-ios/package.json')"`), "native_modules")
 require File.join(File.dirname(`node --print "require.resolve('react-native-unimodules/package.json')"`), "cocoapods")
 
-# Disabled for Expo unimodules
-#platform :ios, '10.0'
 # Added for Expo unimodules
 platform :ios, '11.0'
 
@@ -47,10 +45,18 @@ target 'MyRNDemoApp' do
 
   post_install do |installer|
     react_native_post_install(installer)
+
+    # Flipper requires a crude patch to bump up iOS deployment target, or "error: thread-local storage is not supported for the current target"
+    # I'm not aware of any other way to fix this one other than bumping iOS deployment target to match react-native (iOS 11 now)
     installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-          config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
-        end
-      end
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+       end
+    end
+
+    # ...but if you bump iOS deployment target, Flipper barfs again "Time.h:52:17: error: typedef redefinition with different types"
+    # We need to make one crude patch to RCT-Folly - set `__IPHONE_10_0` to our iOS target + 1
+    # https://github.com/facebook/flipper/issues/834 - 84 comments and still going...
+    `sed -i -e  $'s/__IPHONE_10_0/__IPHONE_12_0/' Pods/RCT-Folly/folly/portability/Time.h`
   end
 end

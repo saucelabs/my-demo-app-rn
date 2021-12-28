@@ -11,7 +11,7 @@ config.port = 4723;
 // ===================
 //
 config.services =
-  //(config.services || []).concat([
+  (config.services || []).concat(
   [
     [
       'appium',
@@ -19,8 +19,7 @@ config.services =
         command: 'appium',
       },
     ],
-  ];
-// ],
-//);
+  ]
+);
 
 export default config;
