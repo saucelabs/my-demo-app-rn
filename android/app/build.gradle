@@ -125,6 +125,11 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 /**
+ * Architectures to build native code for in debug.
+ */
+def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitectures")
+
+/**
  * Name of an debug/release build
  */
 def appName = "Android-MyDemoAppRN"
@@ -138,7 +143,7 @@ android {
         applicationId "com.saucelabs.mydemoapp.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 179
+        versionCode 180
         versionName "1.0.0"
         // For the QR-code scanner
         missingDimensionStrategy 'react-native-camera', 'general'
@@ -171,6 +176,11 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            if (nativeArchitectures) {
+                ndk {
+                    abiFilters nativeArchitectures.split(',')
+                }
+            }
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
