@@ -14,6 +14,16 @@
 		1787FB853A76872C4D38807A /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D616F87DFFDD069B1F634E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */; };
 		643009FE24043073DD6A15DE /* libPods-MyRNDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA875020D8BE788449DD47FC /* libPods-MyRNDemoApp.a */; };
 		81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* BootSplash.storyboard */; };
+		8858CBE6277B4C0E004B2FB6 /* MuseoSans-700Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDC277B4C0D004B2FB6 /* MuseoSans-700Italic.otf */; };
+		8858CBE7277B4C0E004B2FB6 /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDD277B4C0D004B2FB6 /* MuseoSans_700.otf */; };
+		8858CBE8277B4C0E004B2FB6 /* MuseoSans_500_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDE277B4C0D004B2FB6 /* MuseoSans_500_Italic.otf */; };
+		8858CBE9277B4C0E004B2FB6 /* MuseoSans-100Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDF277B4C0D004B2FB6 /* MuseoSans-100Italic.otf */; };
+		8858CBEA277B4C0E004B2FB6 /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE0277B4C0D004B2FB6 /* MuseoSans-300.otf */; };
+		8858CBEB277B4C0E004B2FB6 /* MuseoSans-900Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE1277B4C0D004B2FB6 /* MuseoSans-900Italic.otf */; };
+		8858CBEC277B4C0E004B2FB6 /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE2277B4C0D004B2FB6 /* MuseoSans_900.otf */; };
+		8858CBED277B4C0E004B2FB6 /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE3277B4C0E004B2FB6 /* MuseoSans_500.otf */; };
+		8858CBEE277B4C0E004B2FB6 /* MuseoSans-300Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE4277B4C0E004B2FB6 /* MuseoSans-300Italic.otf */; };
+		8858CBEF277B4C0E004B2FB6 /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE5277B4C0E004B2FB6 /* MuseoSans-100.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +48,16 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyRNDemoApp/main.m; sourceTree = "<group>"; };
 		79D616F87DFFDD069B1F634E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp-MyRNDemoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = MyRNDemoApp/BootSplash.storyboard; sourceTree = "<group>"; };
+		8858CBDC277B4C0D004B2FB6 /* MuseoSans-700Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-700Italic.otf"; path = "../src/assets/fonts/MuseoSans-700Italic.otf"; sourceTree = "<group>"; };
+		8858CBDD277B4C0D004B2FB6 /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MuseoSans_700.otf; path = ../src/assets/fonts/MuseoSans_700.otf; sourceTree = "<group>"; };
+		8858CBDE277B4C0D004B2FB6 /* MuseoSans_500_Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MuseoSans_500_Italic.otf; path = ../src/assets/fonts/MuseoSans_500_Italic.otf; sourceTree = "<group>"; };
+		8858CBDF277B4C0D004B2FB6 /* MuseoSans-100Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-100Italic.otf"; path = "../src/assets/fonts/MuseoSans-100Italic.otf"; sourceTree = "<group>"; };
+		8858CBE0277B4C0D004B2FB6 /* MuseoSans-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-300.otf"; path = "../src/assets/fonts/MuseoSans-300.otf"; sourceTree = "<group>"; };
+		8858CBE1277B4C0D004B2FB6 /* MuseoSans-900Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-900Italic.otf"; path = "../src/assets/fonts/MuseoSans-900Italic.otf"; sourceTree = "<group>"; };
+		8858CBE2277B4C0D004B2FB6 /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MuseoSans_900.otf; path = ../src/assets/fonts/MuseoSans_900.otf; sourceTree = "<group>"; };
+		8858CBE3277B4C0E004B2FB6 /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MuseoSans_500.otf; path = ../src/assets/fonts/MuseoSans_500.otf; sourceTree = "<group>"; };
+		8858CBE4277B4C0E004B2FB6 /* MuseoSans-300Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-300Italic.otf"; path = "../src/assets/fonts/MuseoSans-300Italic.otf"; sourceTree = "<group>"; };
+		8858CBE5277B4C0E004B2FB6 /* MuseoSans-100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-100.otf"; path = "../src/assets/fonts/MuseoSans-100.otf"; sourceTree = "<group>"; };
 		9F5886BEE4526A9676E4D592 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A18782B501F0467ADBC58A30 /* Pods-MyRNDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AE768918601F36E23FC8ACD4 /* Pods-MyRNDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +136,16 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8858CBDE277B4C0D004B2FB6 /* MuseoSans_500_Italic.otf */,
+				8858CBE3277B4C0E004B2FB6 /* MuseoSans_500.otf */,
+				8858CBDD277B4C0D004B2FB6 /* MuseoSans_700.otf */,
+				8858CBE2277B4C0D004B2FB6 /* MuseoSans_900.otf */,
+				8858CBE5277B4C0E004B2FB6 /* MuseoSans-100.otf */,
+				8858CBDF277B4C0D004B2FB6 /* MuseoSans-100Italic.otf */,
+				8858CBE0277B4C0D004B2FB6 /* MuseoSans-300.otf */,
+				8858CBE4277B4C0E004B2FB6 /* MuseoSans-300Italic.otf */,
+				8858CBDC277B4C0D004B2FB6 /* MuseoSans-700Italic.otf */,
+				8858CBE1277B4C0D004B2FB6 /* MuseoSans-900Italic.otf */,
 				13B07FAE1A68108700A75B9A /* MyRNDemoApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MyRNDemoAppTests */,
@@ -145,7 +175,6 @@
 				9F5886BEE4526A9676E4D592 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */,
 				BF90BB6E53007BE49D4888CA /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -243,6 +272,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8858CBE6277B4C0E004B2FB6 /* MuseoSans-700Italic.otf in Resources */,
+				8858CBE7277B4C0E004B2FB6 /* MuseoSans_700.otf in Resources */,
+				8858CBE8277B4C0E004B2FB6 /* MuseoSans_500_Italic.otf in Resources */,
+				8858CBE9277B4C0E004B2FB6 /* MuseoSans-100Italic.otf in Resources */,
+				8858CBEA277B4C0E004B2FB6 /* MuseoSans-300.otf in Resources */,
+				8858CBEB277B4C0E004B2FB6 /* MuseoSans-900Italic.otf in Resources */,
+				8858CBEC277B4C0E004B2FB6 /* MuseoSans_900.otf in Resources */,
+				8858CBED277B4C0E004B2FB6 /* MuseoSans_500.otf in Resources */,
+				8858CBEE277B4C0E004B2FB6 /* MuseoSans-300Italic.otf in Resources */,
+				8858CBEF277B4C0E004B2FB6 /* MuseoSans-100.otf in Resources */,
 				81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

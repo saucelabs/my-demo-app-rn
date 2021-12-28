@@ -70,7 +70,7 @@ const App = () => {
         <SwagLabsStatusBar />
         <NavigationContainer
           linking={Linking}
-          onReady={() => RNBootSplash.hide({fade: true})}>
+          onReady={() => RNBootSplash.hide()}>
           <RootRouter />
         </NavigationContainer>
       </SafeAreaProvider>

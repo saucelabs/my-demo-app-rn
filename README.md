@@ -173,6 +173,44 @@ We needed to add [fbjs](https://www.npmjs.com/package/fbjs) as an extra dependen
 included as a dependency of the package. There is a PR created for this, but at the time of migration this wasn't merged
 yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraroll/pull/365).
 
+### Disabled fade for bootslash
+After upgrading to `0.64.4` I got an issue with `reat-native-bootsplash`, the error was
+
+    NSInvalidArgumentException: Application tried to present modally an active controller
+
+I needed to change this
+```jsx
+return (
+  <StoreProvider>
+    <SafeAreaProvider>
+      <SwagLabsStatusBar />
+      <NavigationContainer
+        linking={Linking}
+        onReady={() => RNBootSplash.hide({fade: true})}>
+        <RootRouter />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  </StoreProvider>
+);
+```
+
+to this
+```jsx
+ return (
+    <StoreProvider>
+      <SafeAreaProvider>
+        <SwagLabsStatusBar />
+        <NavigationContainer
+          linking={Linking}
+          onReady={() => RNBootSplash.hide()}>
+          <RootRouter />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </StoreProvider>
+  );
+```
+See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issuecomment-1002114293)
+
 
 ## TODO
 - [x] TestIds
@@ -210,5 +248,45 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
     - [x] Checkout Payment
     - [x] Checkout Review Order
     - [x] Checkout Complete
+- [ ] Upgrade dependencies
+  - [ ] Dependencies
+    - [ ] To RN `0.66.4`
+    - [ ] @react-native-community/cameraroll
+    - [ ] @react-native-community/masked-view
+    - [ ] @react-navigation/bottom-tabs
+    - [ ] "card-validator
+    - [ ] expo-local-authentication
+    - [ ] i18n-js
+    - [ ] react-native-bootsplash
+    - [ ] react-native-camera
+    - [ ] react-native-fs
+    - [ ] react-native-geolocation-service
+    - [ ] react-native-gesture-handler
+    - [x] react-native-keyboard-aware-scroll-view
+    - [ ] react-native-localize
+    - [ ] react-native-permissions
+    - [ ] react-native-qrcode-scanner
+    - [ ] react-native-reanimated
+    - [ ] react-native-safe-area-context
+    - [ ] react-native-screens
+    - [ ] react-native-signature-canvas
+    - [ ] react-native-testfairy
+    - [ ] react-native-unimodules
+    - [ ] react-native-vector-icons
+    - [ ] react-native-version-number
+    - [ ] react-native-webview
+    - [ ] rn-fetch-blob
+  - [ ] devDependencies
+    - [ ] babel 
+    - [ ] @react-native-community/eslint-config
+    - [ ] @types/i18n-js
+    - [ ] eslint
+    - [ ] eslint-plugin-wdio
+    - [ ] jest
+    - [ ] react-native-clean-project
+    - [ ] react-native-version
+    - [ ] ts-node
+    - [ ] typescript 
+    - [ ] wdio
 - [ ] Remove dependencies
   - [ ] Remove FBJS, see [here](#added-fbjs) 
