@@ -45,6 +45,7 @@ target 'MyRNDemoApp' do
 
   post_install do |installer|
     react_native_post_install(installer)
+    __apply_Xcode_12_5_M1_post_install_workaround(installer)
 
     # Flipper requires a crude patch to bump up iOS deployment target, or "error: thread-local storage is not supported for the current target"
     # I'm not aware of any other way to fix this one other than bumping iOS deployment target to match react-native (iOS 11 now)
