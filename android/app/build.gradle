@@ -1,6 +1,4 @@
 apply plugin: "com.android.application"
-// Added for Expo unimodules
-apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 import com.android.build.OutputFile
 
 /**
@@ -143,7 +141,7 @@ android {
         applicationId "com.saucelabs.mydemoapp.rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 182
+        versionCode 216
         versionName "1.0.0"
         // For the QR-code scanner
         missingDimensionStrategy 'react-native-camera', 'general'
@@ -223,9 +221,10 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
+    // Added for bootsplash
+    implementation "androidx.core:core-splashscreen:1.0.0-alpha02"
+
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-    // Added for expo unimodules
-    addUnimodulesDependencies()
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

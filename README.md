@@ -167,6 +167,9 @@ If you want to contribute to the app and add new functionalities, please check t
 Check [this](https://stackoverflow.com/questions/61922174/react-native-on-android-cannot-run-program-node-error-2-no-such-file-or-dir)
 post.
 
+### Android Studio error "Installed Build Tools revision 31.0.0/32.0.0 is corrupted"
+See [this SO answer](https://stackoverflow.com/a/68430992/5911978).
+
 ## Good to know
 ### Added FBJS
 We needed to add [fbjs](https://www.npmjs.com/package/fbjs) as an extra dependency for `react-native-cameraroll`, it was

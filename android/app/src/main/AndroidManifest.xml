@@ -18,7 +18,7 @@
                  android:icon="@mipmap/ic_launcher"
                  android:roundIcon="@mipmap/ic_launcher_round"
                  android:allowBackup="false"
-                 android:theme="@style/AppTheme"
+                 android:theme="@style/BootTheme"
                  android:requestLegacyExternalStorage="true"><!-- Added for camera roll -->
         <activity android:name=".MainActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
@@ -27,18 +27,12 @@
                   android:exported="true"
                   android:screenOrientation="portrait"
                   android:launchMode="singleTask">
-        </activity>
-        <!-- For SplashActivity -->
-        <activity
-                android:name="com.zoontek.rnbootsplash.RNBootSplashActivity"
-                android:theme="@style/BootTheme"
-                android:launchMode="singleTask">
+            <!-- For the bootsplash -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <!-- add your deep linking instructions inside the RNBootSplashActivity declaration -->
+            <!-- Deep linking instructions -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>

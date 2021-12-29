@@ -5,7 +5,7 @@ import {enableScreens} from 'react-native-screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import RNBootSplash from 'react-native-bootsplash';
 // @ts-ignore
-import TestFairy from 'react-native-testfairy';
+// import TestFairy from 'react-native-testfairy';
 import RootRouter from './navigation/RootRouter';
 import SwagLabsStatusBar from './components/StatusBar';
 import Linking from './navigation/Linking';
@@ -33,8 +33,7 @@ const App = () => {
   useEffect(() => {
     // We call stop to support hot-swap during development.
     // This call will be ignored silently for the initial app launch.
-    TestFairy.stop();
-
+    // TestFairy.stop();
     /////////////////////////////////////////////////////////////////////////////////////////
     //
     // Launch a TestFairy session. The session url will be in the logs for you to navigate.
@@ -58,7 +57,7 @@ const App = () => {
     //
     /////////////////////////////////////////////////////////////////////////////////////////
     // TestFairy.setServerEndpoint("https://your.privatecloud.example.com") // Private cloud only
-    TestFairy.begin(process.env.TESTFAIRY_TOKEN);
+    // TestFairy.begin(process.env.TESTFAIRY_TOKEN);
     // Swap this line with the above if you don't want to record a session but still need
     // the shake gesture detection for the feedbacks.
     // TestFairy.installFeedbackHandler(process.env['TESTFAIRY_TOKEN']);

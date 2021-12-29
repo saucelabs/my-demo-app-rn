@@ -12,7 +12,7 @@ import {
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
 // @ts-ignore
-import TestFairy from 'react-native-testfairy';
+// import TestFairy from 'react-native-testfairy';
 import {Colors} from '../styles/Colors';
 import {ROUTES} from './Routes';
 import {StoreContext} from '../store/Store';
@@ -108,8 +108,9 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
   const navigateToAbout = () =>
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {screen: ROUTES.ABOUT});
   const navigateToReportABug = () => {
-    TestFairy.stop();
-    TestFairy.begin(process.env.TESTFAIRY_TOKEN);
+    // TestFairy.stop();
+    // TestFairy.begin(process.env.TESTFAIRY_TOKEN);
+    Alert.alert('Disabled for now due to pod failure install with TF');
   };
   const navigateToBiometrics = () =>
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {

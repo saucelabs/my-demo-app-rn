@@ -1,10 +1,8 @@
 package com.saucelabs.mydemoapp.rn;
-
-// For the splashscreen
-import android.os.Bundle;
-
+import expo.modules.ReactActivityDelegateWrapper;
 import com.facebook.react.ReactActivity;
-// For the splashscreen
+// For bootsplash
+import com.facebook.react.ReactActivityDelegate;
 import com.zoontek.rnbootsplash.RNBootSplash;
 
 public class MainActivity extends ReactActivity {
@@ -19,11 +17,17 @@ public class MainActivity extends ReactActivity {
   }
 
   /**
-   * For the splashscreen
+   * For RNBootSplash
    */
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState); // or super.onCreate(null) with react-native-screens
-    RNBootSplash.init(R.drawable.bootsplash, MainActivity.this); // display the generated bootsplash.xml drawable over our MainActivity
+  protected ReactActivityDelegate createReactActivityDelegate() {
+    return new ReactActivityDelegateWrapper(this, new ReactActivityDelegate(this, getMainComponentName()) {
+
+      @Override
+      protected void loadApp(String appKey) {
+        RNBootSplash.init(MainActivity.this);
+        super.loadApp(appKey);
+      }
+    });
   }
 }
