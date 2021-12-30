@@ -1,33 +1,36 @@
 # Sauce Labs My Demo App React Native
 In this repository you will find the Sauce Labs My Demo App for React Native You can use it as a sample app for
 testautomation on your local machine, in our Android Emulator/iOS Simulator, or Real Device Cloud.
-The latest version of the iOS and Android app can be found [here](https://github.com/saucelabs/sample-app-mobile/releases).
+The latest version of the iOS and Android app can be found [here](https://github.com/saucelabs/my-demo-app-rn/releases).
 
 ## Table of contents
 1. [Functionalities](#functionalities)
-2. [Touch / Face ID](#touch--face-id)
-    1. [Enabling Touch / Face ID on Android emulators](#enabling-touch--face-id-on-android-emulators)
-    1. [Enabling Touch / Face ID on iOS simulators](#enabling-touch--face-id-on-ios-simulators)
-3. [Deep linking](#deep-linking)
-   1. [Android from CLI](#android-from-cli)
-   1. [Use with iOS](#use-with-ios)
-      1. [iOS from CLI](#ios-from-cli)
-      1. [With Safari](#with-safari)
-4. [Different languages](#different-languages)
-5. [QR code scanner](#qr-code-scanner)
-6. [Gestures](#gestures)
-7. [Geo Location](#geo-location)
-8. [Drawing](#drawing)
-9. [Contributing to the app](#contributing-to-the-app)
-10. [FAQ](#faq)
-11. [Good to know](#good-to-know)
-12. [TODO](#todo)
+   1. [Touch / Face ID](#touch--face-id)
+       1. [Enabling Touch / Face ID on Android emulators](#enabling-touch--face-id-on-android-emulators)
+       1. [Enabling Touch / Face ID on iOS simulators](#enabling-touch--face-id-on-ios-simulators)
+   2. [Deep linking](#deep-linking)
+      1. [Android from CLI](#android-from-cli)
+      1. [Use with iOS](#use-with-ios)
+         1. [iOS from CLI](#ios-from-cli)
+         1. [With Safari](#with-safari)
+   3. [Different languages](#different-languages)
+   4. [QR code scanner](#qr-code-scanner)
+   5. [Gestures](#gestures)
+   6. [Geo Location](#geo-location)
+   7. [Drawing](#drawing)
+2. [Contributing to the app](#contributing-to-the-app)
+3. [FAQ](#faq)
+4. [Good to know](#good-to-know)
+5. [TODO](#todo)
 
 ## Functionalities
 ### Touch / Face ID
-This app supports TouchID and FaceID for Android and iOS and will only show when the phone supports and has this enabled.
+This app supports TouchID/FaceID/Fingerprint for Android and iOS. It will only be shown when the phone supports this and 
+secondly when this has been enabled through the menu.
 
 #### Enabling Touch / Face ID on Android emulators
+<details>
+<summary>Click see the steps</summary>
 To enable this on Android emulators you need to do the following (when you have an emulator that supports this):
 
 - Open an emulator
@@ -46,8 +49,11 @@ To enable this on Android emulators you need to do the following (when you have 
 
 > **NOTE:<br>**
 > Make sure you remember the fingerprint number you selected, that needs to be used to select a (non)matching finger print!
+</details>
 
 #### Enabling Touch / Face ID on iOS simulators
+<details>
+<summary>Click see the steps</summary>
 To enable this on iOS simulators you need to do the following (when you have a simulator that supports this):
 
 - Open a simulator
@@ -55,6 +61,7 @@ To enable this on iOS simulators you need to do the following (when you have a s
 - For Face ID go to the Simulator menu and open `Hardware > Face ID` and select `Enrolled`
 
 In the previous mentioned menu you can also select a (non)matching Touch / Face ID when the phone is asking for it.
+</details>
 
 ### Deep linking
 This app supports deep linking for iOS and for Android, this means that screens can directly be opened with a deep link.
@@ -138,7 +145,7 @@ This app supports ~~4~~ 1 different languages and will automatically check the l
 language. The supported languages are:
 
 - ~~Dutch~~ @TODO
-- ~~English
+- English
 - ~~German~~ @TODO
 - ~~Spanish~~ @TODO
 
@@ -146,7 +153,8 @@ language. The supported languages are:
 This app now also has a QR code scanner.
 You can find it in the menu under the option "QR CODE SCANNER".
 This page opens the camera (you first need to allow the app to use the camera) which can be used to scan a QR Code.
-If the QR code holds an URL it will automatically open it in a browser. The following image can be used to demo this option.
+If the QR code holds an URL it will automatically open it in a browser. The [following image](./docs/assets/qr-code.png)
+can be used to demo this option.
 
 ![QR Code](./docs/assets/qr-code.png)
 
@@ -214,12 +222,11 @@ to this
 ```
 See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issuecomment-1002114293)
 
-
 ## TODO
 - [x] TestIds
-- [ ] TestFairy integration
-  - [ ] Add TF SDK
-  - [ ] Add TF events, see [this](https://github.com/saucelabs/sample-app-mobile/pull/74) for an example
+- [x] TestFairy integration
+  - [x] Add TF SDK
+  - [x] Add TF events, see [this](https://github.com/saucelabs/sample-app-mobile/pull/74) for an example
 - [x] Splash screen
 - [x] Android/iOS icons
 - [x] About screen
