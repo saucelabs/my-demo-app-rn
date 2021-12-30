@@ -28,6 +28,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: yarn install
+        # Fix for 'Android Studio error "Installed Build Tools revision 31/32.0.0 is corrupted"'
+      - name: Fix BuildTools
+        run: cd ~/Library/Android/sdk/build-tools/31.0.0 && mv d8 dx && cd lib && mv d8.jar dx.jar
       - name: Build Android Release
         run: yarn android.release
       - name: Archive Apps
