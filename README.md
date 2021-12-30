@@ -3,6 +3,8 @@ In this repository you will find the Sauce Labs My Demo App for React Native You
 testautomation on your local machine, in our Android Emulator/iOS Simulator, or Real Device Cloud.
 The latest version of the iOS and Android app can be found [here](https://github.com/saucelabs/my-demo-app-rn/releases).
 
+https://user-images.githubusercontent.com/11979740/147770651-38822435-8d07-48a1-a6a6-de68b78a4fa9.mp4
+
 ## Table of contents
 1. [Functionalities](#functionalities)
    1. [Touch / Face ID](#touch--face-id)
