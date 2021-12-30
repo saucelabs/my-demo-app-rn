@@ -55,6 +55,7 @@
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.1",
     "react-native-signature-canvas": "^4.3.0",
+    "react-native-testfairy": "2.54.0",
     "react-native-vector-icons": "^9.0.0",
     "react-native-version-number": "^0.3.6",
     "react-native-webview": "^11.15.0",
@@ -62,7 +63,14 @@
   },
   "expo": {
     "autolinking": {
-      "exclude": ["expo-file-system", "expo-application", "expo-asset", "expo-constants", "expo-font", "expo-keep-awake"]
+      "exclude": [
+        "expo-file-system",
+        "expo-application",
+        "expo-asset",
+        "expo-constants",
+        "expo-font",
+        "expo-keep-awake"
+      ]
     }
   },
   "devDependencies": {

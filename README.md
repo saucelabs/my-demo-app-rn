@@ -251,8 +251,8 @@ See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issueco
     - [x] Checkout Payment
     - [x] Checkout Review Order
     - [x] Checkout Complete
-- [ ] Upgrade dependencies (to all  `npx react-native init TsDemo --template react-native-template-typescript` v:`0.66.4`)
-  - [] Dependencies
+- [x] Upgrade dependencies (to all  `npx react-native init TsDemo --template react-native-template-typescript` v:`0.66.4`)
+  - [x] Dependencies
     - [x] react-native
     - [x] @react-native-community/cameraroll
     - [x] @react-native-community/masked-view
@@ -273,7 +273,7 @@ See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issueco
     - [x] react-native-safe-area-context
     - [x] react-native-screens
     - [x] react-native-signature-canvas
-    - [ ] react-native-testfairy
+    - [x] react-native-testfairy
     - [x] react-native-unimodules
     - [x] react-native-vector-icons
     - [x] react-native-version-number
