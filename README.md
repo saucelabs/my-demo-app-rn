@@ -142,6 +142,13 @@ describe('Sample test', ()=>{
 });
 ```
 
+### Webview
+Within the menu you can find the option Webview. This will lead you to a screen where you can load any valid `https`-url.
+The url will be loaded into a webview, this will be equal for Android and iOS. 
+
+The purpose of this Webview-screen is that you can learn/test how to switch between the *NATIVE* and *WEBVIEW*-context 
+with Appium.
+
 ### Different languages
 This app supports ~~4~~ 1 different languages and will automatically check the language of the device to set the right 
 language. The supported languages are:
@@ -186,44 +193,6 @@ We needed to add [fbjs](https://www.npmjs.com/package/fbjs) as an extra dependen
 included as a dependency of the package. There is a PR created for this, but at the time of migration this wasn't merged
 yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraroll/pull/365).
 
-### Disabled fade for bootslash
-After upgrading to `0.64.4` I got an issue with `reat-native-bootsplash`, the error was
-
-    NSInvalidArgumentException: Application tried to present modally an active controller
-
-I needed to change this
-```jsx
-return (
-  <StoreProvider>
-    <SafeAreaProvider>
-      <SwagLabsStatusBar />
-      <NavigationContainer
-        linking={Linking}
-        onReady={() => RNBootSplash.hide({fade: true})}>
-        <RootRouter />
-      </NavigationContainer>
-    </SafeAreaProvider>
-  </StoreProvider>
-);
-```
-
-to this
-```jsx
- return (
-    <StoreProvider>
-      <SafeAreaProvider>
-        <SwagLabsStatusBar />
-        <NavigationContainer
-          linking={Linking}
-          onReady={() => RNBootSplash.hide()}>
-          <RootRouter />
-        </NavigationContainer>
-      </SafeAreaProvider>
-    </StoreProvider>
-  );
-```
-See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issuecomment-1002114293)
-
 ## TODO
 - [x] TestIds
 - [x] TestFairy integration
@@ -251,15 +220,27 @@ See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issueco
 - [ ] Think if we need to store data to the _local_ storage or keep it in the session storage.
 - [ ] Write Tests:
   - [ ] Unit Tests
-  - [x] E2E Tests
-    - [x] Catalog
-    - [x] Product details
-    - [x] Cart
-    - [x] Login
-    - [x] Checkout Address
-    - [x] Checkout Payment
-    - [x] Checkout Review Order
-    - [x] Checkout Complete
+  - [ ] E2E Tests
+    - [ ] Default tests:
+      - [x] Catalog
+      - [x] Product details
+      - [x] Cart
+      - [x] Login
+      - [x] Checkout Address
+      - [x] Checkout Payment
+      - [x] Checkout Review Order
+      - [x] Checkout Complete
+      - [ ] Navigation between screens
+    - [ ] Extra tests:
+      - [ ] TouchId/FaceID/Fingerprint:
+        - [ ] Local/Sauce Emulators and Simulators
+        - [ ] Sauce Labs Real Devices
+      - [ ] Webview
+      - [ ] QR Code Scanner on Sauce Labs Real Devices
+      - [ ] Geo Location:
+        - [ ] Local/Sauce Emulators and Simulators
+        - [ ] Sauce Labs Real Devices
+      - [ ] Drawing
 - [x] Upgrade dependencies (to all  `npx react-native init TsDemo --template react-native-template-typescript` v:`0.66.4`)
   - [x] Dependencies
     - [x] react-native
