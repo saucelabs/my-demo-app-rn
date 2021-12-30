@@ -10,16 +10,13 @@ config.port = 4723;
 // Test Configurations
 // ===================
 //
-config.services =
-  (config.services || []).concat(
+config.services = (config.services || []).concat([
   [
-    [
-      'appium',
-      {
-        command: 'appium',
-      },
-    ],
-  ]
-);
+    'appium',
+    {
+      command: 'appium',
+    },
+  ],
+]);
 
 export default config;

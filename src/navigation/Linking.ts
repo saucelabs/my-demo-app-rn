@@ -1,5 +1,7 @@
 import {ROUTES} from './Routes';
 import {IS_IOS} from '../utils/Constants';
+import {LinkingOptions} from '@react-navigation/native';
+import {RootDrawerParamList} from './types';
 
 const screens = {
   [ROUTES.STORE_STACK_NAVIGATOR]: {
@@ -46,8 +48,7 @@ const screens = {
 const config = {
   screens: IS_IOS ? {[ROUTES.TAB_NAVIGATOR]: {screens}} : screens,
 };
-
-const Linking = {
+const Linking: LinkingOptions<RootDrawerParamList> = {
   prefixes: ['mydemoapprn://'],
   config,
 };

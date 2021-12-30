@@ -24,7 +24,8 @@ const QrCodePage = () => {
         Alert.alert(I18n.t('qrCode.notValidUrl', {url}));
       }
     } catch (err) {
-      Alert.alert(I18n.t('qrCode.errorOccurred'), err);
+      // @ts-ignore
+      Alert.alert(I18n.t('qrCode.errorOccurred'), err.message);
     }
   };
 

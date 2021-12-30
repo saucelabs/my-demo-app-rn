@@ -16,20 +16,25 @@ const RootRouter = () => {
   return (
     <RootDrawerNavigator.Navigator
       drawerContent={props => <DrawerContent {...props} />}
-      drawerStyle={styles.drawerWidth}>
+      screenOptions={{
+        drawerStyle: styles.drawerWidth,
+      }}>
       <RootDrawerNavigator.Screen
         name={IS_IOS ? ROUTES.TAB_NAVIGATOR : ROUTES.STORE_STACK_NAVIGATOR}
         component={IS_IOS ? TabNavigation : StoreStackNavigation}
+        options={{headerShown: false}}
       />
       {!IS_IOS && (
         <>
           <RootDrawerNavigator.Screen
             name={ROUTES.CART_STACK_NAVIGATOR}
             component={CartStackNavigation}
+            options={{headerShown: false}}
           />
           <RootDrawerNavigator.Screen
             name={ROUTES.MENU_STACK_NAVIGATOR}
             component={MenuStackNavigation}
+            options={{headerShown: false}}
           />
         </>
       )}

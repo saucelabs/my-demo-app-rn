@@ -21,9 +21,10 @@ const TabNavigation = () => {
 
   return (
     <TabNavigator.Navigator
-      tabBarOptions={{
-        activeTintColor: Colors.black,
-        labelStyle: styles.labelStyle,
+      screenOptions={{
+        tabBarActiveTintColor: Colors.black,
+        tabBarLabelStyle: styles.labelStyle,
+        headerShown: false,
       }}>
       <TabNavigator.Screen
         name={ROUTES.STORE_STACK_NAVIGATOR}

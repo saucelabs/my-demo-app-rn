@@ -167,6 +167,9 @@ If you want to contribute to the app and add new functionalities, please check t
 Check [this](https://stackoverflow.com/questions/61922174/react-native-on-android-cannot-run-program-node-error-2-no-such-file-or-dir)
 post.
 
+### Android Studio error "Installed Build Tools revision 31.0.0/32.0.0 is corrupted"
+See [this SO answer](https://stackoverflow.com/a/68430992/5911978).
+
 ## Good to know
 ### Added FBJS
 We needed to add [fbjs](https://www.npmjs.com/package/fbjs) as an extra dependency for `react-native-cameraroll`, it was
@@ -215,7 +218,7 @@ See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issueco
 ## TODO
 - [x] TestIds
 - [ ] TestFairy integration
-  - [x] Add TF SDK
+  - [ ] Add TF SDK
   - [ ] Add TF events, see [this](https://github.com/saucelabs/sample-app-mobile/pull/74) for an example
 - [x] Splash screen
 - [x] Android/iOS icons
@@ -248,45 +251,45 @@ See [here](https://github.com/zoontek/react-native-bootsplash/issues/161#issueco
     - [x] Checkout Payment
     - [x] Checkout Review Order
     - [x] Checkout Complete
-- [ ] Upgrade dependencies
-  - [ ] Dependencies
-    - [x] To RN `0.66.4`
-    - [ ] @react-native-community/cameraroll
-    - [ ] @react-native-community/masked-view
-    - [ ] @react-navigation/bottom-tabs
-    - [ ] "card-validator
-    - [ ] expo-local-authentication
-    - [ ] i18n-js
-    - [ ] react-native-bootsplash
-    - [ ] react-native-camera
-    - [ ] react-native-fs
-    - [ ] react-native-geolocation-service
-    - [ ] react-native-gesture-handler
+- [ ] Upgrade dependencies (to all  `npx react-native init TsDemo --template react-native-template-typescript` v:`0.66.4`)
+  - [] Dependencies
+    - [x] react-native
+    - [x] @react-native-community/cameraroll
+    - [x] @react-native-community/masked-view
+    - [x] @react-navigation/bottom-tabs
+    - [x] card-validator
+    - [x] expo-local-authentication
+    - [x] i18n-js
+    - [x] react-native-bootsplash
+    - [x] react-native-camera
+    - [x] react-native-fs
+    - [x] react-native-geolocation-service
+    - [x] react-native-gesture-handler
     - [x] react-native-keyboard-aware-scroll-view
-    - [ ] react-native-localize
-    - [ ] react-native-permissions
-    - [ ] react-native-qrcode-scanner
-    - [ ] react-native-reanimated
-    - [ ] react-native-safe-area-context
-    - [ ] react-native-screens
-    - [ ] react-native-signature-canvas
+    - [x] react-native-localize
+    - [x] react-native-permissions
+    - [x] react-native-qrcode-scanner
+    - [x] react-native-reanimated
+    - [x] react-native-safe-area-context
+    - [x] react-native-screens
+    - [x] react-native-signature-canvas
     - [ ] react-native-testfairy
-    - [ ] react-native-unimodules
-    - [ ] react-native-vector-icons
-    - [ ] react-native-version-number
-    - [ ] react-native-webview
-    - [ ] rn-fetch-blob
-  - [ ] devDependencies
-    - [ ] babel 
-    - [ ] @react-native-community/eslint-config
-    - [ ] @types/i18n-js
-    - [ ] eslint
-    - [ ] eslint-plugin-wdio
-    - [ ] jest
-    - [ ] react-native-clean-project
-    - [ ] react-native-version
-    - [ ] ts-node
-    - [ ] typescript 
-    - [ ] wdio
+    - [x] react-native-unimodules
+    - [x] react-native-vector-icons
+    - [x] react-native-version-number
+    - [x] react-native-webview
+    - [x] rn-fetch-blob
+  - [x] devDependencies
+    - [x] babel 
+    - [x] @react-native-community/eslint-config
+    - [x] @types/i18n-js
+    - [x] eslint
+    - [x] eslint-plugin-wdio
+    - [x] jest
+    - [x] react-native-clean-project
+    - [x] react-native-version
+    - [x] ts-node
+    - [x] typescript 
+    - [x] wdio
 - [ ] Remove dependencies
   - [ ] Remove FBJS, see [here](#added-fbjs) 

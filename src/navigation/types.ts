@@ -18,7 +18,9 @@ export type CartStackParamList = {
   [ROUTES.LOGIN]: undefined;
   [ROUTES.CHECKOUT_ADDRESS]: undefined;
   [ROUTES.CHECKOUT_PAYMENT]: undefined;
-  [ROUTES.CHECKOUT_REVIEW_ORDER]: undefined;
+  [ROUTES.CHECKOUT_REVIEW_ORDER]: {
+    params: {products: string; payment?: string};
+  };
   [ROUTES.CHECKOUT_COMPLETE]: undefined;
   [ROUTES.STORE_STACK_NAVIGATOR]: {
     screen: ROUTES.STORE;

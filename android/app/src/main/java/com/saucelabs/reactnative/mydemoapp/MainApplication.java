@@ -1,6 +1,7 @@
 package com.saucelabs.mydemoapp.rn;
-// added for Expo unimodules
-import com.saucelabs.mydemoapp.rn.generated.BasePackageList;
+import android.content.res.Configuration;
+import expo.modules.ApplicationLifecycleDispatcher;
+import expo.modules.ReactNativeHostWrapper;
 
 import android.app.Application;
 import android.content.Context;
@@ -17,21 +18,14 @@ import com.facebook.soloader.SoLoader;
 import android.webkit.WebView;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-// Added for Expo unimodules
-import java.util.Arrays;
-import org.unimodules.adapters.react.ModuleRegistryAdapter;
-import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 // For react reanimated
 import com.facebook.react.bridge.JSIModulePackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 
 public class MainApplication extends Application implements ReactApplication {
-  // Added for expo unimodules
-  private final ReactModuleRegistryProvider mModuleRegistryProvider =
-      new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
 
   private final ReactNativeHost mReactNativeHost =
-      new ReactNativeHost(this) {
+      new ReactNativeHostWrapper(this, new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
@@ -43,12 +37,6 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-
-          // Added for Expo unimodules
-          List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
-            new ModuleRegistryAdapter(mModuleRegistryProvider)
-          );
-          packages.addAll(unimodules);
 
           return packages;
         }
@@ -63,7 +51,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected JSIModulePackage getJSIModulePackage() {
             return new ReanimatedJSIModulePackage();
         }
-      };
+      });
 
   @Override
   public ReactNativeHost getReactNativeHost() {
@@ -77,6 +65,7 @@ public class MainApplication extends Application implements ReactApplication {
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
     // For Webview debugging
     WebView.setWebContentsDebuggingEnabled(true);
+    ApplicationLifecycleDispatcher.onApplicationCreate(this);
   }
 
   /**
@@ -108,5 +97,11 @@ public class MainApplication extends Application implements ReactApplication {
         e.printStackTrace();
       }
     }
+  }
+
+  @Override
+  public void onConfigurationChanged(Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);
+    ApplicationLifecycleDispatcher.onConfigurationChanged(this, newConfig);
   }
 }

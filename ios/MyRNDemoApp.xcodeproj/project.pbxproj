@@ -12,7 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1787FB853A76872C4D38807A /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D616F87DFFDD069B1F634E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */; };
+		2C35DF6597BFA49199DF5FC1 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A640F9A14E9F57267F7940 /* ExpoModulesProvider.swift */; };
 		643009FE24043073DD6A15DE /* libPods-MyRNDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA875020D8BE788449DD47FC /* libPods-MyRNDemoApp.a */; };
+		7CCCFDD1881167A52CA0F279 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83522A0898341EC48E30C76 /* ExpoModulesProvider.swift */; };
 		81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* BootSplash.storyboard */; };
 		8858CBE6277B4C0E004B2FB6 /* MuseoSans-700Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDC277B4C0D004B2FB6 /* MuseoSans-700Italic.otf */; };
 		8858CBE7277B4C0E004B2FB6 /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDD277B4C0D004B2FB6 /* MuseoSans_700.otf */; };
@@ -46,6 +48,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyRNDemoApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyRNDemoApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyRNDemoApp/main.m; sourceTree = "<group>"; };
+		68A640F9A14E9F57267F7940 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		79D616F87DFFDD069B1F634E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp-MyRNDemoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = MyRNDemoApp/BootSplash.storyboard; sourceTree = "<group>"; };
 		8858CBDC277B4C0D004B2FB6 /* MuseoSans-700Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-700Italic.otf"; path = "../src/assets/fonts/MuseoSans-700Italic.otf"; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		BF90BB6E53007BE49D4888CA /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA875020D8BE788449DD47FC /* libPods-MyRNDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F83522A0898341EC48E30C76 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MyRNDemoApp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		11E3ACFC0F120244BD7E1BC7 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				9572601BD1B233DAA20DDB97 /* MyRNDemoApp */,
+				43F73ACBDA1272C6B3018BF1 /* MyRNDemoAppTests */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* MyRNDemoApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,14 @@
 				79D616F87DFFDD069B1F634E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43F73ACBDA1272C6B3018BF1 /* MyRNDemoAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				68A640F9A14E9F57267F7940 /* ExpoModulesProvider.swift */,
+			);
+			name = MyRNDemoAppTests;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -152,6 +173,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				CDA0EE31E7D3E42F21731B64 /* Pods */,
+				11E3ACFC0F120244BD7E1BC7 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -165,6 +187,14 @@
 				00E356EE1AD99517003FC87E /* MyRNDemoAppTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9572601BD1B233DAA20DDB97 /* MyRNDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				F83522A0898341EC48E30C76 /* ExpoModulesProvider.swift */,
+			);
+			name = MyRNDemoApp;
 			sourceTree = "<group>";
 		};
 		CDA0EE31E7D3E42F21731B64 /* Pods */ = {
@@ -443,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* MyRNDemoAppTests.m in Sources */,
+				2C35DF6597BFA49199DF5FC1 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +483,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				7CCCFDD1881167A52CA0F279 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +509,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MyRNDemoAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +534,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 2ZQ6NMUD9U;
 				INFOPLIST_FILE = MyRNDemoAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -679,7 +711,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",

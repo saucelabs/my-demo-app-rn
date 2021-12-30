@@ -28,7 +28,7 @@ const AppHeader = ({
   title,
   rightComponent,
 }: AppHeaderProps) => {
-  const {dangerouslyGetState, goBack} = navigation;
+  const {getState, goBack} = navigation;
   const {
     state: {
       cartContent: {totalAmount},
@@ -37,7 +37,7 @@ const AppHeader = ({
 
   return (
     <View style={styles.headerContainer}>
-      {IS_IOS && dangerouslyGetState().routes.length > 1 && showBackButton && (
+      {IS_IOS && getState().routes.length > 1 && showBackButton && (
         <NavigationBackButton onPress={() => goBack()} />
       )}
       {!IS_IOS && (
