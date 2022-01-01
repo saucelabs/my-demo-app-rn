@@ -5,6 +5,9 @@
 1. [Using Touch / Face ID / Fingerprint during automation](#using-touch--face-id--fingerprint-during-automation)
     1. [Run on Android](#run-on-android)
     2. [Run on iOS](#run-on-ios)
+1. [Using Camera Image Injection during Real Device automation](#using-camera-image-injection-during-real-device-automation)
+    1. [Run on Android](#run-on-android)
+    2. [Run on iOS](#run-on-ios)
 
 ## Getting Started
 > **NOTE:** Make sure you've set up your local machine before running the tests, see 
@@ -101,4 +104,52 @@ yarn test.e2e.ios.sauce.sim.us --spec=__tests__/e2e/specs/extra/biometrics.emusi
 BIOMETRICS=true yarn test.e2e.ios.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/biometrics.rdc.spec.ts
 # Run on Sauce Labs iOS Real Devices in the US cloud
 BIOMETRICS=true yarn test.e2e.ios.sauce.rdc.us --spec=__tests__/e2e/specs/extra/biometrics.rdc.spec.ts
+```
+
+## Using Camera Image Injection during Real Device automation
+The Sauce Labs Real Device cloud supports camera image injection, see 
+[here](https://docs.saucelabs.com/mobile-apps/features/camera-image-injection/). This means that the camera
+implementation in an app can be tested through manual or automated tests.
+
+This app holds a QR-Code scanner that will automatically open the URL from the QR-code in a system browser. For this app
+we use this image
+
+![QR Code](assets/qr-code.png)
+
+> **NOTE 1:**
+> 
+> When you want to test Camera Image Injection on Sauce Labs Real Device you need to make sure that the
+> settings of the uploaded apps have `Image Injection` enabled.
+
+> **NOTE 2:**
+> 
+> The app project setting for `Image Injection` can be overruled by providing the `sauceLabsImageInjectionEnabled`
+> -capability with the value `true`. **This is also a best practice, so you always test what you want to test.**
+
+### Run on Android
+#### Sauce Labs Real Device
+> **NOTE:**
+> When `IMAGE_INJECTION=true` has been provided from the command line it will start the driver with 
+> `sauceLabsImageInjectionEnabled` enabled, see 
+> [`wdio.android.sauce.rdc.conf.ts`](../__tests__/e2e/configs/wdio.android.sauce.rdc.conf.ts)
+
+```bash 
+# Run on Sauce Labs Android Real Devices in the EU cloud
+IMAGE_INJECTION=true yarn test.e2e.android.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/image.injection.rdc.spec.ts
+# Run on Sauce Labs Android Real Devices in the US cloud
+IMAGE_INJECTION=true yarn test.e2e.android.sauce.rdc.us --spec=__tests__/e2e/specs/extra/image.injection.rdc.spec.ts
+```
+
+### Run on iOS
+#### Sauce Labs Real Device
+> **NOTE:**
+> When `IMAGE_INJECTION=true` has been provided from the command line it will start the driver with
+> `sauceLabsImageInjectionEnabled` enabled, see
+> [`wdio.ios.sauce.rdc.conf.ts`](../__tests__/e2e/configs/wdio.ios.sauce.rdc.conf.ts)
+
+```bash 
+# Run on Sauce Labs iOS Real Devices in the EU cloud
+IMAGE_INJECTION=true yarn test.e2e.ios.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/image.injection.rdc.spec.ts
+# Run on Sauce Labs iOS Real Devices in the US cloud
+IMAGE_INJECTION=true yarn test.e2e.ios.sauce.rdc.us --spec=__tests__/e2e/specs/extra/image.injection.rdc.spec.ts
 ```

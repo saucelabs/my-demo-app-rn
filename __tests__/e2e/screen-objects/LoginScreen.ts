@@ -137,7 +137,10 @@ class LoginScreen extends AppScreen {
     // for all other versions it can officially wait on the modal
 
     // @ts-ignore
-    if (driver.isIOS && parseInt(driver.capabilities.platformVersion) < 14) {
+    if (
+      driver.isIOS &&
+      parseInt(driver.capabilities.platformVersion, 10) < 14
+    ) {
       return driver.pause(3000);
     }
 

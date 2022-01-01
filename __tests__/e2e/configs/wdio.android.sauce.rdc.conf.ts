@@ -25,10 +25,14 @@ config.capabilities = [
     // Select only phone devices
     // @ts-ignore
     phoneOnly: true,
-    // If BIOMETRICS=true has been provided from the command line it will
+    // If `BIOMETRICS=true` has been provided from the command line it will
     // start the driver with `allowTouchIdEnroll` enabled
     // @ts-ignore
     allowTouchIdEnroll: !!process.env.BIOMETRICS,
+    // If `IMAGE_INJECTION=true` has been provided from the command line it will
+    // start the driver with `sauceLabsImageInjectionEnabled` enabled
+    // @ts-ignore
+    sauceLabsImageInjectionEnabled: !!process.env.IMAGE_INJECTION,
     // This will adjust the Appium server in such a way that it will return all
     // non visible elements so we can assert against it.
     // @ts-ignore

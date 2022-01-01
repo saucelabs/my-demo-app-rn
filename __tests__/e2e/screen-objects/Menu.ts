@@ -6,7 +6,7 @@ const drawerContainerSelector = 'menu item catalog';
 
 class Menu extends AppScreen {
   constructor() {
-    super(drawerContainerSelector);
+    super(locatorStrategy(drawerContainerSelector));
   }
 
   private get drawerContainer() {

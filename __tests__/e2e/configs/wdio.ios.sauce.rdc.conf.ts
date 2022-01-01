@@ -1,7 +1,10 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `iOS My React Native Demo app: ${new Date().getTime()}`;
-
+const imageInjectionOsVersions = ['13', '15'];
+const randomImageInjectionOsVersions = Math.floor(
+  Math.random() * imageInjectionOsVersions.length,
+);
 // ============
 // Capabilities
 // ============
@@ -29,6 +32,18 @@ config.capabilities = [
     // start the driver with `allowTouchIdEnroll` enabled
     // @ts-ignore
     allowTouchIdEnroll: !!process.env.BIOMETRICS,
+    // If `IMAGE_INJECTION=true` has been provided from the command line it will
+    // start the driver with `sauceLabsImageInjectionEnabled` enabled
+    // @ts-ignore
+    sauceLabsImageInjectionEnabled: !!process.env.IMAGE_INJECTION,
+    // There seems to be an issue with iOS 14.3 which keeps hanging on Appium commands which doesn't happen on 14.8
+    // We use a random value 13/15 here, but only when image injection is used
+    ...(process.env.IMAGE_INJECTION
+      ? {
+          platformVersion:
+            imageInjectionOsVersions[randomImageInjectionOsVersions],
+        }
+      : {}),
   },
 ];
 
@@ -53,7 +68,7 @@ if (process.env.BIOMETRICS) {
     shouldTerminateApp: true,
     build: buildName,
     newCommandTimeout: 240,
-    // If BIOMETRICS=true has been provided from the command line it will
+    // If `BIOMETRICS=true` has been provided from the command line it will
     // start the driver with `allowTouchIdEnroll` enabled
     // @ts-ignore
     allowTouchIdEnroll: !!process.env.BIOMETRICS,

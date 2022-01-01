@@ -236,7 +236,7 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
         - [x] Local/Sauce Emulators and Simulators
         - [x] Sauce Labs Real Devices
       - [ ] Webview
-      - [ ] QR Code Scanner on Sauce Labs Real Devices
+      - [X] QR Code Scanner on Sauce Labs Real Devices
       - [ ] Geo Location:
         - [ ] Local/Sauce Emulators and Simulators
         - [ ] Sauce Labs Real Devices
