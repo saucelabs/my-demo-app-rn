@@ -28,4 +28,7 @@ config.capabilities = ['12.4', '13.4', '14.5', '15.0'].map(
   }),
 );
 
+// Never run the RDC tests
+config.exclude = ['./__tests__/e2e/specs/default/*.rdc.spec.ts'];
+
 exports.config = config;

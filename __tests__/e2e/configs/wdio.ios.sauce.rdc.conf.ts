@@ -75,4 +75,6 @@ if (process.env.BIOMETRICS) {
   });
 }
 
+config.exclude = ['./__tests__/e2e/specs/default/*.emusim.spec.ts'];
+
 exports.config = config;

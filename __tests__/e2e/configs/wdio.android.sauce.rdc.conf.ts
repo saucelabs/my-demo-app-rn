@@ -40,4 +40,7 @@ config.capabilities = [
   },
 ];
 
+// Never run the EMUSIM tests
+config.exclude = ['./__tests__/e2e/specs/default/*.emusim.spec.ts'];
+
 exports.config = config;
