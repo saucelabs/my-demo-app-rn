@@ -20,6 +20,9 @@ config.capabilities = [
     // https://docs.saucelabs.com/mobile-apps/app-storage/
     app: 'storage:filename=iOS.MyDemoAppRN.ipa',
     noReset: true,
+    // @ts-ignore
+    // There is an issue with noReset: true and driver.reset(). This cap fixes that
+    shouldTerminateApp: true,
     build: buildName,
     newCommandTimeout: 240,
     // If BIOMETRICS=true has been provided from the command line it will
@@ -45,6 +48,9 @@ if (process.env.BIOMETRICS) {
     // Read the reset strategies very well, they differ per platform, see
     // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
     noReset: true,
+    // @ts-ignore
+    // There is an issue with noReset: true and driver.reset(). This cap fixes that
+    shouldTerminateApp: true,
     build: buildName,
     newCommandTimeout: 240,
     // If BIOMETRICS=true has been provided from the command line it will

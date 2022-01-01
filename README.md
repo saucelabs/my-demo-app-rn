@@ -232,9 +232,9 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
       - [x] Checkout Complete
       - [ ] Navigation between screens
     - [ ] Extra tests:
-      - [ ] TouchId/FaceID/Fingerprint:
-        - [ ] Local/Sauce Emulators and Simulators
-        - [ ] Sauce Labs Real Devices
+      - [x] TouchId/FaceID/Fingerprint:
+        - [x] Local/Sauce Emulators and Simulators
+        - [x] Sauce Labs Real Devices
       - [ ] Webview
       - [ ] QR Code Scanner on Sauce Labs Real Devices
       - [ ] Geo Location:
@@ -280,6 +280,6 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
     - [x] react-native-version
     - [x] ts-node
     - [x] typescript 
-    - [x] wdio
+    - [x] WDIO
 - [ ] Remove dependencies
   - [ ] Remove FBJS, see [here](#added-fbjs) 
