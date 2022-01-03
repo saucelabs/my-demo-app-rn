@@ -3,11 +3,7 @@
 ## Table of contents
 1. [Getting Started](#getting-started)
 1. [Using Touch / Face ID / Fingerprint during automation](#using-touch--face-id--fingerprint-during-automation)
-    1. [Run on Android](#run-on-android)
-    2. [Run on iOS](#run-on-ios)
 1. [Using Camera Image Injection during Real Device automation](#using-camera-image-injection-during-real-device-automation)
-    1. [Run on Android](#run-on-android)
-    2. [Run on iOS](#run-on-ios)
 
 ## Getting Started
 > **NOTE:** Make sure you've set up your local machine before running the tests, see 

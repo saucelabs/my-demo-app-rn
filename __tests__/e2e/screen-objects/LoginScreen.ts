@@ -78,14 +78,6 @@ class LoginScreen extends AppScreen {
     return $(driver.isIOS ? iosSelector : androidSelector);
   }
 
-  private get biometricsNotEnabledModal() {
-    const iosSelector =
-      '-ios class chain:**/XCUIElementTypeAlert[`label == "Biometrics"`]';
-    const androidSelector = '//*[@resource-id="android:id/alertTitle"]';
-
-    return $(driver.isIOS ? iosSelector : androidSelector);
-  }
-
   private get allowBiometricsModal() {
     const iosSelector =
       '-ios class chain:**/XCUIElementTypeStaticText[`label CONTAINS "Do you want to allow"`]';
@@ -136,9 +128,9 @@ class LoginScreen extends AppScreen {
     // So for all versions lower than 14 it will just wait for 3 seconds to make sure the modal is there
     // for all other versions it can officially wait on the modal
 
-    // @ts-ignore
     if (
       driver.isIOS &&
+      // @ts-ignore
       parseInt(driver.capabilities.platformVersion, 10) < 14
     ) {
       return driver.pause(3000);
@@ -157,10 +149,6 @@ class LoginScreen extends AppScreen {
     } else {
       await this.biometricsModal.waitForDisplayed();
     }
-  }
-
-  async waitForBiometricsNotEnabledModal() {
-    await this.biometricsNotEnabledModal.waitForDisplayed();
   }
 
   async cancelBiometrics() {

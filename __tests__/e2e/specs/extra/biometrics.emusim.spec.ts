@@ -13,7 +13,7 @@ describe('Biometrics for Emulators and Simulators', () => {
     await Menu.openBiometrics();
 
     // No assertion is needed, if the element is not available it will fail
-    await LoginScreen.waitForBiometricsNotEnabledModal();
+    await BiometricsScreen.waitForBiometricsNotEnabledModal();
   });
 
   it('should be able to login with biometrics', async () => {

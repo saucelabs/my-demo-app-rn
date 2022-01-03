@@ -221,7 +221,7 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
 - [ ] Write Tests:
   - [ ] Unit Tests
   - [ ] E2E Tests
-    - [ ] Default tests:
+    - [x] Default tests:
       - [x] Catalog
       - [x] Product details
       - [x] Cart
@@ -230,7 +230,7 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
       - [x] Checkout Payment
       - [x] Checkout Review Order
       - [x] Checkout Complete
-      - [ ] Navigation between screens
+      - [x] Navigation between screens
     - [ ] Extra tests:
       - [x] TouchId/FaceID/Fingerprint:
         - [x] Local/Sauce Emulators and Simulators

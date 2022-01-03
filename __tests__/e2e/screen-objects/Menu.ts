@@ -157,10 +157,16 @@ class Menu extends AppScreen {
 
   async openMenu() {
     await this.openMenuButton.click();
+
+    // Wait for animation to be done
+    await driver.pause(750);
   }
 
   async closeMenu() {
     await this.closeMenuButton.click();
+
+    // Wait for animation to be done
+    await driver.pause(750);
   }
 
   async getCartAmount(): Promise<number> {

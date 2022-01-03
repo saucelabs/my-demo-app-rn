@@ -10,7 +10,7 @@ class QrCodeScreen extends AppScreen {
     const iosSelector =
       '-ios class chain:**/XCUIElementTypeButton[`name == "OK"`]';
     const androidSelector =
-      '//*[@resource-id="com.android.permissioncontroller:id/permission_allow_button" or @resource-id="com.android.packageinstaller:id/permission_allow_button"]';
+      '//*[@resource-id="com.android.permissioncontroller:id/permission_allow_button" or @resource-id="com.android.packageinstaller:id/permission_allow_button" or contains(@text,"Only") or contains(@text,"ONLY")]';
 
     return $(driver.isAndroid ? androidSelector : iosSelector);
   }
