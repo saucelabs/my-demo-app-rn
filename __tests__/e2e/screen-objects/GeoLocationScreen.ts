@@ -86,7 +86,7 @@ class GeoLocationScreen extends AppScreen {
   }
 
   async getLatitudeValue(): Promise<number> {
-    return Number(this.latitude.getText());
+    return Number(await this.latitude.getText());
   }
 
   /**
@@ -95,7 +95,7 @@ class GeoLocationScreen extends AppScreen {
    * @returns {number}
    */
   async getLongitudeValue(): Promise<number> {
-    return Number(this.longitude.getText());
+    return Number(await this.longitude.getText());
   }
 }
 

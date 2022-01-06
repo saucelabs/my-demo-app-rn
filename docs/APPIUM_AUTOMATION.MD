@@ -5,6 +5,7 @@
 1. [Getting Started](#getting-started)
 1. [Using Touch / Face ID / Fingerprint during automation](#using-touch--face-id--fingerprint-during-automation)
 1. [Using Camera Image Injection during Real Device automation](#using-camera-image-injection-during-real-device-automation)
+1. [Mocking GEO Location during automation](#mocking-geo-location-during-automation)
 
 ## Getting Started
 
@@ -164,4 +165,54 @@ IMAGE_INJECTION=true yarn test.e2e.android.sauce.rdc.us --spec=__tests__/e2e/spe
 IMAGE_INJECTION=true yarn test.e2e.ios.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/image.injection.rdc.spec.ts
 # Run on Sauce Labs iOS Real Devices in the US cloud
 IMAGE_INJECTION=true yarn test.e2e.ios.sauce.rdc.us --spec=__tests__/e2e/specs/extra/image.injection.rdc.spec.ts
+```
+
+## Mocking GEO Location during automation
+
+There is a simple test that mocks the GPS location and validates if it changed, you can find it [here](../__tests__/e2e/specs/extra/geo.location.spec.ts).
+
+### Run on Android
+
+#### Local or Sauce Labs Emulators
+
+```bash
+# Run on local Android emulators
+yarn test.e2e.android.local.emu --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+
+# Run on Sauce Labs Android emulators in the EU cloud
+yarn test.e2e.android.sauce.emu.eu --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+# Run on Sauce Labs Android emulators in the US cloud
+yarn test.e2e.android.sauce.emu.us --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+```
+
+#### Sauce Labs Real Device
+
+```bash
+# Run on Sauce Labs Android Real Devices in the EU cloud
+yarn test.e2e.android.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+# Run on Sauce Labs Android Real Devices in the US cloud
+yarn test.e2e.android.sauce.rdc.us --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+```
+
+### Run on iOS
+
+#### Local or Sauce Labs Simulators
+
+```bash
+# Run on local iOS simulators
+yarn test.e2e.ios.local.sim --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+
+# Run on Sauce Labs iOS Simulators in the EU cloud
+yarn test.e2e.ios.sauce.sim.eu --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+# Run on Sauce Labs iOS Simulators in the US cloud
+yarn test.e2e.ios.sauce.sim.us --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+```
+
+#### Sauce Labs Real Device
+
+```bash
+# Run on Sauce Labs iOS Real Devices in the EU cloud
+yarn test.e2e.ios.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+# Run on Sauce Labs iOS Real Devices in the US cloud
+yarn test.e2e.ios.sauce.rdc.us --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
 ```

@@ -237,9 +237,9 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
         - [x] Sauce Labs Real Devices
       - [ ] Webview
       - [X] QR Code Scanner on Sauce Labs Real Devices
-      - [ ] Geo Location:
-        - [ ] Local/Sauce Emulators and Simulators
-        - [ ] Sauce Labs Real Devices
+      - [x] Geo Location:
+        - [x] Local/Sauce Emulators and Simulators
+        - [x] Sauce Labs Real Devices
       - [ ] Drawing
 - [x] Upgrade dependencies (to all  `npx react-native init TsDemo --template react-native-template-typescript` v:`0.66.4`)
   - [x] Dependencies
