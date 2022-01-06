@@ -6,7 +6,7 @@ const drawerContainerSelector = 'menu item catalog';
 
 class Menu extends AppScreen {
   constructor() {
-    super(drawerContainerSelector);
+    super(locatorStrategy(drawerContainerSelector));
   }
 
   private get drawerContainer() {
@@ -157,10 +157,16 @@ class Menu extends AppScreen {
 
   async openMenu() {
     await this.openMenuButton.click();
+
+    // Wait for animation to be done
+    await driver.pause(750);
   }
 
   async closeMenu() {
     await this.closeMenuButton.click();
+
+    // Wait for animation to be done
+    await driver.pause(750);
   }
 
   async getCartAmount(): Promise<number> {

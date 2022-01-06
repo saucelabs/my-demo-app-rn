@@ -19,4 +19,7 @@ config.services = (config.services || []).concat([
   ],
 ]);
 
+// Never run the RDC tests
+config.exclude = ['./__tests__/e2e/specs/default/*.rdc.spec.ts'];
+
 export default config;

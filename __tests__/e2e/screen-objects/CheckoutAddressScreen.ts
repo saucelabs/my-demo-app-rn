@@ -15,6 +15,10 @@ class CheckoutAddressScreen extends AppScreen {
     return $(locatorStrategy('checkout address screen'));
   }
 
+  private get backButton() {
+    return $(locatorStrategy('navigation back button'));
+  }
+
   private get paymentButton() {
     return $(locatorStrategy('To Payment button'));
   }
@@ -65,6 +69,10 @@ class CheckoutAddressScreen extends AppScreen {
 
   private get countryErrorMessage() {
     return $(locatorStrategy('Country*-error-message'));
+  }
+
+  async goBack() {
+    return driver.isIOS ? this.backButton.click() : driver.back();
   }
 
   private async getElementText(

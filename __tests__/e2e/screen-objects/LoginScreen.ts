@@ -53,14 +53,10 @@ class LoginScreen extends AppScreen {
   }
 
   private get biometricsModal() {
-    const iosSelector = process.env.RDC
-      ? // On RDC we have a different selector
-        '-ios class chain:**/XCUIElementTypeStaticText[`label CONTAINS "Touch ID Verification" OR label CONTAINS "Face ID Verification"`]'
-      : '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeStaticText[`label CONTAINS "Face ID" or label CONTAINS "Touch ID"`]';
-    const androidSelector = process.env.RDC
-      ? // On RDC we have a different selector
-        '//android.widget.TextView[contains(@text,"Sign in with FingerPrint")]'
-      : '//android.widget.TextView[@resource-id="com.android.systemui:id/dialog"]';
+    const iosSelector =
+      '-ios class chain:**/XCUIElementTypeOther/**/XCUIElementTypeStaticText[`label CONTAINS "Face ID" or label CONTAINS "Touch ID"`]';
+    const androidSelector =
+      '//*[contains(@text,"Sign in with FingerPrint") or contains(@text,"Please sign in")]';
 
     return $(driver.isIOS ? iosSelector : androidSelector);
   }
@@ -78,14 +74,6 @@ class LoginScreen extends AppScreen {
     // On RDC the text is uppercase for the cancel button
     const androidSelector =
       "//android.widget.Button[contains(@text,'Cancel') or contains(@text,'CANCEL')]";
-
-    return $(driver.isIOS ? iosSelector : androidSelector);
-  }
-
-  private get biometricsNotEnabledModal() {
-    const iosSelector =
-      '-ios class chain:**/XCUIElementTypeAlert[`label == "Biometrics"`]';
-    const androidSelector = '//*[@resource-id="android:id/alertTitle"]';
 
     return $(driver.isIOS ? iosSelector : androidSelector);
   }
@@ -134,7 +122,24 @@ class LoginScreen extends AppScreen {
   }
 
   async waitForBiometricsModal(isShown = true) {
-    await this.biometricsModal.waitForDisplayed({reverse: !isShown});
+    // This is not a good practice, but....:
+    // - This fails on iOS 12 and 13, no text/labels are given back which makes this fail
+    // - This is an Appium related thing
+    // So for all versions lower than 14 it will just wait for 3 seconds to make sure the modal is there
+    // for all other versions it can officially wait on the modal
+
+    if (
+      driver.isIOS &&
+      // @ts-ignore
+      parseInt(driver.capabilities.platformVersion, 10) < 14
+    ) {
+      return driver.pause(3000);
+    }
+
+    return this.biometricsModal.waitForDisplayed({
+      timeout: 3000,
+      reverse: !isShown,
+    });
   }
 
   async waitForBiometricsFailureModal() {
@@ -144,10 +149,6 @@ class LoginScreen extends AppScreen {
     } else {
       await this.biometricsModal.waitForDisplayed();
     }
-  }
-
-  async waitForBiometricsNotEnabledModal() {
-    await this.biometricsNotEnabledModal.waitForDisplayed();
   }
 
   async cancelBiometrics() {

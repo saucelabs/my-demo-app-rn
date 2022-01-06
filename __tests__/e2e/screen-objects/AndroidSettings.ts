@@ -103,27 +103,6 @@ class AndroidSettings {
       await this.fingerPrintWizardEightOrHigher(DEFAULT_PIN);
     }
   }
-
-  async disableBiometricLogin() {
-    // Open the settings screen
-    await this.executeAdbCommand(
-      'am start -a android.settings.SECURITY_SETTINGS',
-    );
-    // Open the settings screen and set screen lock to pin
-    // await this.executeAdbCommand(
-    //   `am start -a android.settings.SECURITY_SETTINGS && locksettings set-pin ${DEFAULT_PIN}`,
-    // );
-    await this.waitAndClick('Fingerprint');
-    await this.executeAdbCommand(
-      // `input text ${DEFAULT_PIN} && input keyevent 66`,
-      `input text ${DEFAULT_PIN}`,
-    );
-    // Remove the fingerprint
-    const selector = '//android.widget.ImageView[@content-desc="Delete"]';
-    await $(selector).waitForDisplayed();
-    await $(selector).click();
-    await this.waitAndClick('Yes, remove');
-  }
 }
 
 export default new AndroidSettings();

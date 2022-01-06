@@ -1,6 +1,8 @@
 import {MobileConfig} from '../configs/wdio.shared.conf';
 
-const getTextOfElement = async (element: WebdriverIO.Element) => {
+const getTextOfElement = async (
+  element: WebdriverIO.Element,
+): Promise<string> => {
   let visualText = '';
 
   try {
@@ -20,10 +22,10 @@ const getTextOfElement = async (element: WebdriverIO.Element) => {
 
   return visualText.trim();
 };
-const locatorStrategy = (selector: string) => {
+const locatorStrategy = (selector: string): string => {
   return driver.isIOS ? `id=${selector}` : `//*[@content-desc="${selector}"]`;
 };
-const restartApp = async () => {
+const restartApp = async (): Promise<void> => {
   if (!(driver.config as MobileConfig).firstAppStart) {
     await driver.reset();
   }
@@ -31,7 +33,7 @@ const restartApp = async () => {
   // Set the firstAppstart to false to say that the following test can be reset
   (driver.config as MobileConfig).firstAppStart = false;
 };
-const hideKeyboard = async () => {
+const hideKeyboard = async (): Promise<void> => {
   // The hideKeyboard is not working on ios devices, so take a different approach
   if (!(await driver.isKeyboardShown())) {
     return;
@@ -49,9 +51,9 @@ const hideKeyboard = async () => {
   }
 
   // Wait for the keyboard animation to be done
-  return driver.pause(750);
+  await driver.pause(750);
 };
-const hideNumericKeyboard = async () => {
+const hideNumericKeyboard = async (): Promise<void> => {
   // The hideKeyboard is not working on ios devices, so take a different approach
   if (!(await driver.isKeyboardShown())) {
     return;
@@ -73,7 +75,7 @@ const hideNumericKeyboard = async () => {
   }
 
   // Wait for the keyboard animation to be done
-  return driver.pause(750);
+  await driver.pause(750);
 };
 const openDeepLinkUrl = async (url: string): Promise<void | string> => {
   const prefix = 'mydemoapprn://';
@@ -113,7 +115,7 @@ const openDeepLinkUrl = async (url: string): Promise<void | string> => {
     // Use the predicate string because  the accessibility label will return 2 different types
     // of elements making it flaky to use. With predicate string we can be more precise
     const addressBarSelector =
-      "name CONTAINS 'URL' OR name CONTAINS 'TabBarItemTitle'";
+      "name CONTAINS 'URL' OR name CONTAINS 'TabBarItemTitle' OR value contains 'Search or enter website name'";
     const urlFieldSelector =
       'type == "XCUIElementTypeTextField" && name CONTAINS "URL"';
     const addressBar = $(`-ios predicate string:${addressBarSelector}`);
@@ -145,10 +147,70 @@ const openDeepLinkUrl = async (url: string): Promise<void | string> => {
   }
 };
 
+/**
+ * Get the app state for iOS, see
+ * http://appium.io/docs/en/writing-running-appium/ios/ios-xctest-mobile-apps-management/
+ *  0: 'The current application state cannot be determined/is unknown',
+ *  1: 'The application is not running',
+ *  2: 'The application is running in the background and is suspended',
+ *  3: 'The application is running in the background and is not suspended',
+ *  4: 'The application is running in the foreground',
+ */
+const getIosAppState = (bundleId: string): Promise<number> => {
+  return driver.execute('mobile: queryAppState', {bundleId: bundleId});
+};
+
+/**
+ * Check if the application is running in the foreground
+ */
+const isIosApplicationRunning = async (bundleId: string): Promise<boolean> => {
+  try {
+    await driver.waitUntil(async () => (await getIosAppState(bundleId)) === 4);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+/**
+ * Verify that the apps main activity is not open anymore, this means that the browser, or the choose browser
+ * helper is opened
+ */
+const androidBrowserOpened = async (): Promise<boolean> => {
+  try {
+    await driver.waitUntil(
+      async () =>
+        !(await driver.getCurrentActivity()).includes('.MainActivity') &&
+        !(
+          await driver.getCurrentActivity()
+        ).includes('.GrantPermissionsActivity'),
+    );
+
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+/**
+ * Verify that the browser is opened.
+ * - iOS:     For iOS we can check if Safari is running in the foreground
+ * - Android: For Android we can check the current activity. If it holds a browser reference we know
+ *            for sure that the app is put on the background and that for example chrome is opened.
+ */
+const isBrowserOpened = async (): Promise<boolean> => {
+  if (driver.isIOS) {
+    return isIosApplicationRunning('com.apple.mobilesafari');
+  }
+
+  return androidBrowserOpened();
+};
+
 export {
   getTextOfElement,
   hideKeyboard,
   hideNumericKeyboard,
+  isBrowserOpened,
   locatorStrategy,
   openDeepLinkUrl,
   restartApp,

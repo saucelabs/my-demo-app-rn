@@ -28,6 +28,9 @@ config.capabilities = ['9.0', '10.0', '11'].map((osVersion: string) => ({
   // allowInvisibleElements: true,
 }));
 
+// Never run the RDC tests
+config.exclude = ['./__tests__/e2e/specs/default/*.rdc.spec.ts'];
+
 /**
  * Workaround for the `allowInvisibleElements: true,` cap.
  * The setting can also be set during execution

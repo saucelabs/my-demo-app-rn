@@ -45,6 +45,12 @@ const CartStackNavigation = () => {
       <Cart.Screen
         name={ROUTES.CHECKOUT_COMPLETE}
         component={CheckoutCompletePage}
+        options={({navigation}) => ({
+          ...TransitionScreenOptions,
+          header: () => (
+            <AppHeader showBackButton={false} navigation={navigation} />
+          ),
+        })}
       />
     </Cart.Navigator>
   );

@@ -16,6 +16,10 @@ class CheckoutPaymentScreen extends AppScreen {
     return $(locatorStrategy('checkout payment screen'));
   }
 
+  private get backButton() {
+    return $(locatorStrategy('navigation back button'));
+  }
+
   private get reviewOrderButton() {
     return $(locatorStrategy('Review Order button'));
   }
@@ -116,6 +120,10 @@ class CheckoutPaymentScreen extends AppScreen {
     });
 
     return getTextOfElement(await textElement);
+  }
+
+  async goBack() {
+    return driver.isIOS ? this.backButton.click() : driver.back();
   }
 
   private async addValueToField(

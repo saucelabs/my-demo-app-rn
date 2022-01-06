@@ -6,6 +6,23 @@ class BiometricsScreen extends AppScreen {
     super(locatorStrategy('biometrics screen'));
   }
 
+  private get biometricsNotEnabledModal() {
+    const iosSelector =
+      '-ios class chain:**/XCUIElementTypeAlert[`label == "Biometrics"`]';
+    const androidSelector =
+      '//android.widget.TextView[contains(@text, "Biometrics is or not supported")]';
+
+    return $(driver.isIOS ? iosSelector : androidSelector);
+  }
+
+  private get alertCloseButton() {
+    const iosSelector =
+      '-ios class chain:**/XCUIElementTypeButton[`label == "OK"`]';
+    const androidSelector = '//android.widget.Button[contains(@text, "OK")]';
+
+    return $(driver.isIOS ? iosSelector : androidSelector);
+  }
+
   private get biometricsSwitch() {
     return $(locatorStrategy('biometrics switch'));
   }
@@ -26,6 +43,14 @@ class BiometricsScreen extends AppScreen {
     if (isEnabled) {
       await this.biometricsSwitch.click();
     }
+  }
+
+  async waitForBiometricsNotEnabledModal() {
+    await this.biometricsNotEnabledModal.waitForDisplayed();
+  }
+
+  async closeAlert() {
+    return this.alertCloseButton.click();
   }
 }
 

@@ -6,6 +6,10 @@ class CheckoutReviewOrderScreen extends AppScreen {
     super(locatorStrategy('checkout review order screen'));
   }
 
+  private get backButton() {
+    return $(locatorStrategy('navigation back button'));
+  }
+
   private get items() {
     return $$(locatorStrategy('product row'));
   }
@@ -32,6 +36,10 @@ class CheckoutReviewOrderScreen extends AppScreen {
 
   private get placeOrderButton() {
     return $(locatorStrategy('Place Order button'));
+  }
+
+  async goBack() {
+    return driver.isIOS ? this.backButton.click() : driver.back();
   }
 
   async itemsAmount(): Promise<number> {
