@@ -250,7 +250,7 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
 - [ ] Think if we need to store data to the _local_ storage or keep it in the session storage.
 - [ ] Write Tests:
   - [ ] Unit Tests
-  - [ ] E2E Tests
+  - [x] E2E Tests
     - [x] Default tests:
       - [x] Catalog
       - [x] Product details
@@ -261,11 +261,13 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
       - [x] Checkout Review Order
       - [x] Checkout Complete
       - [x] Navigation between screens
-    - [ ] Extra tests:
+    - [x] Extra tests:
       - [x] TouchId/FaceID/Fingerprint:
         - [x] Local/Sauce Emulators and Simulators
         - [x] Sauce Labs Real Devices
-      - [ ] Webview
+      - [x] Webview:
+        - [x] Local/Sauce Emulators and Simulators
+        - [x] Sauce Labs Real Devices
       - [x] QR Code Scanner on Sauce Labs Real Devices
       - [x] Geo Location:
         - [x] Local/Sauce Emulators and Simulators

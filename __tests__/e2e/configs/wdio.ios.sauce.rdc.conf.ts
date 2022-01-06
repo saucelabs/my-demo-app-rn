@@ -9,9 +9,6 @@ const osVersions = ['13', '14'];
 const imageInjectionOsVersions = ['13', '15'];
 const getRandomOsVersion = (versions: string[]): string =>
   versions[Math.floor(Math.random() * versions.length)];
-const randomImageInjectionOsVersions = Math.floor(
-  Math.random() * imageInjectionOsVersions.length,
-);
 // ============
 // Capabilities
 // ============

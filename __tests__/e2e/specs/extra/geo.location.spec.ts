@@ -1,4 +1,4 @@
-import {openDeepLinkUrl, restartApp} from '../../helpers/utils';
+import {restartApp} from '../../helpers/utils';
 import CatalogScreen from '../../screen-objects/CatalogScreen';
 import GeoLocationScreen from '../../screen-objects/GeoLocationScreen';
 import Menu from '../../screen-objects/Menu';
@@ -21,8 +21,6 @@ describe('Geo Location Page', () => {
     // https://github.com/appium/io.appium.settings/blob/master/app/src/main/java/io/appium/settings/receivers/LocationInfoReceiver.java#L48
     const newLongitude = 52.50032;
     const newLatitude = 13.45143;
-    const currentLongitude = await GeoLocationScreen.getLongitudeValue();
-    const currentLatitude = await GeoLocationScreen.getLatitudeValue();
     await GeoLocationScreen.setLocation({
       longitude: newLongitude,
       latitude: newLatitude,
