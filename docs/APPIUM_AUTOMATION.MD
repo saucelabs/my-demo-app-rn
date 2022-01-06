@@ -6,6 +6,7 @@
 1. [Using Touch / Face ID / Fingerprint during automation](#using-touch--face-id--fingerprint-during-automation)
 1. [Using Camera Image Injection during Real Device automation](#using-camera-image-injection-during-real-device-automation)
 1. [Mocking GEO Location during automation](#mocking-geo-location-during-automation)
+1. [Use Appium to draw on a screen](#use-appium-to-draw-on-a-screen)
 
 ## Getting Started
 
@@ -215,4 +216,56 @@ yarn test.e2e.ios.sauce.sim.us --spec=__tests__/e2e/specs/extra/geo.location.spe
 yarn test.e2e.ios.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
 # Run on Sauce Labs iOS Real Devices in the US cloud
 yarn test.e2e.ios.sauce.rdc.us --spec=__tests__/e2e/specs/extra/geo.location.spec.ts
+```
+
+## Use Appium to draw on a screen
+
+There is a simple test that will draw a Sauce Bolt on a canvas, you can find it [here](../__tests__/e2e/specs/extra/drawing.spec.ts).
+
+> **NOTE:** There is no validation because it's not really possible with drawing
+
+### Run on Android
+
+#### Local or Sauce Labs Emulators
+
+```bash
+# Run on local Android emulators
+yarn test.e2e.android.local.emu --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+
+# Run on Sauce Labs Android emulators in the EU cloud
+yarn test.e2e.android.sauce.emu.eu --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+# Run on Sauce Labs Android emulators in the US cloud
+yarn test.e2e.android.sauce.emu.us --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+```
+
+#### Sauce Labs Real Device
+
+```bash
+# Run on Sauce Labs Android Real Devices in the EU cloud
+yarn test.e2e.android.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+# Run on Sauce Labs Android Real Devices in the US cloud
+yarn test.e2e.android.sauce.rdc.us --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+```
+
+### Run on iOS
+
+#### Local or Sauce Labs Simulators
+
+```bash
+# Run on local iOS simulators
+yarn test.e2e.ios.local.sim --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+
+# Run on Sauce Labs iOS Simulators in the EU cloud
+yarn test.e2e.ios.sauce.sim.eu --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+# Run on Sauce Labs iOS Simulators in the US cloud
+yarn test.e2e.ios.sauce.sim.us --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+```
+
+#### Sauce Labs Real Device
+
+```bash
+# Run on Sauce Labs iOS Real Devices in the EU cloud
+yarn test.e2e.ios.sauce.rdc.eu --spec=__tests__/e2e/specs/extra/drawing.spec.ts
+# Run on Sauce Labs iOS Real Devices in the US cloud
+yarn test.e2e.ios.sauce.rdc.us --spec=__tests__/e2e/specs/extra/drawing.spec.ts
 ```
