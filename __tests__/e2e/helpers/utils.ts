@@ -115,7 +115,7 @@ const openDeepLinkUrl = async (url: string): Promise<void | string> => {
     // Use the predicate string because  the accessibility label will return 2 different types
     // of elements making it flaky to use. With predicate string we can be more precise
     const addressBarSelector =
-      "name CONTAINS 'URL' OR name CONTAINS 'TabBarItemTitle'";
+      "name CONTAINS 'URL' OR name CONTAINS 'TabBarItemTitle' OR value contains 'Search or enter website name'";
     const urlFieldSelector =
       'type == "XCUIElementTypeTextField" && name CONTAINS "URL"';
     const addressBar = $(`-ios predicate string:${addressBarSelector}`);

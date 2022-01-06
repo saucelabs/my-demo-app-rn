@@ -1,7 +1,14 @@
 import config from './wdio.shared.sauce.conf';
 
-const buildName = `iOS My React Native Demo app: ${new Date().getTime()}`;
+const buildName = `iOS My React Native Demo app iOS: ${new Date().getTime()}`;
+// There seems to be an issue with iOS 15.x, RDC and extreme slowness causing the tests to fail.
+// This means we need to limit the OS versions to 13 and 14
+const osVersions = ['13', '14'];
+// There seems to be an issue with iOS 14.3 which keeps hanging on Appium commands which doesn't happen on 14.8
+// We use a random value 13/15 here, but only when image injection is used
 const imageInjectionOsVersions = ['13', '15'];
+const getRandomOsVersion = (versions: string[]): string =>
+  versions[Math.floor(Math.random() * versions.length)];
 const randomImageInjectionOsVersions = Math.floor(
   Math.random() * imageInjectionOsVersions.length,
 );
@@ -19,9 +26,10 @@ config.capabilities = [
     // See https://docs.saucelabs.com/mobile-apps/automated-testing/appium/real-devices/#dynamic-device-allocation
     deviceName: 'iPhone (11|12|13|X.*).*',
     automationName: 'XCUITest',
+    platformVersion: getRandomOsVersion(osVersions),
     // The name of the App in the Sauce Labs storage, for more info see
     // https://docs.saucelabs.com/mobile-apps/app-storage/
-    app: 'storage:filename=iOS.MyDemoAppRN.ipa',
+    app: 'storage:filename=MyRNDemoApp.ipa',
     noReset: true,
     // @ts-ignore
     // There is an issue with noReset: true and driver.reset(). This cap fixes that
@@ -40,10 +48,10 @@ config.capabilities = [
     // We use a random value 13/15 here, but only when image injection is used
     ...(process.env.IMAGE_INJECTION
       ? {
-          platformVersion:
-            imageInjectionOsVersions[randomImageInjectionOsVersions],
+          platformVersion: getRandomOsVersion(imageInjectionOsVersions),
         }
       : {}),
+    appiumVersion: '1.22.0',
   },
 ];
 
@@ -57,6 +65,7 @@ if (process.env.BIOMETRICS) {
     // See https://docs.saucelabs.com/mobile-apps/automated-testing/appium/real-devices/#dynamic-device-allocation
     deviceName: 'iPhone ([6-8]|SE).*',
     automationName: 'XCUITest',
+    platformVersion: getRandomOsVersion(osVersions),
     // The name of the App in the Sauce Labs storage, for more info see
     // https://docs.saucelabs.com/mobile-apps/app-storage/
     app: 'storage:filename=iOS.MyDemoAppRN.ipa',
