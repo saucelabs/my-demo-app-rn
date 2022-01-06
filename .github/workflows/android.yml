@@ -39,7 +39,7 @@ jobs:
           yarn android.release
       - name: Detect App Name
         run: |
-          echo "APP_NAME=${basename android/app/build/outputs/apk/release/*.apk}" >> $GITHUB_ENV
+          echo "APP_NAME=${basename **/app/build/outputs/apk/release/*.apk}" >> $GITHUB_ENV
         shell: bash
       - name: Archive Apps
         uses: actions/upload-artifact@v2
