@@ -1,4 +1,4 @@
-name: Android SauceLabs Sample App
+name: Android SauceLabs My Demo App
 
 on:
   push:
@@ -34,9 +34,11 @@ jobs:
           ln -s ${ANDROID_HOME}/build-tools/32.0.0/d8 ${ANDROID_HOME}/build-tools/32.0.0/dx
           ln -s ${ANDROID_HOME}/build-tools/32.0.0/lib/d8.jar ${ANDROID_HOME}/build-tools/32.0.0/lib/dx.jar
       - name: Build Android Release
-        run: yarn android.release
+        run: |
+        yarn android.release
+        echo "APP_NAME=${basename android/app/build/outputs/apk/release/*.apk}" >> $GITHUB_ENV
       - name: Archive Apps
         uses: actions/upload-artifact@v2
         with:
-          name: Android SauceLabs My Demo App RN Release
+          name: ${{env.APP_NAME}}
           path: '**/app/build/outputs/apk/release/**/*.apk'
