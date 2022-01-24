@@ -1,6 +1,6 @@
 {
   "name": "my-demo-app-rn",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "android.clean": "cd android && ./gradlew clean && cd .. ",
@@ -9,7 +9,7 @@
     "clean": "react-native-clean-project",
     "clear.cache": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste-*",
     "ios.dev": "yarn version.apps --target ios && react-native run-ios",
-    "ios.release.sim.build": "react-native run-ios --configuration Release",
+    "ios.release.sim.build": "yarn version.apps --target ios && react-native run-ios --configuration Release",
     "ios.pods": "cd ios && pod install && cd ..",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "postversion": "react-native-version",
