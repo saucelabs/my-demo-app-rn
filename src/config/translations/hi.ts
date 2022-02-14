@@ -2,7 +2,7 @@ import {USERNAMES_ENUM, VALID_PASSWORD} from '../../utils/Constants';
 
 export default {
   about: {
-    goTo: 'Sauce labs की वेबसाइट पर जाएं।',
+    goTo: 'Sauce Labs की वेबसाइट पर जाएं।',
     header: 'जानकारी',
     versionBuild: 'V.{{version}}-build {{build}} by ',
     url: 'https://www.saucelabs.com',
