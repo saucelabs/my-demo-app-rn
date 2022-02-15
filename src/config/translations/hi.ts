@@ -16,7 +16,7 @@ export default {
     description:
       'अगर आपके उपकरण {{sensor Type}} को सपोर्ट करते हैं तो आप इसे यहां सक्षम कर सकते हैं। इससे आप आसानी से लॉग इन कर पाएंगे।',
     note: 'आम तौर पर यह स्क्रीन एक सुरक्षित लॉगिन के पीछे होगी, लेकिन डेमो उद्देश्यों के लिए इस स्क्रीन को डिफ़ॉल्ट रूप से यहां रखा गया है।',
-    logInWith: 'Allow login with {{sensorType}}',
+    logInWith: '{{sensorType}} के साथ लॉगिन करने की अनुमति दें',
     biometricNotAvailableTitle: 'एरर',
     biometricNotAvailableMessage:
       'बायोमेट्रिक पुष्टीकरण उपलब्ध नहीं है, कृपया अपनी सेटिंग जांचें।',
@@ -46,7 +46,7 @@ export default {
     testId: 'checkout footer',
   },
   login: {
-    header: 'Login',
+    header: 'लॉग इन करें',
     subText:
       'नीचे दी गई सूची से एक उपयोगकर्ता नाम और पासवर्ड का चयन करें, या उपयोगकर्ता नाम और पासवर्ड को स्वचालित रूप से भरने के लिए उपयोगकर्ता नाम पर क्लिक करें।',
     usernameLabel: 'यूजर का नाम',
@@ -68,7 +68,7 @@ export default {
     testId: 'login screen',
     genericErrorMessageTestId: 'generic-error-message',
     autoFillTestId: '',
-    lockedOut: '(locked out)',
+    lockedOut: '(लॉक आउट)',
   },
   checkoutAddress: {
     header: 'चेक आउट',
@@ -86,7 +86,7 @@ export default {
     cardData: {
       fullName: {
         label: 'पूरा नाम',
-        placeholder: 'Rebecca Winter',
+        placeholder: 'Ritu Kumar',
         errorMessage: 'डेटा गलत लग रहा है',
       },
       card: {
@@ -141,7 +141,7 @@ export default {
     fullName: {
       label: 'पूरा नाम',
       errorMessage: 'कृपया अपना पूरा नाम बताएं।',
-      placeholder: 'Rebecca Winter',
+      placeholder: 'Ritu Kumar',
     },
     addressLineOne: {
       label: 'पता पंक्ति 1',
@@ -196,7 +196,7 @@ export default {
     textTestId: 'store item text',
   },
   footer: {
-    text: 'Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy.',
+    text: 'Sauce Labs. सभी अधिकार सुरक्षित। सेवा की शर्तें | गोपनीयता नीति।',
   },
   drawing: {
     header: 'चित्रकारी',
@@ -211,8 +211,8 @@ export default {
     downloadPermissionsTitle: 'ड्रॉइंग डाउनलोड की अनुमति',
     downloadPermissionsRequiredMessage:
       'ड्राइंग को अपने डिवाइस में सहेजने के लिए आपकी अनुमति आवश्यक है',
-    androidPermissions: 'Android permissions',
-    androidPermissionsFailed: 'Android permissions failed',
+    androidPermissions: 'Android अनुमतियाँ',
+    androidPermissionsFailed: 'Android अनुमतियाँ असफल',
     testId: 'drawing screen',
   },
   geoLocation: {
@@ -235,7 +235,7 @@ export default {
     stopObserving: 'निरीक्षण करना बंद करो',
     unableOpenSettings: 'सेटिंग्स को खोलने में असमर्थ',
     turnOn:
-      'Turn on Location Services to allow "{{appName}}" to determine your location.',
+      '"{{appName}}" को अपना लोकेशन निर्धारित करने की अनुमति देने के लिए स्थान सेवाएँ चालू करें।',
     latitudeTestId: 'latitude data',
     longitudeTestId: 'longitude data',
     testId: 'geo location screen',
@@ -303,8 +303,8 @@ export default {
     testId: 'cart badge',
   },
   productRow: {
-    color: 'Color',
-    removeItem: 'Remove Item',
+    color: 'रंग',
+    removeItem: 'इस आइटम को हटा दें',
     removeItemTestId: 'remove item',
     productLabelTestId: 'product label',
     productPriceTestId: 'product price',
