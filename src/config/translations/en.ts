@@ -8,6 +8,14 @@ export default {
     url: 'https://www.saucelabs.com',
     testId: 'about screen',
   },
+  apiCalls: {
+    header: 'API calls',
+    testId: 'api calls screen',
+  },
+  sauceBotVideo: {
+    header: 'SauceBot - The Beginning',
+    testId: 'SauceBot screen',
+  },
   biometrics: {
     androidHeader: 'FingerPrint',
     defaultHeader: 'Biometrics',
@@ -390,6 +398,14 @@ export default {
     },
     openMenu: {
       testId: 'open menu',
+    },
+    sauceBotVideo: {
+      label: 'Sauce Bot Video',
+      testId: 'menu item sauce bot video',
+    },
+    apiCalls: {
+      label: 'Api Calls',
+      testId: 'menu item api calls',
     },
   },
 };
