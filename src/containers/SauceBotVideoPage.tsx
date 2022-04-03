@@ -39,7 +39,7 @@ const SauceBotVideoPage = () => {
       <Icon name={name} onPress={onPress} size={20} style={styles.videoIcon} />
     </View>
   );
-  
+
   return (
     <View
       style={styles.container}

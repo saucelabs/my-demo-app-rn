@@ -115,6 +115,10 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {
       screen: ROUTES.SAUCE_BOT_VIDEO,
     });
+  const navigateToApiCalls = () =>
+    navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {
+      screen: ROUTES.API_CALLS,
+    });
   const navigateToBiometrics = () =>
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {
       screen: ROUTES.BIOMETRICS,
@@ -190,6 +194,13 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
       label: I18n.t('drawer.logOut.label'),
       testId: I18n.t('drawer.logOut.testId'),
       onPress: logOut,
+    },
+    {
+      borderBottom: IS_IOS,
+      icon: false,
+      label: I18n.t('drawer.apiCalls.label'),
+      testId: I18n.t('drawer.apiCalls.testId'),
+      onPress: navigateToApiCalls,
     },
     {
       borderBottom: IS_IOS,

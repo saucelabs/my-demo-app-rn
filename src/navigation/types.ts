@@ -37,6 +37,7 @@ export type MenuStackParamList = {
   [ROUTES.ABOUT]: undefined;
   [ROUTES.BIOMETRICS]: undefined;
   [ROUTES.SAUCE_BOT_VIDEO]: undefined;
+  [ROUTES.API_CALLS]: undefined;
   [ROUTES.STORE_STACK_NAVIGATOR]: {screen: ROUTES.STORE} | undefined;
 };
 export type StoreFlowStackParamList = {
