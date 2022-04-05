@@ -19,7 +19,7 @@ export const config: MobileConfig = {
   // Test Configurations
   // ===================
   //
-  logLevel: 'silent',
+  logLevel: 'warn',
   bail: 0,
   baseUrl: 'http://localhost',
   waitforTimeout: 15000,
