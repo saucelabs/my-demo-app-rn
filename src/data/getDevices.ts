@@ -6,10 +6,16 @@ interface LocationInterface {
   };
 }
 export enum DcEnum {
+  ERROR = 'ERROR',
   EU = 'EU',
   US = 'US',
 }
 export const LOCATION: LocationInterface = {
+  ERROR: {
+    label: 'ERROR-DC',
+    value: 'error',
+    endpoint: 'error-1',
+  },
   EU: {
     label: 'EU',
     value: 'eu',
@@ -80,7 +86,7 @@ export async function getDevices(dc: DcEnum) {
       });
 
     return devices;
-  } catch (error) {
-    console.log('error = ', error);
+  } catch (error: any) {
+    throw error;
   }
 }

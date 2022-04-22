@@ -13,13 +13,19 @@ const ApiCallsPage = () => {
   const [devicesList, setDevicesList] = useState<DevicesInterface[] | null>(
     null,
   );
+  const [errorMessage, setErrorMessage] = useState<Error | null>(null);
   const numColumns = 2;
   useEffect(() => {
-    getDevices(dc).then(devices => {
-      if (devices) {
-        setDevicesList(devices);
-      }
-    });
+    setErrorMessage(null);
+    getDevices(dc)
+      .then(devices => {
+        if (devices) {
+          setDevicesList(devices);
+        }
+      })
+      .catch(error => {
+        setErrorMessage(error);
+      });
   }, [dc]);
   const selectDc = (dataCenter: DcEnum) => {
     setDevicesList(null);
@@ -47,9 +53,17 @@ const ApiCallsPage = () => {
           numColumns={numColumns}
           keyExtractor={item => item.id}
           ListEmptyComponent={
-            <View style={styles.emptyContainer}>
-              <Text>Loading devices</Text>
-            </View>
+            errorMessage ? (
+              <View style={styles.errorContainer}>
+                <Text style={styles.errorText}>
+                  {errorMessage?.message || 'Network request failed'}
+                </Text>
+              </View>
+            ) : (
+              <View style={styles.emptyContainer}>
+                <Text style={styles.loadingText}>Loading devices</Text>
+              </View>
+            )
           }
           showsVerticalScrollIndicator={false}
         />
@@ -74,11 +88,25 @@ const styles = StyleSheet.create({
     paddingVertical: 0,
     flex: 0,
   },
+  errorContainer: {
+    backgroundColor: Colors.slRed,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  errorText: {
+    color: Colors.white,
+    fontSize: 20,
+  },
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
+  },
+  loadingText: {
+    fontSize: 20,
   },
   flatListContainer: {
     flex: 3,
