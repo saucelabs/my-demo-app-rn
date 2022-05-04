@@ -15,6 +15,7 @@ export interface ItemStateInterface extends ItemIdentifierInterface {
 
 export interface CartItemInterface extends ItemInterface {
   amount: number;
+  id: number;
   selectedColor: ITEM_COLOR_TYPE;
 }
 

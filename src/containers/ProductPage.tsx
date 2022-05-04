@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {ROUTES} from '../navigation/Routes';
 import {StoreFlowStackParamList} from '../navigation/types';
@@ -22,6 +22,7 @@ import {ITEM_COLOR_TYPE, ITEM_COLORS} from '../data/inventoryData';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {addSwagItem, getSwagItem} from '../data/apiCalls';
 
 type ProductProps = {
   navigation: StackNavigationProp<StoreFlowStackParamList, ROUTES.STORE>;
@@ -77,9 +78,21 @@ const ProductPage = ({navigation, route}: ProductProps) => {
           selectedColor,
         }),
       );
+      addSwagItem({
+        ...selectedProduct,
+        amount: counterAmount,
+        selectedColor,
+      });
     }
   };
   const changeColor = (color: ITEM_COLOR_TYPE) => setSelectedColor(color);
+
+  useEffect(() => {
+    async function fetchData() {
+      return getSwagItem(id);
+    }
+    fetchData();
+  });
 
   return (
     <ScrollView

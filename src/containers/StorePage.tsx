@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {Colors} from '../styles/Colors';
@@ -14,6 +14,7 @@ import {ROUTES} from '../navigation/Routes';
 import {StoreContext} from '../store/Store';
 import {updateSorting} from '../store/actions/ProductStoreActions';
 import I18n from '../config/I18n';
+import {initCall} from '../data/apiCalls';
 
 type StoreProps = {
   navigation: StackNavigationProp<StoreFlowStackParamList, ROUTES.STORE>;
@@ -33,6 +34,13 @@ const StorePage = ({navigation}: StoreProps) => {
   const closeReviewModal = () => setReviewModalVisible(!reviewModalVisible);
   const openProductDetails = (id: number) =>
     navigation.push(ROUTES.PRODUCT, {id});
+
+  useEffect(() => {
+    async function fetchData() {
+      return initCall();
+    }
+    fetchData();
+  });
 
   return (
     <View

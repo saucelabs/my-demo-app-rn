@@ -21,6 +21,7 @@ import Button from '../components/Button';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
 import {parseDeepLinkProductData} from '../utils/DeepLinking';
+import {addSwagItem, checkoutCart, removeSwagItem} from '../data/apiCalls';
 
 type CartProps = {
   navigation: StackNavigationProp<CartStackParamList, ROUTES.CART>;
@@ -51,12 +52,18 @@ const CartPage = ({navigation, route}: CartProps) => {
     }
   }, [dispatch, items, route]);
 
-  const addItem = (cartItem: CartItemInterface) =>
+  const addItem = (cartItem: CartItemInterface) => {
     dispatch(addProductToCart(cartItem));
-  const deleteItem = (cartItem: CartItemInterface) =>
+    addSwagItem(cartItem);
+  };
+  const deleteItem = (cartItem: CartItemInterface) => {
     dispatch(deleteProductFromCart(cartItem));
-  const removeItem = (cartItem: CartItemInterface) =>
+    removeSwagItem(cartItem);
+  };
+  const removeItem = (cartItem: CartItemInterface) => {
     dispatch(removeProductFromCart(cartItem));
+    removeSwagItem(cartItem);
+  };
 
   return (
     <View style={styles.container}>
@@ -110,11 +117,12 @@ const CartPage = ({navigation, route}: CartProps) => {
       </ScrollView>
       {cartContent.totalAmount > 0 && (
         <CheckoutFooter
-          onPress={() =>
+          onPress={() => {
+            checkoutCart(cartContent);
             isLoggedIn
               ? navigation.navigate(ROUTES.CHECKOUT_ADDRESS)
-              : navigation.navigate(ROUTES.LOGIN)
-          }
+              : navigation.navigate(ROUTES.LOGIN);
+          }}
           title={I18n.t('cart.filledCartButtonText')}
           totalNumber={cartContent.totalAmount}
           totalPrice={cartContent.totalPrice}
