@@ -11,6 +11,7 @@ import SwagLabsStatusBar from './components/StatusBar';
 import Linking from './navigation/Linking';
 import {StoreProvider} from './store/Store';
 import {Text} from 'react-native';
+import {IS_IOS} from './utils/Constants';
 
 //Ignore all log notifications
 LogBox.ignoreAllLogs();
@@ -31,36 +32,38 @@ const App = () => {
     false;
 
   useEffect(() => {
-    // We call stop to support hot-swap during development.
-    // This call will be ignored silently for the initial app launch.
-    TestFairy.stop();
-    /////////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Launch a TestFairy session. The session url will be in the logs for you to navigate.
-    // Optionally, specify a private cloud endpoint if it applies to you.
-    //
-    // When TestFairy launches a session, these will be listened collected until the session
-    // is stopped or app is closed:
-    //
-    //   - logs
-    //   - crashes
-    //   - video recording
-    //   - http network events
-    //   - feedbacks via forms launched when the users shakes their device
-    //   - custom attributes set in the code w/ TestFairy.setAttribute()
-    //   - events sent in the code w/ TestFairy.addEvent()
-    //
-    // and many others.
-    //
-    // All of this data will be available in your TestFairy web dashboard as well as
-    // the REST API.
-    //
-    /////////////////////////////////////////////////////////////////////////////////////////
-    // TestFairy.setServerEndpoint("https://your.privatecloud.example.com") // Private cloud only
-    TestFairy.begin(process.env.TESTFAIRY_TOKEN);
-    // Swap this line with the above if you don't want to record a session but still need
-    // the shake gesture detection for the feedbacks.
-    // TestFairy.installFeedbackHandler(process.env['TESTFAIRY_TOKEN']);
+    if (!IS_IOS) {
+      // We call stop to support hot-swap during development.
+      // This call will be ignored silently for the initial app launch.
+      TestFairy.stop();
+      /////////////////////////////////////////////////////////////////////////////////////////
+      //
+      // Launch a TestFairy session. The session url will be in the logs for you to navigate.
+      // Optionally, specify a private cloud endpoint if it applies to you.
+      //
+      // When TestFairy launches a session, these will be listened collected until the session
+      // is stopped or app is closed:
+      //
+      //   - logs
+      //   - crashes
+      //   - video recording
+      //   - http network events
+      //   - feedbacks via forms launched when the users shakes their device
+      //   - custom attributes set in the code w/ TestFairy.setAttribute()
+      //   - events sent in the code w/ TestFairy.addEvent()
+      //
+      // and many others.
+      //
+      // All of this data will be available in your TestFairy web dashboard as well as
+      // the REST API.
+      //
+      /////////////////////////////////////////////////////////////////////////////////////////
+      // TestFairy.setServerEndpoint("https://your.privatecloud.example.com") // Private cloud only
+      TestFairy.begin(process.env.TESTFAIRY_TOKEN);
+      // Swap this line with the above if you don't want to record a session but still need
+      // the shake gesture detection for the feedbacks.
+      // TestFairy.installFeedbackHandler(process.env['TESTFAIRY_TOKEN']);
+    }
   }, []);
 
   return (

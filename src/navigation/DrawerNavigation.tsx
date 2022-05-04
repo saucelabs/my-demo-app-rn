@@ -153,13 +153,17 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
       testId: I18n.t('drawer.drawing.testId'),
       onPress: navigateToDrawing,
     },
-    {
-      borderBottom: IS_IOS,
-      icon: false,
-      label: I18n.t('drawer.reportABug.label'),
-      testId: I18n.t('drawer.reportABug.testId'),
-      onPress: navigateToReportABug,
-    },
+    ...(IS_IOS
+      ? [
+          {
+            borderBottom: IS_IOS,
+            icon: false,
+            label: I18n.t('drawer.reportABug.label'),
+            testId: I18n.t('drawer.reportABug.testId'),
+            onPress: navigateToReportABug,
+          },
+        ]
+      : []),
     {
       borderBottom: IS_IOS,
       icon: false,
@@ -239,7 +243,7 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
           onPress={onPress}
           style={[styles.menuButton, borderBottom ? styles.borderBottom : {}]}
           key={`${index}-${label}`}
-          {...testProperties(testId)}>
+          {...testProperties(testId as string)}>
           <Text style={styles.menuLabel}>{label}</Text>
           {icon && IS_IOS && (
             <Image
