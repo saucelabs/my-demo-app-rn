@@ -2,6 +2,7 @@ import {
   CardActionEnum as ACTIONS,
   CardDetailsActionType,
 } from '../actions/CardDetailsActions';
+import {StateNameEnum, storeAsyncData} from '../Store';
 
 export interface CardDetailsInterface {
   cardFullName: string;
@@ -36,19 +37,23 @@ const initialCardDetailsState: CardDetailsInterface = {
     country: '',
   },
 };
-
 const cardDetailsReducer = (
   state = initialCardDetailsState,
   action: CardDetailsActionType,
 ) => {
   switch (action.type) {
     case ACTIONS.UPDATE_CARD_DETAILS: {
-      return {
+      const newState = {
         ...state,
         ...action.cardDetails,
       };
+      storeAsyncData(StateNameEnum.CARD_DETAILS, newState);
+
+      return newState;
     }
     case ACTIONS.RESET_CARD_DETAILS: {
+      storeAsyncData(StateNameEnum.CARD_DETAILS, initialCardDetailsState);
+
       return initialCardDetailsState;
     }
     default:

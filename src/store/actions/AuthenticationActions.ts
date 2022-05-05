@@ -1,12 +1,14 @@
 import {BIOMETRICS_TYPE, BiometryType} from '../../containers/Biometrics';
 import * as LocalAuthentication from 'expo-local-authentication';
 import {DispatchType} from '../Store';
+import {AuthenticationInterface} from '../reducers/AuthenticationReducer';
 
 enum AuthenticationActionEnum {
   LOGIN = 'LOGIN',
   LOGOUT = 'LOGOUT',
   UPDATE_BIOMETRICS = 'UPDATE_BIOMETRICS',
   ENABLE_BIOMETRICS = 'ENABLE_BIOMETRICS',
+  UPDATE_STATE = 'UPDATE_STATE',
 }
 
 export type AuthenticationActionType =
@@ -17,6 +19,10 @@ export type AuthenticationActionType =
     }
   | {
       type: AuthenticationActionEnum.LOGOUT;
+    }
+  | {
+      authenticationData: AuthenticationInterface;
+      type: AuthenticationActionEnum.UPDATE_STATE;
     }
   | {
       isBiometricsAvailable: boolean;
@@ -39,6 +45,14 @@ function login(username: string) {
 function logout() {
   return {
     type: AuthenticationActionEnum.LOGOUT,
+  };
+}
+function updateAuthenticationState(
+  authenticationData: AuthenticationInterface,
+) {
+  return {
+    authenticationData,
+    type: AuthenticationActionEnum.UPDATE_STATE,
   };
 }
 
@@ -88,5 +102,6 @@ export {
   getBiometricsData,
   login,
   logout,
+  updateAuthenticationState,
   updateBiometricSettings,
 };

@@ -8,6 +8,9 @@ export default {
     url: 'https://www.saucelabs.com',
     testId: 'about screen',
   },
+  appHeader: {
+    testId: 'longpress reset app',
+  },
   apiCalls: {
     header: 'API calls',
     testId: 'api calls screen',

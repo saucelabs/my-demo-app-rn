@@ -13,10 +13,16 @@ import Footer from '../components/Footer';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 import {parseDeepLinkProductData} from '../utils/DeepLinking';
-import {addProductToCart} from '../store/actions/CartActions';
+import {addProductToCart, resetCart} from '../store/actions/CartActions';
 import {RouteProp} from '@react-navigation/native';
-import {updateShippingAddress} from '../store/actions/ShippingAddressActions';
-import {updateCardDetails} from '../store/actions/CardDetailsActions';
+import {
+  resetShippingAddress,
+  updateShippingAddress,
+} from '../store/actions/ShippingAddressActions';
+import {
+  resetCardDetails,
+  updateCardDetails,
+} from '../store/actions/CardDetailsActions';
 
 type CheckoutReviewOrderProps = {
   navigation: StackNavigationProp<CartStackParamList, ROUTES.CHECKOUT_COMPLETE>;
@@ -38,6 +44,12 @@ const CheckoutReviewOrderPage = ({
   } = useContext(StoreContext);
   const deliveryCosts = 5.99;
   const totalCosts = cartContent.totalPrice + deliveryCosts;
+  const navigateToCheckoutComplete = () => {
+    dispatch(resetCart());
+    dispatch(resetCardDetails());
+    dispatch(resetShippingAddress());
+    navigation.navigate(ROUTES.CHECKOUT_COMPLETE);
+  };
 
   useEffect(() => {
     // @ts-ignore
@@ -193,7 +205,7 @@ const CheckoutReviewOrderPage = ({
         <Footer />
       </ScrollView>
       <CheckoutFooter
-        onPress={() => navigation.navigate(ROUTES.CHECKOUT_COMPLETE)}
+        onPress={navigateToCheckoutComplete}
         title={I18n.t('checkoutReviewOrder.submitButtonText')}
         totalNumber={cartContent.totalAmount}
         totalPrice={totalCosts}

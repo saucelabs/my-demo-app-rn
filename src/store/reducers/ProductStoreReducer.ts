@@ -4,6 +4,7 @@ import {
 } from '../actions/ProductStoreActions';
 import {ItemInterface, StoreData} from '../../data/inventoryData';
 import {SORT_OPTIONS, SortOptionType, sortStoreData} from '../../utils/Sorting';
+import {StateNameEnum, storeAsyncData} from '../Store';
 
 export interface ProductStoreInterface {
   items: ItemInterface[];
@@ -22,15 +23,18 @@ const productStoreReducer = (
 ) => {
   switch (action.type) {
     case ACTIONS.UPDATE_STORE: {
-      return state;
+      return action.products;
     }
     case ACTIONS.UPDATE_SORTING: {
-      return {
+      const newState = {
         ...state,
         items: sortStoreData(state.items, action.sortOption),
         sortModalVisible: !state.sortModalVisible,
         sortState: action.sortOption,
       };
+      storeAsyncData(StateNameEnum.PRODUCTS, newState);
+
+      return newState;
     }
     case ACTIONS.TOGGLE_SORT_MODAL: {
       return {

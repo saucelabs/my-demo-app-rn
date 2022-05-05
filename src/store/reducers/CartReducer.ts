@@ -3,6 +3,7 @@ import {
   CartActionType,
 } from '../actions/CartActions';
 import {ITEM_COLOR_TYPE, ItemInterface} from '../../data/inventoryData';
+import {StateNameEnum, storeAsyncData} from '../Store';
 
 export interface ItemIdentifierInterface {
   color: ITEM_COLOR_TYPE;
@@ -52,8 +53,7 @@ const cartReducer = (state = initialCartState, action: CartActionType) => {
 
         return item;
       });
-
-      return {
+      const newState = {
         ...state,
         items: added ? updatedItems : updatedItems.concat(selectedProduct),
         totalAmount: added ? totalAmount : totalAmount + selectedProduct.amount,
@@ -61,6 +61,9 @@ const cartReducer = (state = initialCartState, action: CartActionType) => {
           ? totalPrice
           : totalPrice + selectedProduct.amount * selectedProduct.price,
       };
+      storeAsyncData(StateNameEnum.CART_CONTENT, newState);
+
+      return newState;
     }
     case ACTIONS.REMOVE_FROM_CART: {
       const {
@@ -85,8 +88,7 @@ const cartReducer = (state = initialCartState, action: CartActionType) => {
 
         return item;
       });
-
-      return {
+      const newState = {
         ...state,
         items: removed
           ? updatedItems
@@ -96,6 +98,9 @@ const cartReducer = (state = initialCartState, action: CartActionType) => {
         totalAmount: removed ? totalAmount : totalAmount - amount,
         totalPrice: removed ? totalPrice : totalPrice - amount * price,
       };
+      storeAsyncData(StateNameEnum.CART_CONTENT, newState);
+
+      return newState;
     }
     case ACTIONS.DELETE_FROM_CART: {
       const {
@@ -103,7 +108,7 @@ const cartReducer = (state = initialCartState, action: CartActionType) => {
       } = action;
       const {totalAmount, totalPrice} = state;
 
-      return {
+      const newState = {
         ...state,
         items: state.items.filter(
           item => !(item.id === id && item.selectedColor === selectedColor),
@@ -111,9 +116,19 @@ const cartReducer = (state = initialCartState, action: CartActionType) => {
         totalAmount: totalAmount - amount,
         totalPrice: totalPrice - price * amount,
       };
+      storeAsyncData(StateNameEnum.CART_CONTENT, newState);
+
+      return newState;
     }
     case ACTIONS.RESET_CART:
+      storeAsyncData(StateNameEnum.CART_CONTENT, initialCartState);
+
       return initialCartState;
+    case ACTIONS.SET_INITIAL_CART_STATE:
+      return {
+        ...state,
+        ...action.initialCartState,
+      };
     default:
       return state;
   }

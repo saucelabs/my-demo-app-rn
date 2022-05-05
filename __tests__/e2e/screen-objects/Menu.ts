@@ -152,14 +152,14 @@ class Menu extends AppScreen {
     await $(driver.isIOS ? iosSelector('OK') : androidSelector('OK')).click();
 
     // Wait for animation to be done
-    await driver.pause(750);
+    await driver.pause(1000);
   }
 
   async openMenu() {
     await this.openMenuButton.click();
 
     // Wait for animation to be done
-    await driver.pause(750);
+    await driver.pause(1000);
   }
 
   async closeMenu() {
