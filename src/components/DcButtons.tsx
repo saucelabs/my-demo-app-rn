@@ -33,12 +33,22 @@ const DcButtons = ({
       <Pressable
         style={[
           styles.dcButton,
-          styles.borderRight,
-          dc === DcEnum.ERROR ? styles.active : {},
+          dc === DcEnum.UNAUTHORIZED ? styles.active : {},
         ]}
-        onPress={() => selectDc(DcEnum.ERROR)}>
-        <Text style={[dc === DcEnum.ERROR ? styles.activeText : {}]}>
-          {LOCATION.ERROR.label}
+        onPress={() => selectDc(DcEnum.UNAUTHORIZED)}>
+        <Text style={[dc === DcEnum.UNAUTHORIZED ? styles.activeText : {}]}>
+          {LOCATION.UNAUTHORIZED.label}
+        </Text>
+      </Pressable>
+      <Pressable
+        style={[
+          styles.dcButton,
+          styles.borderRight,
+          dc === DcEnum.NOT_FOUND ? styles.active : {},
+        ]}
+        onPress={() => selectDc(DcEnum.NOT_FOUND)}>
+        <Text style={[dc === DcEnum.NOT_FOUND ? styles.activeText : {}]}>
+          {LOCATION.NOT_FOUND.label}
         </Text>
       </Pressable>
     </View>
