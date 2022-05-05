@@ -44,7 +44,7 @@ import {
   AuthenticationActionType,
   enableBiometrics,
   getBiometricsData,
-  setInitialAuthenticationState,
+  updateAuthenticationState,
 } from './actions/AuthenticationActions';
 
 export type DispatchType = React.Dispatch<any>;
@@ -73,8 +73,10 @@ const initialState: InitialStoreStateInterface = {
 };
 const getAsyncState = async (dispatch: DispatchType) => {
   try {
-    // await AsyncStorage.clear();
     // Get all current async storage keys
+    const authenticationData = await AsyncStorage.getItem(
+      StateNameEnum.AUTHENTICATION,
+    );
     const cardDetails = await AsyncStorage.getItem(StateNameEnum.CARD_DETAILS);
     const cartContent = await AsyncStorage.getItem(StateNameEnum.CART_CONTENT);
     const products = await AsyncStorage.getItem(StateNameEnum.PRODUCTS);
@@ -83,7 +85,13 @@ const getAsyncState = async (dispatch: DispatchType) => {
     );
 
     // Update the state with the retrieved / initial data
-    dispatch(setInitialAuthenticationState());
+    dispatch(
+      updateAuthenticationState(
+        authenticationData
+          ? JSON.parse(authenticationData)
+          : initialAuthenticationState,
+      ),
+    );
     dispatch(
       updateProductStore(
         products ? JSON.parse(products) : initialProductStoreState,

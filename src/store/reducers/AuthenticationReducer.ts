@@ -4,6 +4,7 @@ import {
   AuthenticationActionType,
 } from '../actions/AuthenticationActions';
 import {BiometryType} from '../../containers/Biometrics';
+import {StateNameEnum, storeAsyncData} from '../Store';
 
 export interface AuthenticationInterface {
   biometricsType: BiometryType | undefined;
@@ -27,21 +28,27 @@ const authenticationReducer = (
 ) => {
   switch (action.type) {
     case ACTIONS.LOGIN: {
-      return {
+      const newState = {
         ...state,
         isLoggedIn: action.isLoggedIn,
         username: action.username,
       };
+      storeAsyncData(StateNameEnum.AUTHENTICATION, newState);
+
+      return newState;
     }
     case ACTIONS.LOGOUT: {
-      return {
+      const newState = {
         ...state,
         isLoggedIn: false,
         username: '',
       };
+      storeAsyncData(StateNameEnum.AUTHENTICATION, newState);
+
+      return newState;
     }
-    case ACTIONS.INITIAL_STATE: {
-      return initialAuthenticationState;
+    case ACTIONS.UPDATE_STATE: {
+      return action.authenticationData;
     }
     case ACTIONS.UPDATE_BIOMETRICS: {
       return {
@@ -51,10 +58,13 @@ const authenticationReducer = (
       };
     }
     case ACTIONS.ENABLE_BIOMETRICS: {
-      return {
+      const newState = {
         ...state,
         isBiometricsEnabled: action.isBiometricsEnabled,
       };
+      storeAsyncData(StateNameEnum.AUTHENTICATION, newState);
+
+      return newState;
     }
     default:
       return state;
