@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Image, Platform, StyleSheet, Text, View} from 'react-native';
+import {Image, Platform, Pressable, StyleSheet, Text, View} from 'react-native';
 import {IS_IOS, MUSEO_SANS_700} from '../utils/Constants';
 import {Colors} from '../styles/Colors';
 import {STATUS_BAR_HEIGHT} from './StatusBar';
@@ -7,9 +7,11 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import NavigationBackButton from './NavigationBackButton';
 import {DrawerActions} from '@react-navigation/native';
 import AndroidMenuButton from './AndroidMenuButton';
-import {StoreContext} from '../store/Store';
+import {resetStore, StoreContext} from '../store/Store';
 import AndroidCartButton from './AndroidCartButton';
 import {ROUTES} from '../navigation/Routes';
+import {testProperties} from '../config/TestProperties';
+import I18n from '../config/I18n';
 
 type AppHeaderProps = {
   navigation: StackNavigationProp<any>;
@@ -33,6 +35,7 @@ const AppHeader = ({
     state: {
       cartContent: {totalAmount},
     },
+    dispatch,
   } = useContext(StoreContext);
 
   return (
@@ -47,11 +50,16 @@ const AppHeader = ({
       )}
       {title && <Text style={styles.headerText}>{title}</Text>}
       {showHeaderImage && (
-        <Image
-          style={styles.headerImage}
-          resizeMode="contain"
-          source={require('../assets/images/my-demo-app-logo.png')}
-        />
+        <Pressable
+          style={styles.headerImageContainer}
+          onLongPress={async () => await resetStore(dispatch)}
+          {...testProperties(I18n.t('drawer.openMenu.testId'))}>
+          <Image
+            style={styles.headerImage}
+            resizeMode="contain"
+            source={require('../assets/images/my-demo-app-logo.png')}
+          />
+        </Pressable>
       )}
       {((!IS_IOS && !hideAndroidCart) || rightComponent) && (
         <View style={styles.rightComponent}>
@@ -104,8 +112,7 @@ const styles = StyleSheet.create({
     fontFamily: MUSEO_SANS_700,
     fontSize: 16,
   },
-  headerImage: {
-    height: 20,
+  headerImageContainer: {
     left: 'auto',
     right: 'auto',
     position: 'absolute',
@@ -117,6 +124,9 @@ const styles = StyleSheet.create({
         top: STATUS_BAR_HEIGHT + 15,
       },
     }),
+  },
+  headerImage: {
+    height: 20,
   },
   rightComponent: {
     marginLeft: 'auto',
