@@ -53,7 +53,7 @@ const AppHeader = ({
         <Pressable
           style={styles.headerImageContainer}
           onLongPress={async () => await resetStore(dispatch)}
-          {...testProperties(I18n.t('drawer.openMenu.testId'))}>
+          {...testProperties(I18n.t('appHeader.testId'))}>
           <Image
             style={styles.headerImage}
             resizeMode="contain"
