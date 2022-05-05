@@ -24,14 +24,31 @@ const DcButtons = ({
         </Text>
       </Pressable>
       <Pressable
-        style={[
-          styles.dcButton,
-          styles.borderRight,
-          dc === DcEnum.US ? styles.active : {},
-        ]}
+        style={[styles.dcButton, dc === DcEnum.US ? styles.active : {}]}
         onPress={() => selectDc(DcEnum.US)}>
         <Text style={[dc === DcEnum.US ? styles.activeText : {}]}>
           {LOCATION.US.label}
+        </Text>
+      </Pressable>
+      <Pressable
+        style={[
+          styles.dcButton,
+          dc === DcEnum.UNAUTHORIZED ? styles.active : {},
+        ]}
+        onPress={() => selectDc(DcEnum.UNAUTHORIZED)}>
+        <Text style={[dc === DcEnum.UNAUTHORIZED ? styles.activeText : {}]}>
+          {LOCATION.UNAUTHORIZED.label}
+        </Text>
+      </Pressable>
+      <Pressable
+        style={[
+          styles.dcButton,
+          styles.borderRight,
+          dc === DcEnum.NOT_FOUND ? styles.active : {},
+        ]}
+        onPress={() => selectDc(DcEnum.NOT_FOUND)}>
+        <Text style={[dc === DcEnum.NOT_FOUND ? styles.activeText : {}]}>
+          {LOCATION.NOT_FOUND.label}
         </Text>
       </Pressable>
     </View>
@@ -43,6 +60,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     marginVertical: 10,
+    justifyContent: 'space-between',
   },
   dcButton: {
     borderWidth: 1,
@@ -50,7 +68,9 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     justifyContent: 'center',
     alignItems: 'center',
+    // flex: 1,
     flexGrow: 1,
+    flexBasis: 1,
   },
   borderLeft: {
     borderTopLeftRadius: 4,
