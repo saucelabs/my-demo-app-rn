@@ -25,16 +25,6 @@ async function removeSwagItem(item: CartItemInterface) {
   });
 }
 
-async function checkoutProducts() {
-  return executeApiCall(`${myDemoApiUrl}/checkout`, {
-    method: 'POST',
-    body: JSON.stringify({
-      firstParam: 'dummy-value-one',
-      secondParam: 'dummy-value-second',
-    }),
-  });
-}
-
 async function getSwagItem(id: number) {
   return executeApiCall(`${myDemoApiUrl}/item-load?id=${id}`, {
     method: 'GET',
@@ -59,11 +49,4 @@ async function checkoutCart(cartContent: CartState) {
   });
 }
 
-export {
-  addSwagItem,
-  checkoutCart,
-  checkoutProducts,
-  getSwagItem,
-  initCall,
-  removeSwagItem,
-};
+export {addSwagItem, checkoutCart, getSwagItem, initCall, removeSwagItem};
