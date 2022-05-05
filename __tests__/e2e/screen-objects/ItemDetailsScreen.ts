@@ -59,7 +59,7 @@ class ItemDetailsScreen extends AppScreen {
     )?.click();
 
     // We need to have a small pause so the internal state can be updated
-    return driver.pause(750);
+    return driver.pause(1000);
   }
 
   async selectColor(color: ColorsType) {
@@ -71,7 +71,7 @@ class ItemDetailsScreen extends AppScreen {
     )?.click();
 
     // Add a hard pause so the state can be updated
-    return driver.pause(750);
+    return driver.pause(1000);
   }
 
   async counterAddOne() {
@@ -83,7 +83,7 @@ class ItemDetailsScreen extends AppScreen {
     )?.click();
 
     // We need to have a small pause so the internal state can be updated
-    return driver.pause(750);
+    return driver.pause(1000);
   }
 
   async counterLowerOne() {
@@ -95,7 +95,7 @@ class ItemDetailsScreen extends AppScreen {
     )?.click();
 
     // We need to have a small pause so the internal state can be updated
-    return driver.pause(750);
+    return driver.pause(1000);
   }
 
   async getCounterAmount(): Promise<number> {

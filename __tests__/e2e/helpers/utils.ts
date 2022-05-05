@@ -39,12 +39,12 @@ const restartApp = async (): Promise<void> => {
   if (driver.isIOS) {
     return driver.execute('mobile: touchAndHold', {
       elementId: headerImage.elementId,
-      duration: 0.6,
+      duration: 1,
     });
   }
   await driver.execute('mobile: longClickGesture', {
     elementId: headerImage.elementId,
-    duration: 600,
+    duration: 1000,
   });
 };
 const hideKeyboard = async (): Promise<void> => {
