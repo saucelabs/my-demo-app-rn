@@ -1,24 +1,40 @@
 import React, {createContext, useEffect, useReducer} from 'react';
-import {CartActionType} from './actions/CartActions';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  CartActionType,
+  resetCart,
+  setInitialCartState,
+} from './actions/CartActions';
 import {cartReducer, initialCartState, CartState} from './reducers/CartReducer';
 import {
   initialProductStoreState,
   ProductStoreInterface,
   productStoreReducer,
 } from './reducers/ProductStoreReducer';
-import {ProductStoreActionType} from './actions/ProductStoreActions';
+import {
+  ProductStoreActionType,
+  updateProductStore,
+} from './actions/ProductStoreActions';
 import {
   initialShippingAddressState,
   ShippingAddressInterface,
   shippingAddressReducer,
 } from './reducers/ShippingAddressReducer';
-import {ShippingAddressActionType} from './actions/ShippingAddressActions';
+import {
+  resetShippingAddress,
+  ShippingAddressActionType,
+  updateShippingAddress,
+} from './actions/ShippingAddressActions';
 import {
   CardDetailsInterface,
   cardDetailsReducer,
   initialCardDetailsState,
 } from './reducers/CardDetailsReducer';
-import {CardDetailsActionType} from './actions/CardDetailsActions';
+import {
+  CardDetailsActionType,
+  resetCardDetails,
+  updateCardDetails,
+} from './actions/CardDetailsActions';
 import {
   AuthenticationInterface,
   authenticationReducer,
@@ -26,25 +42,91 @@ import {
 } from './reducers/AuthenticationReducer';
 import {
   AuthenticationActionType,
+  enableBiometrics,
   getBiometricsData,
+  setInitialAuthenticationState,
 } from './actions/AuthenticationActions';
 
-interface InitialStoreStateInterface {
-  authentication: AuthenticationInterface;
-  cartContent: CartState;
-  products: ProductStoreInterface;
-  shippingAddress: ShippingAddressInterface;
-  cardDetails: CardDetailsInterface;
+export type DispatchType = React.Dispatch<any>;
+export enum StateNameEnum {
+  AUTHENTICATION = 'authentication',
+  CARD_DETAILS = 'cardDetails',
+  CART_CONTENT = 'cartContent',
+  PRODUCTS = 'products',
+  SHIPPING_ADDRESS = 'shippingAddress',
 }
 
-export type DispatchType = React.Dispatch<any>;
+interface InitialStoreStateInterface {
+  [StateNameEnum.AUTHENTICATION]: AuthenticationInterface;
+  [StateNameEnum.CARD_DETAILS]: CardDetailsInterface;
+  [StateNameEnum.CART_CONTENT]: CartState;
+  [StateNameEnum.PRODUCTS]: ProductStoreInterface;
+  [StateNameEnum.SHIPPING_ADDRESS]: ShippingAddressInterface;
+}
 
 const initialState: InitialStoreStateInterface = {
-  authentication: initialAuthenticationState,
-  cartContent: initialCartState,
-  products: initialProductStoreState,
-  shippingAddress: initialShippingAddressState,
-  cardDetails: initialCardDetailsState,
+  [StateNameEnum.AUTHENTICATION]: initialAuthenticationState,
+  [StateNameEnum.CARD_DETAILS]: initialCardDetailsState,
+  [StateNameEnum.CART_CONTENT]: initialCartState,
+  [StateNameEnum.PRODUCTS]: initialProductStoreState,
+  [StateNameEnum.SHIPPING_ADDRESS]: initialShippingAddressState,
+};
+const getAsyncState = async (dispatch: DispatchType) => {
+  try {
+    // await AsyncStorage.clear();
+    // Get all current async storage keys
+    const cardDetails = await AsyncStorage.getItem(StateNameEnum.CARD_DETAILS);
+    const cartContent = await AsyncStorage.getItem(StateNameEnum.CART_CONTENT);
+    const products = await AsyncStorage.getItem(StateNameEnum.PRODUCTS);
+    const shippingAddress = await AsyncStorage.getItem(
+      StateNameEnum.SHIPPING_ADDRESS,
+    );
+
+    // Update the state with the retrieved / initial data
+    dispatch(setInitialAuthenticationState());
+    dispatch(
+      updateProductStore(
+        products ? JSON.parse(products) : initialProductStoreState,
+      ),
+    );
+    dispatch(
+      updateCardDetails(
+        cardDetails ? JSON.parse(cardDetails) : initialCardDetailsState,
+      ),
+    );
+    dispatch(
+      setInitialCartState(
+        cartContent ? JSON.parse(cartContent) : initialCartState,
+      ),
+    );
+    dispatch(
+      updateShippingAddress(
+        shippingAddress
+          ? JSON.parse(shippingAddress)
+          : initialShippingAddressState,
+      ),
+    );
+  } catch (e) {
+    console.log('Failed to fetch the data from storage');
+  }
+};
+const resetStore = async (dispatch: DispatchType) => {
+  dispatch(updateProductStore(initialProductStoreState));
+  dispatch(resetCart());
+  dispatch(resetCardDetails());
+  dispatch(resetShippingAddress());
+  dispatch(enableBiometrics(false));
+  await AsyncStorage.clear();
+};
+const storeAsyncData = async function <T>(
+  stateName: StateNameEnum,
+  asyncStoreState: T,
+) {
+  try {
+    await AsyncStorage.setItem(stateName, JSON.stringify(asyncStoreState));
+  } catch (e) {
+    console.log(`Error for storing '${stateName}' to Async Storage = `, e);
+  }
 };
 const StoreContext = createContext<{
   state: InitialStoreStateInterface;
@@ -56,35 +138,48 @@ const StoreContext = createContext<{
 const mainReducer = (
   {
     authentication,
+    cardDetails,
     cartContent,
     products,
     shippingAddress,
-    cardDetails,
   }: InitialStoreStateInterface,
   action:
     | AuthenticationActionType
+    | CardDetailsActionType
     | CartActionType
     | ProductStoreActionType
-    | ShippingAddressActionType
-    | CardDetailsActionType,
+    | ShippingAddressActionType,
 ) => ({
-  authentication: authenticationReducer(
+  [StateNameEnum.AUTHENTICATION]: authenticationReducer(
     authentication,
     action as AuthenticationActionType,
   ),
-  cartContent: cartReducer(cartContent, action as CartActionType),
-  products: productStoreReducer(products, action as ProductStoreActionType),
-  shippingAddress: shippingAddressReducer(
+  [StateNameEnum.CARD_DETAILS]: cardDetailsReducer(
+    cardDetails,
+    action as CardDetailsActionType,
+  ),
+  [StateNameEnum.CART_CONTENT]: cartReducer(
+    cartContent,
+    action as CartActionType,
+  ),
+  [StateNameEnum.PRODUCTS]: productStoreReducer(
+    products,
+    action as ProductStoreActionType,
+  ),
+  [StateNameEnum.SHIPPING_ADDRESS]: shippingAddressReducer(
     shippingAddress,
     action as ShippingAddressActionType,
   ),
-  cardDetails: cardDetailsReducer(cardDetails, action as CardDetailsActionType),
 });
 const StoreProvider: React.FC = ({children}) => {
   const [state, dispatch] = useReducer(mainReducer, initialState);
+  // Loading initial state
   useEffect(() => {
-    (async () => await getBiometricsData(dispatch))();
-  }, [dispatch]);
+    (async () => {
+      await getAsyncState(dispatch);
+      await getBiometricsData(dispatch);
+    })();
+  }, []);
 
   return (
     <StoreContext.Provider value={{state, dispatch}}>
@@ -93,4 +188,4 @@ const StoreProvider: React.FC = ({children}) => {
   );
 };
 
-export {StoreContext, StoreProvider};
+export {resetStore, storeAsyncData, StoreContext, StoreProvider};

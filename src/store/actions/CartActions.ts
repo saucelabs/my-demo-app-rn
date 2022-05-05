@@ -1,10 +1,11 @@
-import {CartItemInterface} from '../reducers/CartReducer';
+import {CartItemInterface, CartState} from '../reducers/CartReducer';
 
 enum CartActionEnum {
   ADD_TO_CART = 'ADD_TO_CART',
   REMOVE_FROM_CART = 'REMOVE_FROM_CART',
   DELETE_FROM_CART = 'DELETE_FROM_CART',
   RESET_CART = 'RESET_CART',
+  SET_INITIAL_CART_STATE = 'SET_INITIAL_CART_STATE',
 }
 
 export type CartActionType =
@@ -22,6 +23,10 @@ export type CartActionType =
     }
   | {
       type: CartActionEnum.RESET_CART;
+    }
+  | {
+      initialCartState: CartItemInterface[];
+      type: CartActionEnum.SET_INITIAL_CART_STATE;
     };
 
 /**
@@ -55,6 +60,16 @@ function deleteProductFromCart(selectedProduct: CartItemInterface) {
 }
 
 /**
+ * Set initial cart state
+ */
+function setInitialCartState(initialCartState: CartState) {
+  return {
+    initialCartState,
+    type: CartActionEnum.SET_INITIAL_CART_STATE,
+  };
+}
+
+/**
  * Reset cart
  */
 function resetCart() {
@@ -69,4 +84,5 @@ export {
   removeProductFromCart,
   deleteProductFromCart,
   resetCart,
+  setInitialCartState,
 };

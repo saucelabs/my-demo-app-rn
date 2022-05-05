@@ -15,13 +15,10 @@ import {
 import TestFairy from 'react-native-testfairy';
 import {Colors} from '../styles/Colors';
 import {ROUTES} from './Routes';
-import {StoreContext} from '../store/Store';
-import {enableBiometrics, logout} from '../store/actions/AuthenticationActions';
+import {resetStore, StoreContext} from '../store/Store';
+import {logout} from '../store/actions/AuthenticationActions';
 import {IS_IOS, MUSEO_SANS_300} from '../utils/Constants';
 import {DrawerActions} from '@react-navigation/native';
-import {resetCart} from '../store/actions/CartActions';
-import {resetCardDetails} from '../store/actions/CardDetailsActions';
-import {resetShippingAddress} from '../store/actions/ShippingAddressActions';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 import {getBiometricsLabel} from '../containers/Biometrics';
@@ -80,11 +77,8 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
         },
         {
           text: I18n.t('drawer.reset.ok'),
-          onPress: () => {
-            dispatch(resetCart());
-            dispatch(resetCardDetails());
-            dispatch(resetShippingAddress());
-            dispatch(enableBiometrics(false));
+          onPress: async () => {
+            await resetStore(dispatch);
             Alert.alert(I18n.t('drawer.reset.resetSuccessful'));
           },
         },

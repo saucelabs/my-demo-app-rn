@@ -2,6 +2,7 @@ import {
   ShippingAddressActionEnum as ACTIONS,
   ShippingAddressActionType,
 } from '../actions/ShippingAddressActions';
+import {StateNameEnum, storeAsyncData} from '../Store';
 
 export interface ShippingAddressInterface {
   fullName: string;
@@ -22,19 +23,26 @@ const initialShippingAddressState: ShippingAddressInterface = {
   zipCode: '',
   country: '',
 };
-
 const shippingAddressReducer = (
   state = initialShippingAddressState,
   action: ShippingAddressActionType,
 ) => {
   switch (action.type) {
     case ACTIONS.UPDATE_SHIPPING_ADDRESS: {
-      return {
+      const newState = {
         ...state,
         ...action.shippingAddress,
       };
+      storeAsyncData(StateNameEnum.SHIPPING_ADDRESS, newState);
+
+      return newState;
     }
     case ACTIONS.RESET_SHIPPING_ADDRESS: {
+      storeAsyncData(
+        StateNameEnum.SHIPPING_ADDRESS,
+        initialShippingAddressState,
+      );
+
       return initialShippingAddressState;
     }
     default:

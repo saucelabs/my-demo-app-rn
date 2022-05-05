@@ -1,4 +1,3 @@
-import {ItemInterface} from '../../data/inventoryData';
 import {ProductStoreInterface} from '../reducers/ProductStoreReducer';
 import {SortOptionType} from '../../utils/Sorting';
 
@@ -24,7 +23,7 @@ export type ProductStoreActionType =
 /**
  * Update the complete product store
  */
-function updateProductStore(products: ItemInterface[]) {
+function updateProductStore(products: ProductStoreInterface) {
   return {
     products,
     type: ProductStoreActionEnum.UPDATE_STORE,

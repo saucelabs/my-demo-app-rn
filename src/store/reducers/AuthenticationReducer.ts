@@ -40,6 +40,9 @@ const authenticationReducer = (
         username: '',
       };
     }
+    case ACTIONS.INITIAL_STATE: {
+      return initialAuthenticationState;
+    }
     case ACTIONS.UPDATE_BIOMETRICS: {
       return {
         ...state,

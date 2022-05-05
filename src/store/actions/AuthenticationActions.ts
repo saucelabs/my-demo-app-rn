@@ -7,6 +7,7 @@ enum AuthenticationActionEnum {
   LOGOUT = 'LOGOUT',
   UPDATE_BIOMETRICS = 'UPDATE_BIOMETRICS',
   ENABLE_BIOMETRICS = 'ENABLE_BIOMETRICS',
+  INITIAL_STATE = 'INITIAL_STATE',
 }
 
 export type AuthenticationActionType =
@@ -17,6 +18,9 @@ export type AuthenticationActionType =
     }
   | {
       type: AuthenticationActionEnum.LOGOUT;
+    }
+  | {
+      type: AuthenticationActionEnum.INITIAL_STATE;
     }
   | {
       isBiometricsAvailable: boolean;
@@ -39,6 +43,11 @@ function login(username: string) {
 function logout() {
   return {
     type: AuthenticationActionEnum.LOGOUT,
+  };
+}
+function setInitialAuthenticationState() {
+  return {
+    type: AuthenticationActionEnum.INITIAL_STATE,
   };
 }
 
@@ -88,5 +97,6 @@ export {
   getBiometricsData,
   login,
   logout,
+  setInitialAuthenticationState,
   updateBiometricSettings,
 };

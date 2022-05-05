@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {CommonActions} from '@react-navigation/native';
 import {ROUTES} from '../navigation/Routes';
@@ -7,10 +7,6 @@ import {CartStackParamList} from '../navigation/types';
 import {Colors} from '../styles/Colors';
 import {MUSEO_SANS_300, MUSEO_SANS_700} from '../utils/Constants';
 import Button from '../components/Button';
-import {StoreContext} from '../store/Store';
-import {resetCart} from '../store/actions/CartActions';
-import {resetCardDetails} from '../store/actions/CardDetailsActions';
-import {resetShippingAddress} from '../store/actions/ShippingAddressActions';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 
@@ -19,12 +15,7 @@ type CheckoutCompleteProps = {
 };
 
 const CheckoutCompletePage = ({navigation}: CheckoutCompleteProps) => {
-  const {dispatch} = useContext(StoreContext);
-
   const continueShopping = () => {
-    dispatch(resetCart());
-    dispatch(resetCardDetails());
-    dispatch(resetShippingAddress());
     navigation.dispatch({
       ...CommonActions.reset({
         index: 0,
