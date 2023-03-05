@@ -16,6 +16,21 @@ export const HAS_IOS_NOTCH =
 export const MUSEO_SANS_300 = IS_IOS ? 'MuseoSans-300' : 'MuseoSans_300';
 export const MUSEO_SANS_500 = IS_IOS ? 'MuseoSans-500' : 'MuseoSans_500';
 export const MUSEO_SANS_700 = IS_IOS ? 'MuseoSans-700' : 'MuseoSans_700';
+export const FONTS = {
+  DM_MONO_ITALIC: 'DMMono-Italic',
+  DM_MONO_LIGHT: 'DMMono-Light',
+  DM_MONO_LIGHT_ITALIC: 'DMMono-LightItalic',
+  DM_MONO_MEDIUM: 'DMMono-Medium',
+  DM_MONO_MEDIUM_ITALIC: 'DMMono-MediumItalic',
+  DM_MONO_REGULAR: 'DMMono-Regular',
+  DM_SANS_BOLD: 'DMSans-Bold',
+  DM_SANS_BOLD_ITALIC: 'DMSans-BoldItalic',
+  DM_SANS_ITALIC: 'DMSans-Italic',
+  DM_SANS_MEDIUM: 'DMSans-Medium',
+  DM_SANS_MEDIUM_ITALIC: 'DMSans-MediumItalic',
+  DM_SANS_REGULAR: 'DMSans-Regular',
+};
+
 export const VALID_PASSWORD = '10203040';
 export enum USERNAMES_ENUM {
   STANDARD_USER = 'bob@example.com',

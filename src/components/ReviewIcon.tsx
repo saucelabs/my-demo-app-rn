@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     color: Colors.lightGray,
   },
   activeReviewIcon: {
-    color: Colors.yellow,
+    color: Colors.green,
   },
 });
 

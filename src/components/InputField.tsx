@@ -9,7 +9,7 @@ import {
   TextInputFocusEventData,
   View,
 } from 'react-native';
-import {MUSEO_SANS_300, MUSEO_SANS_700} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {Colors} from '../styles/Colors';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
@@ -126,17 +126,16 @@ const styles = StyleSheet.create({
   },
   label: {
     color: Colors.black,
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 16,
     marginBottom: 8,
   },
   inputFieldContainer: {},
   inputField: {
-    borderWidth: 1,
-    borderColor: Colors.gray,
-    borderRadius: 4,
+    borderColor: Colors.lightGray,
+    borderBottomWidth: 1,
     color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
     paddingHorizontal: 12,
     paddingVertical: 8,
@@ -164,7 +163,7 @@ const styles = StyleSheet.create({
   },
   errorMessage: {
     color: Colors.slRed,
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
   },
 });

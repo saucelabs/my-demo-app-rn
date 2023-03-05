@@ -24,6 +24,6 @@ export enum ROUTES {
   GEO_LOCATION = 'GeoLocationPage',
   DRAWING = 'DrawingPage',
   ABOUT = 'AboutPage',
-  SAUCE_BOT_VIDEO = 'SauceBotVideo',
+  VIDEO = 'Video',
   API_CALLS = 'ApiCalls',
 }

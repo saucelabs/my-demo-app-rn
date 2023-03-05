@@ -10,11 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Colors} from '../styles/Colors';
-import {
-  HAS_IOS_NOTCH,
-  MUSEO_SANS_300,
-  MUSEO_SANS_700,
-} from '../utils/Constants';
+import {HAS_IOS_NOTCH, FONTS} from '../utils/Constants';
 import {SORT_IMAGES, SORT_OPTIONS, SortOptionType} from '../utils/Sorting';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
@@ -140,10 +136,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   activeRow: {
-    backgroundColor: Colors.lightRed,
+    backgroundColor: Colors.neutral,
   },
   headerText: {
-    fontFamily: MUSEO_SANS_700,
+    color: Colors.black,
+    fontFamily: FONTS.DM_SANS_BOLD,
     fontSize: 16,
   },
   checkContainer: {
@@ -154,7 +151,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   activeCheck: {
-    color: Colors.slRed,
+    color: Colors.green,
   },
   labelContainer: {
     flexDirection: 'row',
@@ -166,7 +163,8 @@ const styles = StyleSheet.create({
     width: 20,
   },
   labelText: {
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.black,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
     marginRight: 5,
   },

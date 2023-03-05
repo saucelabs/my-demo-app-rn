@@ -8,7 +8,7 @@ import {ROUTES} from './Routes';
 import {StoreContext} from '../store/Store';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS, MUSEO_SANS_300} from '../utils/Constants';
 import I18n from '../config/I18n';
 
 const TabNavigation = () => {
@@ -22,7 +22,7 @@ const TabNavigation = () => {
   return (
     <TabNavigator.Navigator
       screenOptions={{
-        tabBarActiveTintColor: Colors.black,
+        tabBarActiveTintColor: Colors.dark,
         tabBarLabelStyle: styles.labelStyle,
         headerShown: false,
       }}>
@@ -34,8 +34,8 @@ const TabNavigation = () => {
             <Image
               source={
                 focused
-                  ? require('../assets/images/sl-active-icon.png')
-                  : require('../assets/images/sl-inactive-icon.png')
+                  ? require('../assets/images/catalog-active-icon.png')
+                  : require('../assets/images/catalog-inactive-icon.png')
               }
               style={styles.image}
             />
@@ -101,7 +101,7 @@ const TabNavigation = () => {
 const styles = StyleSheet.create({
   labelStyle: {
     color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 12,
   },
   image: {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   tabBarBadgeStyle: {
-    backgroundColor: Colors.slRed,
+    backgroundColor: Colors.green,
     width: 18,
     height: 18,
     borderRadius: 9,

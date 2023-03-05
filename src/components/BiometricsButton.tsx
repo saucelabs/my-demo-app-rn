@@ -41,7 +41,7 @@ const BiometricsButton = ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.slRed,
+    backgroundColor: Colors.green,
     borderRadius: 4,
     paddingVertical: 12,
     justifyContent: 'center',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     width: 50,
   },
   icon: {
-    color: Colors.white,
+    color: Colors.dark,
     fontSize: 20,
   },
 });

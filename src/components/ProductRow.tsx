@@ -9,11 +9,7 @@ import {
 } from 'react-native';
 import {Colors} from '../styles/Colors';
 import Counter from './Counter';
-import {
-  MUSEO_SANS_300,
-  MUSEO_SANS_500,
-  MUSEO_SANS_700,
-} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import ReviewContainer from './ReviewContainer';
 import ColorCircle from './ColorCircle';
 import {CartItemInterface} from '../store/reducers/CartReducer';
@@ -112,14 +108,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   productHeader: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_500,
+    color: Colors.darkGreen,
+    fontFamily: FONTS.DM_SANS_MEDIUM,
     fontSize: 16,
     marginBottom: 10,
   },
   priceText: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_700,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 18,
     marginBottom: 10,
   },
@@ -131,15 +127,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   colorLabel: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
   },
   countRemove: {
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  removeText: {color: Colors.slRed, fontFamily: MUSEO_SANS_500, fontSize: 16},
+  removeText: {
+    borderWidth: 1,
+    borderColor: Colors.slRed,
+    borderRadius: 8,
+    padding: 10,
+    color: Colors.slRed,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
+    fontSize: 16,
+  },
 });
 
 export default ProductRow;

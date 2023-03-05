@@ -17,7 +17,7 @@ import {Colors} from '../styles/Colors';
 import {ROUTES} from './Routes';
 import {resetStore, StoreContext} from '../store/Store';
 import {logout} from '../store/actions/AuthenticationActions';
-import {IS_IOS, MUSEO_SANS_300} from '../utils/Constants';
+import {IS_IOS, FONTS} from '../utils/Constants';
 import {DrawerActions} from '@react-navigation/native';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
@@ -105,9 +105,9 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
     TestFairy.stop();
     TestFairy.begin(process.env.TESTFAIRY_TOKEN);
   };
-  const navigateToSauceBotVideo = () =>
+  const navigateToVideo = () =>
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {
-      screen: ROUTES.SAUCE_BOT_VIDEO,
+      screen: ROUTES.VIDEO,
     });
   const navigateToApiCalls = () =>
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {
@@ -203,9 +203,9 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
     {
       borderBottom: IS_IOS,
       icon: false,
-      label: I18n.t('drawer.sauceBotVideo.label'),
-      testId: I18n.t('drawer.sauceBotVideo.testId'),
-      onPress: navigateToSauceBotVideo,
+      label: I18n.t('drawer.video.label'),
+      testId: I18n.t('drawer.video.testId'),
+      onPress: navigateToVideo,
     },
   ];
   if (!IS_IOS) {
@@ -273,11 +273,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   activeMenuButton: {
-    backgroundColor: Colors.lightRed,
+    backgroundColor: Colors.green,
   },
   menuLabel: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.darkGreen,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 18,
     ...Platform.select({
       android: {

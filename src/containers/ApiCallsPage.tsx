@@ -7,6 +7,7 @@ import {testProperties} from '../config/TestProperties';
 import DcButtons from '../components/DcButtons';
 import {DcEnum, DevicesInterface, getDevices} from '../data/getDevices';
 import DeviceTile from '../components/DeviceTile';
+import {FONTS} from '../utils/Constants';
 
 const ApiCallsPage = () => {
   const [dc, setDc] = useState(DcEnum.EU);
@@ -96,6 +97,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   errorText: {
+    fontFamily: FONTS.DM_MONO_REGULAR,
     color: Colors.white,
     fontSize: 20,
   },
@@ -106,6 +108,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   loadingText: {
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 20,
   },
   flatListContainer: {

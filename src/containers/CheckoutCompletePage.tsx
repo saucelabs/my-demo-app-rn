@@ -5,7 +5,7 @@ import {ROUTES} from '../navigation/Routes';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {CartStackParamList} from '../navigation/types';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_300, MUSEO_SANS_700} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import Button from '../components/Button';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
@@ -30,20 +30,17 @@ const CheckoutCompletePage = ({navigation}: CheckoutCompleteProps) => {
       {...testProperties(I18n.t('checkoutComplete.testId'))}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <Text style={styles.title}>{I18n.t('checkoutComplete.header')}</Text>
-        <Text style={styles.text}>
+        <Image
+          source={require('../assets/images/checkmark.png')}
+          style={styles.image}
+        />
+        <Text style={styles.subTitle}>
           {I18n.t('checkoutComplete.order.lineOne')}
-        </Text>
-        <Text style={styles.swagText}>
-          {I18n.t('checkoutComplete.order.lineTwo')}
         </Text>
         <Text style={styles.text}>
           {' '}
           {I18n.t('checkoutComplete.order.lineThree')}
         </Text>
-        <Image
-          source={require('../assets/images/pony-express.png')}
-          style={styles.image}
-        />
         <Button
           onPress={continueShopping}
           paddingHorizontal={32}
@@ -66,28 +63,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
+    color: Colors.dark,
     fontSize: 24,
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     marginTop: 70,
     marginBottom: 32,
   },
-  text: {
-    color: Colors.black,
-    fontSize: 14,
-    fontFamily: MUSEO_SANS_300,
+  subTitle: {
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
+    fontSize: 18,
     marginBottom: 16,
     textAlign: 'center',
   },
-  swagText: {
-    color: Colors.slRed,
-    fontFamily: MUSEO_SANS_700,
-    fontSize: 16,
-    marginBottom: 16,
+  text: {
+    color: Colors.dark,
+    fontSize: 14,
+    fontFamily: FONTS.DM_SANS_REGULAR,
+    marginBottom: 60,
     textAlign: 'center',
   },
   image: {
-    height: 140,
-    width: 192,
+    height: 100,
+    width: 100,
     marginBottom: 32,
     marginTop: 16,
   },

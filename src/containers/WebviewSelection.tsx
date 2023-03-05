@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Keyboard, ScrollView, StyleSheet, Text, View} from 'react-native';
 import ContainerHeader from '../components/ContainerHeader';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import InputField from '../components/InputField';
 import Button from '../components/Button';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   subText: {
     color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     width: '90%',
   },

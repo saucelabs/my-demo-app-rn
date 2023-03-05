@@ -1,8 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {MUSEO_SANS_700} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
+import {Colors} from '../styles/Colors';
 
 const ContainerHeader = ({
   title,
@@ -38,7 +39,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_MONO_REGULAR,
+    color: Colors.dark,
   },
   rightComponent: {},
 });

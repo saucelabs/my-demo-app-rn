@@ -12,11 +12,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {CartStackParamList} from '../navigation/types';
 import ContainerHeader from '../components/ContainerHeader';
 import {Colors} from '../styles/Colors';
-import {
-  MUSEO_SANS_300,
-  MUSEO_SANS_500,
-  MUSEO_SANS_700,
-} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import CheckoutFooter from '../components/CheckoutFooter';
 import {StoreContext} from '../store/Store';
 import InputField from '../components/InputField';
@@ -406,14 +402,14 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
   },
   subTitle: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_700,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 16,
     marginVertical: 16,
   },
   subText: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     marginBottom: 16,
     width: '90%',
@@ -428,9 +424,9 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   subHeaderText: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
-    fontSize: 16,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_REGULAR,
+    fontSize: 18,
   },
   image: {
     height: 20,
@@ -476,7 +472,7 @@ const styles = StyleSheet.create({
   },
   tooltipText: {
     color: Colors.white,
-    fontFamily: MUSEO_SANS_500,
+    fontFamily: FONTS.DM_SANS_MEDIUM,
     fontSize: 14,
   },
   triangle: {

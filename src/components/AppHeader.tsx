@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import {Image, Platform, Pressable, StyleSheet, Text, View} from 'react-native';
-import {IS_IOS, MUSEO_SANS_700} from '../utils/Constants';
+import {Platform, Pressable, StyleSheet, Text, View} from 'react-native';
+import {IS_IOS, FONTS} from '../utils/Constants';
 import {Colors} from '../styles/Colors';
 import {STATUS_BAR_HEIGHT} from './StatusBar';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -54,11 +54,9 @@ const AppHeader = ({
           style={styles.headerImageContainer}
           onLongPress={async () => await resetStore(dispatch)}
           {...testProperties(I18n.t('appHeader.testId'))}>
-          <Image
-            style={styles.headerImage}
-            resizeMode="contain"
-            source={require('../assets/images/my-demo-app-logo.png')}
-          />
+          <Text style={styles.headerImageText}>
+            MY<Text style={styles.headerImageTextBold}>DEMO</Text>APP
+          </Text>
         </Pressable>
       )}
       {((!IS_IOS && !hideAndroidCart) || rightComponent) && (
@@ -108,9 +106,17 @@ const styles = StyleSheet.create({
     }),
   },
   headerText: {
-    color: Colors.slRed,
-    fontFamily: MUSEO_SANS_700,
-    fontSize: 16,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_LIGHT,
+    fontSize: 20,
+  },
+  headerImageText: {
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_LIGHT,
+    fontSize: 20,
+  },
+  headerImageTextBold: {
+    fontFamily: FONTS.DM_MONO_MEDIUM,
   },
   headerImageContainer: {
     left: 'auto',
@@ -127,6 +133,7 @@ const styles = StyleSheet.create({
   },
   headerImage: {
     height: 20,
+    // width: 20,
   },
   rightComponent: {
     marginLeft: 'auto',

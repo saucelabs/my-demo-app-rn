@@ -1,6 +1,6 @@
 import React from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import {MUSEO_SANS_300, MUSEO_SANS_700} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import Button from './Button';
 import {Colors} from '../styles/Colors';
 import I18n from '../config/I18n';
@@ -89,16 +89,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   totalText: {
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     marginRight: 5,
     fontSize: 16,
   },
   totalNumber: {
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 16,
   },
   totalPrice: {
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 18,
   },
 });

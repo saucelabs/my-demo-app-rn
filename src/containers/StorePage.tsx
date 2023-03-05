@@ -90,9 +90,12 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
-  containerHeaderStyle: {paddingLeft: 10},
-  columnWrapperStyle: {justifyContent: 'space-around'},
-  contentContainerStyle: {marginHorizontal: 10},
+  containerHeaderStyle: {paddingLeft: 20},
+  columnWrapperStyle: {
+    justifyContent: 'space-around',
+    paddingHorizontal: 10,
+  },
+  contentContainerStyle: {marginHorizontal: 0},
   modalCenteredView: {
     backgroundColor: 'rgba(0,0,0,0.5)',
     flex: 1,

@@ -3,7 +3,7 @@ import {Alert, ScrollView, StyleSheet, Switch, Text, View} from 'react-native';
 import ContainerHeader from '../components/ContainerHeader';
 import I18n from '../config/I18n';
 import {Colors} from '../styles/Colors';
-import {IS_IOS, MUSEO_SANS_500} from '../utils/Constants';
+import {IS_IOS, FONTS} from '../utils/Constants';
 import {testProperties} from '../config/TestProperties';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {MenuStackParamList} from '../navigation/types';
@@ -88,7 +88,7 @@ const BiometricsScreen = ({navigation}: BiometricsProps) => {
               {I18n.t('biometrics.logInWith', {sensorType})}
             </Text>
             <Switch
-              trackColor={{false: Colors.lightGray, true: Colors.slRed}}
+              trackColor={{false: Colors.lightGray, true: Colors.green}}
               thumbColor={isBiometricsEnabled ? Colors.white : Colors.white}
               ios_backgroundColor={Colors.lightGray}
               onValueChange={toggleSwitch}
@@ -126,17 +126,17 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   label: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_500,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_BOLD,
     fontSize: 18,
   },
   text: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_500,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
   },
   note: {
-    fontStyle: 'italic',
+    fontFamily: FONTS.DM_SANS_ITALIC,
     marginTop: 16,
   },
 });

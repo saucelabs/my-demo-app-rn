@@ -5,12 +5,7 @@ import {StoreFlowStackParamList} from '../navigation/types';
 import {RouteProp} from '@react-navigation/native';
 import {StoreContext} from '../store/Store';
 import {Colors} from '../styles/Colors';
-import {
-  MUSEO_SANS_300,
-  MUSEO_SANS_500,
-  MUSEO_SANS_700,
-  WINDOW_WIDTH,
-} from '../utils/Constants';
+import {FONTS, WINDOW_WIDTH} from '../utils/Constants';
 import ContainerHeader from '../components/ContainerHeader';
 import ReviewModal from '../components/ReviewModal';
 import ReviewContainer from '../components/ReviewContainer';
@@ -207,8 +202,8 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   price: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_500,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 24,
   },
   addToCartContainer: {
@@ -220,15 +215,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   descriptionHeader: {
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 16,
   },
   descriptionText: {
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
   },
   noProductHeader: {
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_SANS_BOLD,
     fontSize: 24,
     marginBottom: 32,
     marginTop: 70,

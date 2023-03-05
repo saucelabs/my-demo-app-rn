@@ -11,8 +11,8 @@ import AppHeader from '../components/AppHeader';
 import {ROUTES} from './Routes';
 import {MenuStackParamList} from './types';
 import BiometricsScreen from '../containers/Biometrics';
-import SauceBotVideoPage from '../containers/SauceBotVideoPage';
 import ApiCallsPage from '../containers/ApiCallsPage';
+import VideoPage from '../containers/VideoPage';
 
 const MenuStackNavigation = () => {
   const MenuStack = createStackNavigator<MenuStackParamList>();
@@ -37,10 +37,7 @@ const MenuStackNavigation = () => {
       <MenuStack.Screen component={DrawingPage} name={ROUTES.DRAWING} />
       <MenuStack.Screen component={AboutPage} name={ROUTES.ABOUT} />
       <MenuStack.Screen component={BiometricsScreen} name={ROUTES.BIOMETRICS} />
-      <MenuStack.Screen
-        component={SauceBotVideoPage}
-        name={ROUTES.SAUCE_BOT_VIDEO}
-      />
+      <MenuStack.Screen component={VideoPage} name={ROUTES.VIDEO} />
       <MenuStack.Screen component={ApiCallsPage} name={ROUTES.API_CALLS} />
     </MenuStack.Navigator>
   );

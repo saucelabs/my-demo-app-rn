@@ -1,8 +1,9 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
+import {Colors} from '../styles/Colors';
 
 const Counter = ({
   isDisabled = false,
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
     width: 40,
   },
   numberText: {
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 18,
   },
   image: {

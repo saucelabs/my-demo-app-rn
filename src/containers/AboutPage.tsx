@@ -12,7 +12,7 @@ import VersionNumber from 'react-native-version-number';
 import ContainerHeader from '../components/ContainerHeader';
 import I18n from '../config/I18n';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_500} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {testProperties} from '../config/TestProperties';
 
 const AboutPage = () => {
@@ -23,10 +23,9 @@ const AboutPage = () => {
           title={I18n.t('about.header')}
           containerStyle={styles.containerHeader}
         />
-        <Image
-          source={require('../assets/images/my-demo-app-logo.png')}
-          style={styles.myDemoAppLogo}
-        />
+        <Text style={styles.myDemoText}>
+          MY<Text style={styles.myDemoTextBold}>DEMO</Text>APP
+        </Text>
         <Text style={styles.text}>
           {I18n.t('about.versionBuild', {
             version: VersionNumber.appVersion,
@@ -42,10 +41,6 @@ const AboutPage = () => {
           onPress={() => Linking.openURL(I18n.t('about.url'))}>
           <Text style={styles.linkText}>{I18n.t('about.goTo')}</Text>
         </TouchableOpacity>
-        <Image
-          source={require('../assets/images/swag-labs-bot.png')}
-          style={styles.swagLabsBot}
-        />
       </ScrollView>
     </View>
   );
@@ -67,30 +62,29 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.black,
-    fontFamily: MUSEO_SANS_500,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
   },
   linkContainer: {},
   linkText: {
-    color: Colors.slRed,
-    fontFamily: MUSEO_SANS_500,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
     textDecorationLine: 'underline',
   },
-  myDemoAppLogo: {
-    height: 20,
-    marginVertical: 20,
-    width: 148,
+  myDemoText: {
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_LIGHT,
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  myDemoTextBold: {
+    fontFamily: FONTS.DM_MONO_MEDIUM,
   },
   sauceLogo: {
-    height: 20,
+    height: 28,
     marginVertical: 20,
-    width: 143,
-  },
-  swagLabsBot: {
-    height: 198,
-    marginTop: 54,
-    width: 226,
+    width: 140,
   },
 });
 

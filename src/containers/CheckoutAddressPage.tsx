@@ -8,7 +8,7 @@ import {StoreContext} from '../store/Store';
 import ContainerHeader from '../components/ContainerHeader';
 import CheckoutFooter from '../components/CheckoutFooter';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_700} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {updateShippingAddress} from '../store/actions/ShippingAddressActions';
 import AddressForm from '../components/AddressForm';
 import {testProperties} from '../config/TestProperties';
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     color: Colors.black,
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 16,
     marginVertical: 16,
   },

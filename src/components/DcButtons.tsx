@@ -2,6 +2,7 @@ import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {DcEnum, LOCATION} from '../data/getDevices';
 import {Colors} from '../styles/Colors';
+import {FONTS} from '../utils/Constants';
 
 const DcButtons = ({
   dc,
@@ -19,14 +20,22 @@ const DcButtons = ({
           dc === DcEnum.EU ? styles.active : {},
         ]}
         onPress={() => selectDc(DcEnum.EU)}>
-        <Text style={[dc === DcEnum.EU ? styles.activeText : {}]}>
+        <Text
+          style={[
+            styles.buttonText,
+            dc === DcEnum.EU ? styles.activeText : {},
+          ]}>
           {LOCATION.EU.label}
         </Text>
       </Pressable>
       <Pressable
         style={[styles.dcButton, dc === DcEnum.US ? styles.active : {}]}
         onPress={() => selectDc(DcEnum.US)}>
-        <Text style={[dc === DcEnum.US ? styles.activeText : {}]}>
+        <Text
+          style={[
+            styles.buttonText,
+            dc === DcEnum.US ? styles.activeText : {},
+          ]}>
           {LOCATION.US.label}
         </Text>
       </Pressable>
@@ -36,7 +45,11 @@ const DcButtons = ({
           dc === DcEnum.UNAUTHORIZED ? styles.active : {},
         ]}
         onPress={() => selectDc(DcEnum.UNAUTHORIZED)}>
-        <Text style={[dc === DcEnum.UNAUTHORIZED ? styles.activeText : {}]}>
+        <Text
+          style={[
+            styles.buttonText,
+            dc === DcEnum.UNAUTHORIZED ? styles.activeText : {},
+          ]}>
           {LOCATION.UNAUTHORIZED.label}
         </Text>
       </Pressable>
@@ -47,7 +60,11 @@ const DcButtons = ({
           dc === DcEnum.NOT_FOUND ? styles.active : {},
         ]}
         onPress={() => selectDc(DcEnum.NOT_FOUND)}>
-        <Text style={[dc === DcEnum.NOT_FOUND ? styles.activeText : {}]}>
+        <Text
+          style={[
+            styles.buttonText,
+            dc === DcEnum.NOT_FOUND ? styles.activeText : {},
+          ]}>
           {LOCATION.NOT_FOUND.label}
         </Text>
       </Pressable>
@@ -68,7 +85,6 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     justifyContent: 'center',
     alignItems: 'center',
-    // flex: 1,
     flexGrow: 1,
     flexBasis: 1,
   },
@@ -80,10 +96,13 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 4,
     borderBottomRightRadius: 4,
   },
+  buttonText: {
+    fontFamily: FONTS.DM_MONO_REGULAR,
+  },
   active: {
-    backgroundColor: Colors.slRed,
+    backgroundColor: Colors.green,
     borderWidth: 1,
-    borderColor: Colors.slRed,
+    borderColor: Colors.green,
   },
   activeText: {
     color: Colors.white,

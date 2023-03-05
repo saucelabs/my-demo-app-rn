@@ -1,8 +1,8 @@
 import React from 'react';
-import {Alert, Animated, StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, Text, View} from 'react-native';
 import {WebView} from 'react-native-webview';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {RouteProp} from '@react-navigation/native';
 import {MenuStackParamList} from '../navigation/types';
 import {ROUTES} from '../navigation/Routes';
@@ -14,26 +14,8 @@ type WebviewProps = {
 };
 
 function renderLoading() {
-  const rotation = new Animated.Value(0);
-  const spin = rotation.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
-  });
-
-  Animated.loop(
-    Animated.timing(rotation, {
-      toValue: 10,
-      duration: 5000,
-      useNativeDriver: true,
-    }),
-  ).start();
-
   return (
     <View style={styles.loaderContainer}>
-      <Animated.Image
-        source={require('../assets/images/saucelabs-spinner.png')}
-        style={[styles.spinner, {transform: [{rotate: spin}]}]}
-      />
       <Text style={styles.loadingText}>Loading ...</Text>
     </View>
   );
@@ -76,14 +58,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     ...StyleSheet.absoluteFillObject,
   },
-  spinner: {
-    width: 125,
-    height: 125,
-  },
   loadingText: {
-    color: Colors.slRed,
-    fontFamily: MUSEO_SANS_300,
-    fontStyle: 'italic',
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     marginTop: 25,
     fontSize: 20,
   },

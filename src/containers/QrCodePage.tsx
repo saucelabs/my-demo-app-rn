@@ -3,7 +3,7 @@ import {Alert, Linking, ScrollView, StyleSheet, Text, View} from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {Colors} from '../styles/Colors';
 import ContainerHeader from '../components/ContainerHeader';
-import {MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {BarCodeReadEvent} from 'react-native-camera';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   subText: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     paddingLeft: 20,
     paddingRight: 20,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     height: 32,
   },
   slMarker: {
-    borderColor: Colors.slRed,
+    borderColor: Colors.green,
   },
 });
 

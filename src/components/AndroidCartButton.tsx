@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
 
@@ -19,7 +19,7 @@ const AndroidCartButton = ({
       {...testProperties(I18n.t('cartBadge.testId'), true)}>
       {amount > 0 && <Text style={styles.badgeText}>{amount}</Text>}
       <Image
-        source={require('../assets/images/android-cart-icon.png')}
+        source={require('../assets/images/cart.png')}
         style={styles.image}
       />
     </TouchableOpacity>
@@ -40,9 +40,9 @@ const styles = StyleSheet.create({
   badgeText: {
     borderWidth: 1,
     borderColor: Colors.white,
-    backgroundColor: Colors.gray,
+    backgroundColor: Colors.green,
     color: Colors.white,
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 10,
     position: 'absolute',
     top: 2,

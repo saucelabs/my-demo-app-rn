@@ -7,7 +7,6 @@ import {CartStackParamList} from '../navigation/types';
 import {StoreContext} from '../store/Store';
 import {Colors} from '../styles/Colors';
 import ContainerHeader from '../components/ContainerHeader';
-import Footer from '../components/Footer';
 import ProductRow from '../components/ProductRow';
 import {
   addProductToCart,
@@ -16,7 +15,7 @@ import {
 } from '../store/actions/CartActions';
 import CheckoutFooter from '../components/CheckoutFooter';
 import {CartItemInterface} from '../store/reducers/CartReducer';
-import {MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import Button from '../components/Button';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
@@ -87,7 +86,6 @@ const CartPage = ({navigation, route}: CartProps) => {
                 />
               );
             })}
-            <Footer />
           </View>
         ) : (
           <View style={styles.emptyCartContainer}>
@@ -161,7 +159,7 @@ const styles = StyleSheet.create({
     width: 104,
   },
   emptyCartText: {
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     textAlign: 'center',
   },

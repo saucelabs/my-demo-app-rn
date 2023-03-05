@@ -8,10 +8,11 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import {MUSEO_SANS_300, MUSEO_SANS_500} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import ReviewContainer from './ReviewContainer';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
+import {Colors} from '../styles/Colors';
 
 const StoreItem = ({
   addReview,
@@ -66,25 +67,32 @@ const StoreItem = ({
 
 const styles = StyleSheet.create({
   storeItemContainer: {
+    borderColor: Colors.lightGray,
+    borderWidth: 1,
+    borderRadius: 8,
     marginHorizontal: 10,
     marginVertical: 10,
     flex: 1,
+    overflow: 'hidden',
   },
   image: {
     aspectRatio: 1,
-    borderRadius: 8,
     width: '100%',
   },
   label: {
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.darkGreen,
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 16,
     marginTop: 5,
+    paddingHorizontal: 10,
   },
   priceReviewContainer: {
     flexDirection: 'column',
+    paddingHorizontal: 10,
   },
   price: {
-    fontFamily: MUSEO_SANS_500,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 20,
     marginVertical: 10,
   },

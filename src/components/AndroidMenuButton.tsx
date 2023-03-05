@@ -10,7 +10,7 @@ const AndroidMenuButton = ({onPress}: {onPress: () => void}) => {
       style={styles.container}
       {...testProperties(I18n.t('drawer.openMenu.testId'))}>
       <Image
-        source={require('../assets/images/android-menu-icon.png')}
+        source={require('../assets/images/menu-inactive-icon.png')}
         style={styles.image}
       />
     </TouchableOpacity>

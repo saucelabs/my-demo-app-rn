@@ -12,12 +12,7 @@ import {
 import Geolocation from 'react-native-geolocation-service';
 import appConfig from '../../app.json';
 import {Colors} from '../styles/Colors';
-import {
-  IS_IOS,
-  MUSEO_SANS_300,
-  MUSEO_SANS_700,
-  PLATFORM_VERSION,
-} from '../utils/Constants';
+import {IS_IOS, FONTS, PLATFORM_VERSION} from '../utils/Constants';
 import ContainerHeader from '../components/ContainerHeader';
 import Button from '../components/Button';
 import {MenuStackParamList} from '../navigation/types';
@@ -226,8 +221,8 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   subText: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     paddingLeft: 20,
     paddingRight: 20,
@@ -240,13 +235,13 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
   text: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     marginBottom: 32,
   },
   link: {
-    color: Colors.slRed,
+    color: Colors.green,
     textDecorationLine: 'underline',
   },
   buttons: {
@@ -266,7 +261,7 @@ const styles = StyleSheet.create({
     width: 16,
   },
   latitudeLongitudeText: {
-    fontFamily: MUSEO_SANS_700,
+    fontFamily: FONTS.DM_SANS_BOLD,
   },
   dataContainer: {
     borderBottomWidth: 1,
@@ -275,12 +270,13 @@ const styles = StyleSheet.create({
     paddingVertical: 32,
   },
   title: {
-    color: Colors.slRed,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 24,
     marginBottom: 24,
   },
   data: {
-    color: Colors.gray,
+    color: Colors.dark,
     fontSize: 18,
   },
   buttonContainer: {

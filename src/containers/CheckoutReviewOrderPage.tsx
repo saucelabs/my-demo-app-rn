@@ -8,8 +8,7 @@ import {Colors} from '../styles/Colors';
 import CheckoutFooter from '../components/CheckoutFooter';
 import ContainerHeader from '../components/ContainerHeader';
 import ProductRow from '../components/ProductRow';
-import {MUSEO_SANS_300, MUSEO_SANS_700} from '../utils/Constants';
-import Footer from '../components/Footer';
+import {FONTS} from '../utils/Constants';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 import {parseDeepLinkProductData} from '../utils/DeepLinking';
@@ -202,7 +201,6 @@ const CheckoutReviewOrderPage = ({
             {I18n.t('checkoutReviewOrder.arrival')}
           </Text>
         </View>
-        <Footer />
       </ScrollView>
       <CheckoutFooter
         onPress={navigateToCheckoutComplete}
@@ -228,8 +226,8 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   subTitle: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_700,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 16,
     marginVertical: 16,
   },
@@ -249,14 +247,14 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   textHeader: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_700,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 16,
     marginVertical: 8,
   },
   text: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     marginVertical: 4,
   },

@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {DevicesInterface} from '../data/getDevices';
 import {Colors} from '../styles/Colors';
+import {FONTS} from '../utils/Constants';
 
 const DeviceTile = ({
   device: {
@@ -23,8 +24,6 @@ const DeviceTile = ({
       </View>
       <View style={styles.imageTextWrapper}>
         <View style={styles.imageWrapper}>
-          <View style={styles.horizontalContainer} />
-          <View style={styles.verticalContainer} />
           <Image
             resizeMode="contain"
             style={styles.image}
@@ -46,7 +45,7 @@ const DeviceTile = ({
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 2,
+    borderRadius: 4,
     backgroundColor: Colors.white,
     borderColor: Colors.lightGray,
     borderWidth: 1,
@@ -59,30 +58,7 @@ const styles = StyleSheet.create({
   imageTextWrapper: {
     flexDirection: 'row',
   },
-  imageWrapper: {
-    borderColor: Colors.lightGray,
-    borderWidth: 1,
-  },
-  horizontalContainer: {
-    backgroundColor: Colors.white,
-    position: 'absolute',
-    width: 72,
-    height: 55,
-    top: 7,
-    bottom: 7,
-    left: -1,
-    right: -1,
-  },
-  verticalContainer: {
-    backgroundColor: Colors.white,
-    position: 'absolute',
-    width: 55,
-    height: 72,
-    left: 7,
-    right: 7,
-    bottom: -1,
-    top: -1,
-  },
+  imageWrapper: {},
   image: {
     width: 70,
     height: 70,
@@ -95,6 +71,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.black,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 12,
     fontWeight: '700',
     marginRight: 5,
@@ -106,7 +83,8 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   deviceDetailsText: {
-    color: Colors.black,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 10,
   },
 });

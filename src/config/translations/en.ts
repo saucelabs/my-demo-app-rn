@@ -15,9 +15,9 @@ export default {
     header: 'API calls',
     testId: 'api calls screen',
   },
-  sauceBotVideo: {
-    header: 'SauceBot - The Beginning',
-    testId: 'SauceBot screen',
+  video: {
+    header: 'The Real Device Cloud',
+    testId: 'Video screen',
   },
   biometrics: {
     androidHeader: 'FingerPrint',
@@ -142,7 +142,6 @@ export default {
     submitButtonText: 'Continue Shopping',
     order: {
       lineOne: 'Thank you for your order',
-      lineTwo: 'Your new swag is on its way',
       lineThree:
         'Your order has been dispatched and will arrive as fast as the pony gallops!',
     },
@@ -402,9 +401,9 @@ export default {
     openMenu: {
       testId: 'open menu',
     },
-    sauceBotVideo: {
-      label: 'Sauce Bot Video',
-      testId: 'menu item sauce bot video',
+    video: {
+      label: 'Video',
+      testId: 'menu item video',
     },
     apiCalls: {
       label: 'Api Calls',

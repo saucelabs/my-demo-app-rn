@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_500} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
 
@@ -42,7 +42,7 @@ const Button = ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.slRed,
+    backgroundColor: Colors.green,
     borderRadius: 4,
     paddingVertical: 12,
     justifyContent: 'center',
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     color: Colors.gray,
   },
   label: {
-    color: Colors.white,
-    fontFamily: MUSEO_SANS_500,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 18,
   },
   disabledLabel: {

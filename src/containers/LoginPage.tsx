@@ -6,12 +6,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {CartStackParamList, MenuStackParamList} from '../navigation/types';
 import {Colors} from '../styles/Colors';
-import {
-  MUSEO_SANS_300,
-  MUSEO_SANS_700,
-  USERNAMES_ENUM,
-  VALID_PASSWORD,
-} from '../utils/Constants';
+import {FONTS, USERNAMES_ENUM, VALID_PASSWORD} from '../utils/Constants';
 import ContainerHeader from '../components/ContainerHeader';
 import Button from '../components/Button';
 import InputField from '../components/InputField';
@@ -150,17 +145,15 @@ const LoginPage = ({route, navigation}: LoginProps) => {
         <InputField
           errorMessage={usernameErrorMessage}
           isError={isUsernameError}
-          label={I18n.t('login.usernameLabel')}
           onChangeText={text => setUsername(text)}
-          placeholder=""
+          placeholder={I18n.t('login.usernameLabel')}
           value={username}
         />
         <InputField
           errorMessage={passwordErrorMessage}
           isError={isPasswordError}
-          label={I18n.t('login.passwordLabel')}
           onChangeText={text => setPassword(text)}
-          placeholder=""
+          placeholder={I18n.t('login.passwordLabel')}
           secureTextEntry
           value={password}
         />
@@ -239,8 +232,8 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   subText: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     marginBottom: 32,
     width: '90%',
@@ -250,7 +243,7 @@ const styles = StyleSheet.create({
   },
   genericErrorMessageText: {
     color: Colors.slRed,
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
   },
   infoContainer: {
@@ -260,14 +253,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   infoHeader: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_700,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 18,
     paddingBottom: 16,
   },
   infoText: {
-    color: Colors.gray,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     paddingBottom: 8,
   },

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import I18n from '../config/I18n';
 import {testProperties} from '../config/TestProperties';
 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     width: 35,
   },
   imageContainer: {
-    borderColor: Colors.slRed,
+    borderColor: Colors.darkGreen,
     borderRadius: 4,
     borderWidth: 1,
     height: 22,
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     width: 20,
   },
   label: {
-    color: Colors.black,
-    fontFamily: MUSEO_SANS_300,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
     width: '80%',
   },

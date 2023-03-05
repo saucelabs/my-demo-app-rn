@@ -1,7 +1,7 @@
 import React from 'react';
 import {Modal, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Colors} from '../styles/Colors';
-import {MUSEO_SANS_300, MUSEO_SANS_700} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import {testProperties} from '../config/TestProperties';
 import I18n from '../config/I18n';
 
@@ -62,19 +62,20 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: 'center',
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_SANS_REGULAR,
+    color: Colors.dark,
     fontSize: 16,
   },
   button: {
-    backgroundColor: Colors.slRed,
+    backgroundColor: Colors.green,
     borderRadius: 4,
     paddingVertical: 12,
-    paddingHorizontal: 20,
+    paddingHorizontal: 40,
     width: '100%',
   },
   buttonTextStyle: {
-    color: Colors.white,
-    fontFamily: MUSEO_SANS_700,
+    color: Colors.dark,
+    fontFamily: FONTS.DM_SANS_BOLD,
     fontSize: 16,
     textAlign: 'center',
   },
