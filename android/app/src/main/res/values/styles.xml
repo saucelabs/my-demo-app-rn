@@ -1,20 +1,20 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <!-- Add the following line to set the default status bar color for all the app. -->
-        <item name="android:statusBarColor">@color/app_bg</item>
-        <!-- Add the following line to set the default status bar text color for all the app
+    <!-- Add the following line to set the default status bar color for all the app. -->
+    <item name="android:statusBarColor">@color/app_bg</item>
+    <!-- Add the following line to set the default status bar text color for all the app
         to be a light color (false) or a dark color (true) -->
-        <item name="android:windowLightStatusBar">true</item>
-        <!-- Add the following line to set the default background color for all the app. -->
-        <item name="android:windowBackground">@color/app_bg</item>
-    </style>
-    <style name="BootTheme" parent="Theme.SplashScreen">
-      <item name="windowSplashScreenBackground">@color/splashscreen_bg</item>
-      <item name="windowSplashScreenAnimatedIcon">@mipmap/splash_icon</item>
-      <item name="postSplashScreenTheme">@style/AppTheme</item>
-    </style>
+    <item name="android:windowLightStatusBar">true</item>
+    <!-- Add the following line to set the default background color for all the app. -->
+    <item name="android:windowBackground">@color/app_bg</item>
+  </style>
+  <style name="BootTheme" parent="Theme.SplashScreen">
+    <item name="windowSplashScreenBackground">@color/bootsplash_background</item>
+    <item name="windowSplashScreenAnimatedIcon">@mipmap/bootsplash_logo</item>
+    <item name="postSplashScreenTheme">@style/AppTheme</item>
+  </style>
 
 </resources>
