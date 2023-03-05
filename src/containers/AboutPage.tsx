@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     paddingTop: 70,
   },
   text: {
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
   },

@@ -13,9 +13,6 @@ export const HAS_IOS_NOTCH =
     WINDOW_HEIGHT === 896 ||
     WINDOW_WIDTH === 844 ||
     WINDOW_HEIGHT === 844);
-export const MUSEO_SANS_300 = IS_IOS ? 'MuseoSans-300' : 'MuseoSans_300';
-export const MUSEO_SANS_500 = IS_IOS ? 'MuseoSans-500' : 'MuseoSans_500';
-export const MUSEO_SANS_700 = IS_IOS ? 'MuseoSans-700' : 'MuseoSans_700';
 export const FONTS = {
   DM_MONO_ITALIC: 'DMMono-Italic',
   DM_MONO_LIGHT: 'DMMono-Light',

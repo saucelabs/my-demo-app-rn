@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
   },
   subTitle: {
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 16,
     marginVertical: 16,

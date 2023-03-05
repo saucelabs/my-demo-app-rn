@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     flexBasis: 0,
   },
   label: {
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 16,
     marginBottom: 8,
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
   inputField: {
     borderColor: Colors.lightGray,
     borderBottomWidth: 1,
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
     paddingHorizontal: 12,

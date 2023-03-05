@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.neutral,
   },
   headerText: {
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_SANS_BOLD,
     fontSize: 16,
   },
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     width: 20,
   },
   labelText: {
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 16,
     marginRight: 5,

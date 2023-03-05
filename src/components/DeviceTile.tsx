@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   title: {
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_MONO_MEDIUM,
     fontSize: 12,
     fontWeight: '700',

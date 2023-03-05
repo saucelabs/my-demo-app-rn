@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   subText: {
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_SANS_REGULAR,
     fontSize: 14,
     width: '90%',

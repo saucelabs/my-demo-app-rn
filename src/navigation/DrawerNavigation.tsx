@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
     }),
   },
   activeMenuLabel: {
-    color: Colors.slRed,
+    color: Colors.green,
   },
   menuCloseContainer: {
     alignSelf: 'flex-end',

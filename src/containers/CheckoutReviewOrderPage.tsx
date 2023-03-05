@@ -78,13 +78,13 @@ const CheckoutReviewOrderPage = ({
       const paymentDetails = {
         ...defaultPaymentDetails,
         billingAddressDetails: {
-          fullName: 'Sauce Bot',
-          addressLineOne: 'Sauce Street 5',
+          fullName: 'Bot',
+          addressLineOne: 'Bot Street 5',
           addressLineTwo: 'Building 2',
-          city: 'Sauce Lake City',
-          stateRegion: 'Sauce Dakota',
+          city: 'Bot Lake City',
+          stateRegion: 'Bot Dakota',
           zipCode: '499382',
-          country: 'South Sauceland',
+          country: 'South Botland',
         },
       };
       dispatch(updateShippingAddress(addressDetails));

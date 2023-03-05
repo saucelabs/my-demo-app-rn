@@ -48,46 +48,6 @@
     {
       "path": "src/assets/fonts/DMSans-Regular.ttf",
       "sha1": "f1cf9ed15e1ec1db951c401233655dbbd304c732"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans-100.otf",
-      "sha1": "49d351b0f06dbba1da78789976f33c2acabce92b"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans-100Italic.otf",
-      "sha1": "11224a7b7cfe067348e6ef6191b9ac85a28ed6ad"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans-300.otf",
-      "sha1": "73dfc5cce27c8d716e5c148db0d4d6c9b1f464b5"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans-300Italic.otf",
-      "sha1": "fd3c0ee98254069807c80f630ad27fe733321636"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans-700Italic.otf",
-      "sha1": "8603d9c6d7b5c9bda443c2ae45a448d2989ef3a5"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans-900Italic.otf",
-      "sha1": "7a053ac87795c524c825ec860a8184c3fd39e2ba"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans_500.otf",
-      "sha1": "bd0ccc06565f4cc438421bd6f101456815925034"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans_500_Italic.otf",
-      "sha1": "0bd35b68568e88c031e4a9821eb68764b948a6bf"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans_700.otf",
-      "sha1": "68a9fdbae63e4802020ac1c5b82515c77bc5399d"
-    },
-    {
-      "path": "src/assets/fonts/MuseoSans_900.otf",
-      "sha1": "c000422eb523e43710b49951ebd235debd1790a9"
     }
   ]
 }

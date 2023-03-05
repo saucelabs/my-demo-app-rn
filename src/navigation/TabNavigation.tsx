@@ -8,7 +8,7 @@ import {ROUTES} from './Routes';
 import {StoreContext} from '../store/Store';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Colors} from '../styles/Colors';
-import {FONTS, MUSEO_SANS_300} from '../utils/Constants';
+import {FONTS} from '../utils/Constants';
 import I18n from '../config/I18n';
 
 const TabNavigation = () => {
@@ -100,7 +100,7 @@ const TabNavigation = () => {
 
 const styles = StyleSheet.create({
   labelStyle: {
-    color: Colors.black,
+    color: Colors.dark,
     fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 12,
   },
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   tabBarBadgeText: {
     color: Colors.white,
-    fontFamily: MUSEO_SANS_300,
+    fontFamily: FONTS.DM_MONO_REGULAR,
     fontSize: 12,
   },
 });

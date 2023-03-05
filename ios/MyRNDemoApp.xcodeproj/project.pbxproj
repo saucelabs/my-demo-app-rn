@@ -8,36 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MyRNDemoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MyRNDemoAppTests.m */; };
+		0761DA7F454043AF94FF234C /* DMMono-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 621FDF849D6E4F2D8EDC6D65 /* DMMono-LightItalic.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1787FB853A76872C4D38807A /* libPods-MyRNDemoApp-MyRNDemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D616F87DFFDD069B1F634E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */; };
-		2C35DF6597BFA49199DF5FC1 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A640F9A14E9F57267F7940 /* ExpoModulesProvider.swift */; };
-		643009FE24043073DD6A15DE /* libPods-MyRNDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA875020D8BE788449DD47FC /* libPods-MyRNDemoApp.a */; };
-		7CCCFDD1881167A52CA0F279 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83522A0898341EC48E30C76 /* ExpoModulesProvider.swift */; };
-		81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* BootSplash.storyboard */; };
-		8858CBE6277B4C0E004B2FB6 /* MuseoSans-700Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDC277B4C0D004B2FB6 /* MuseoSans-700Italic.otf */; };
-		8858CBE7277B4C0E004B2FB6 /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDD277B4C0D004B2FB6 /* MuseoSans_700.otf */; };
-		8858CBE8277B4C0E004B2FB6 /* MuseoSans_500_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDE277B4C0D004B2FB6 /* MuseoSans_500_Italic.otf */; };
-		8858CBE9277B4C0E004B2FB6 /* MuseoSans-100Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBDF277B4C0D004B2FB6 /* MuseoSans-100Italic.otf */; };
-		8858CBEA277B4C0E004B2FB6 /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE0277B4C0D004B2FB6 /* MuseoSans-300.otf */; };
-		8858CBEB277B4C0E004B2FB6 /* MuseoSans-900Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE1277B4C0D004B2FB6 /* MuseoSans-900Italic.otf */; };
-		8858CBEC277B4C0E004B2FB6 /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE2277B4C0D004B2FB6 /* MuseoSans_900.otf */; };
-		8858CBED277B4C0E004B2FB6 /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE3277B4C0E004B2FB6 /* MuseoSans_500.otf */; };
-		8858CBEE277B4C0E004B2FB6 /* MuseoSans-300Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE4277B4C0E004B2FB6 /* MuseoSans-300Italic.otf */; };
-		8858CBEF277B4C0E004B2FB6 /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858CBE5277B4C0E004B2FB6 /* MuseoSans-100.otf */; };
-		A3BE9A346F9C4FAE9DD77819 /* DMMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E8ED5CF5A2544D18CE294D2 /* DMMono-Italic.ttf */; };
-		49495A7EF72D40A1A6693720 /* DMMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A69BF4E665407899DE16DF /* DMMono-Light.ttf */; };
-		0761DA7F454043AF94FF234C /* DMMono-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 621FDF849D6E4F2D8EDC6D65 /* DMMono-LightItalic.ttf */; };
 		27C298F1CC6B467187C0F74A /* DMMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5D6449859A94427BD9DC4AB /* DMMono-Medium.ttf */; };
+		2C35DF6597BFA49199DF5FC1 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A640F9A14E9F57267F7940 /* ExpoModulesProvider.swift */; };
+		3B208E3D18B54CC6A0AD9796 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE7751BC43475A8B26AB88 /* DMSans-Italic.ttf */; };
+		49495A7EF72D40A1A6693720 /* DMMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A69BF4E665407899DE16DF /* DMMono-Light.ttf */; };
 		59BC4E51B3AC4E1D8AC33BF7 /* DMMono-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C533CB679F5414BA44C12E8 /* DMMono-MediumItalic.ttf */; };
+		643009FE24043073DD6A15DE /* libPods-MyRNDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA875020D8BE788449DD47FC /* libPods-MyRNDemoApp.a */; };
+		675BF7D10D3741CA96934E57 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5A28F6D8B4E427C969C0725 /* DMSans-Regular.ttf */; };
 		698D4A12622044029B36DB28 /* DMMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65ACC0B3E764499090D1BD9C /* DMMono-Regular.ttf */; };
 		6F6E5719988B47949CB00002 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7ABB5E1B22D45F999888DC9 /* DMSans-Bold.ttf */; };
-		ABE2B43530474F369A9C01F8 /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69F8E64571C049509462641F /* DMSans-BoldItalic.ttf */; };
-		3B208E3D18B54CC6A0AD9796 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE7751BC43475A8B26AB88 /* DMSans-Italic.ttf */; };
-		F8EC72AB6110449193280FE0 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF357F20679B441FA06FC004 /* DMSans-Medium.ttf */; };
 		77A2777C2BCB4381A1007B73 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD2A33C6BBF45F6B5E650CF /* DMSans-MediumItalic.ttf */; };
-		675BF7D10D3741CA96934E57 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5A28F6D8B4E427C969C0725 /* DMSans-Regular.ttf */; };
+		7CCCFDD1881167A52CA0F279 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83522A0898341EC48E30C76 /* ExpoModulesProvider.swift */; };
+		81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* BootSplash.storyboard */; };
+		A3BE9A346F9C4FAE9DD77819 /* DMMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E8ED5CF5A2544D18CE294D2 /* DMMono-Italic.ttf */; };
+		ABE2B43530474F369A9C01F8 /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69F8E64571C049509462641F /* DMSans-BoldItalic.ttf */; };
+		F8EC72AB6110449193280FE0 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF357F20679B441FA06FC004 /* DMSans-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,38 +50,28 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyRNDemoApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyRNDemoApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyRNDemoApp/main.m; sourceTree = "<group>"; };
+		621FDF849D6E4F2D8EDC6D65 /* DMMono-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMMono-LightItalic.ttf"; path = "../src/assets/fonts/DMMono-LightItalic.ttf"; sourceTree = "<group>"; };
+		65ACC0B3E764499090D1BD9C /* DMMono-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMMono-Regular.ttf"; path = "../src/assets/fonts/DMMono-Regular.ttf"; sourceTree = "<group>"; };
 		68A640F9A14E9F57267F7940 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		69F8E64571C049509462641F /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-BoldItalic.ttf"; path = "../src/assets/fonts/DMSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		79D616F87DFFDD069B1F634E /* libPods-MyRNDemoApp-MyRNDemoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp-MyRNDemoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = MyRNDemoApp/BootSplash.storyboard; sourceTree = "<group>"; };
-		8858CBDC277B4C0D004B2FB6 /* MuseoSans-700Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-700Italic.otf"; path = "../src/assets/fonts/MuseoSans-700Italic.otf"; sourceTree = "<group>"; };
-		8858CBDD277B4C0D004B2FB6 /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MuseoSans_700.otf; path = ../src/assets/fonts/MuseoSans_700.otf; sourceTree = "<group>"; };
-		8858CBDE277B4C0D004B2FB6 /* MuseoSans_500_Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MuseoSans_500_Italic.otf; path = ../src/assets/fonts/MuseoSans_500_Italic.otf; sourceTree = "<group>"; };
-		8858CBDF277B4C0D004B2FB6 /* MuseoSans-100Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-100Italic.otf"; path = "../src/assets/fonts/MuseoSans-100Italic.otf"; sourceTree = "<group>"; };
-		8858CBE0277B4C0D004B2FB6 /* MuseoSans-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-300.otf"; path = "../src/assets/fonts/MuseoSans-300.otf"; sourceTree = "<group>"; };
-		8858CBE1277B4C0D004B2FB6 /* MuseoSans-900Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-900Italic.otf"; path = "../src/assets/fonts/MuseoSans-900Italic.otf"; sourceTree = "<group>"; };
-		8858CBE2277B4C0D004B2FB6 /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MuseoSans_900.otf; path = ../src/assets/fonts/MuseoSans_900.otf; sourceTree = "<group>"; };
-		8858CBE3277B4C0E004B2FB6 /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MuseoSans_500.otf; path = ../src/assets/fonts/MuseoSans_500.otf; sourceTree = "<group>"; };
-		8858CBE4277B4C0E004B2FB6 /* MuseoSans-300Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-300Italic.otf"; path = "../src/assets/fonts/MuseoSans-300Italic.otf"; sourceTree = "<group>"; };
-		8858CBE5277B4C0E004B2FB6 /* MuseoSans-100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-100.otf"; path = "../src/assets/fonts/MuseoSans-100.otf"; sourceTree = "<group>"; };
+		8C533CB679F5414BA44C12E8 /* DMMono-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMMono-MediumItalic.ttf"; path = "../src/assets/fonts/DMMono-MediumItalic.ttf"; sourceTree = "<group>"; };
+		9AD2A33C6BBF45F6B5E650CF /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-MediumItalic.ttf"; path = "../src/assets/fonts/DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		9E8ED5CF5A2544D18CE294D2 /* DMMono-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMMono-Italic.ttf"; path = "../src/assets/fonts/DMMono-Italic.ttf"; sourceTree = "<group>"; };
+		9EBE7751BC43475A8B26AB88 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Italic.ttf"; path = "../src/assets/fonts/DMSans-Italic.ttf"; sourceTree = "<group>"; };
 		9F5886BEE4526A9676E4D592 /* Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A18782B501F0467ADBC58A30 /* Pods-MyRNDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AE768918601F36E23FC8ACD4 /* Pods-MyRNDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp/Pods-MyRNDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		BF90BB6E53007BE49D4888CA /* Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRNDemoApp-MyRNDemoAppTests/Pods-MyRNDemoApp-MyRNDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		C5A28F6D8B4E427C969C0725 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Regular.ttf"; path = "../src/assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		C5D6449859A94427BD9DC4AB /* DMMono-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMMono-Medium.ttf"; path = "../src/assets/fonts/DMMono-Medium.ttf"; sourceTree = "<group>"; };
+		C7ABB5E1B22D45F999888DC9 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Bold.ttf"; path = "../src/assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		CA875020D8BE788449DD47FC /* libPods-MyRNDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyRNDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2A69BF4E665407899DE16DF /* DMMono-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMMono-Light.ttf"; path = "../src/assets/fonts/DMMono-Light.ttf"; sourceTree = "<group>"; };
+		DF357F20679B441FA06FC004 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Medium.ttf"; path = "../src/assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F83522A0898341EC48E30C76 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MyRNDemoApp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		9E8ED5CF5A2544D18CE294D2 /* DMMono-Italic.ttf */ = {isa = PBXFileReference; name = "DMMono-Italic.ttf"; path = "../src/assets/fonts/DMMono-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D2A69BF4E665407899DE16DF /* DMMono-Light.ttf */ = {isa = PBXFileReference; name = "DMMono-Light.ttf"; path = "../src/assets/fonts/DMMono-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		621FDF849D6E4F2D8EDC6D65 /* DMMono-LightItalic.ttf */ = {isa = PBXFileReference; name = "DMMono-LightItalic.ttf"; path = "../src/assets/fonts/DMMono-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C5D6449859A94427BD9DC4AB /* DMMono-Medium.ttf */ = {isa = PBXFileReference; name = "DMMono-Medium.ttf"; path = "../src/assets/fonts/DMMono-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8C533CB679F5414BA44C12E8 /* DMMono-MediumItalic.ttf */ = {isa = PBXFileReference; name = "DMMono-MediumItalic.ttf"; path = "../src/assets/fonts/DMMono-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		65ACC0B3E764499090D1BD9C /* DMMono-Regular.ttf */ = {isa = PBXFileReference; name = "DMMono-Regular.ttf"; path = "../src/assets/fonts/DMMono-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C7ABB5E1B22D45F999888DC9 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; name = "DMSans-Bold.ttf"; path = "../src/assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		69F8E64571C049509462641F /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; name = "DMSans-BoldItalic.ttf"; path = "../src/assets/fonts/DMSans-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9EBE7751BC43475A8B26AB88 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; name = "DMSans-Italic.ttf"; path = "../src/assets/fonts/DMSans-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DF357F20679B441FA06FC004 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; name = "DMSans-Medium.ttf"; path = "../src/assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9AD2A33C6BBF45F6B5E650CF /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; name = "DMSans-MediumItalic.ttf"; path = "../src/assets/fonts/DMSans-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C5A28F6D8B4E427C969C0725 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; name = "DMSans-Regular.ttf"; path = "../src/assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +133,26 @@
 			name = MyRNDemoApp;
 			sourceTree = "<group>";
 		};
+		1FC13E0FF3C64DFCB2387199 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E8ED5CF5A2544D18CE294D2 /* DMMono-Italic.ttf */,
+				D2A69BF4E665407899DE16DF /* DMMono-Light.ttf */,
+				621FDF849D6E4F2D8EDC6D65 /* DMMono-LightItalic.ttf */,
+				C5D6449859A94427BD9DC4AB /* DMMono-Medium.ttf */,
+				8C533CB679F5414BA44C12E8 /* DMMono-MediumItalic.ttf */,
+				65ACC0B3E764499090D1BD9C /* DMMono-Regular.ttf */,
+				C7ABB5E1B22D45F999888DC9 /* DMSans-Bold.ttf */,
+				69F8E64571C049509462641F /* DMSans-BoldItalic.ttf */,
+				9EBE7751BC43475A8B26AB88 /* DMSans-Italic.ttf */,
+				DF357F20679B441FA06FC004 /* DMSans-Medium.ttf */,
+				9AD2A33C6BBF45F6B5E650CF /* DMSans-MediumItalic.ttf */,
+				C5A28F6D8B4E427C969C0725 /* DMSans-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,16 +181,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				8858CBDE277B4C0D004B2FB6 /* MuseoSans_500_Italic.otf */,
-				8858CBE3277B4C0E004B2FB6 /* MuseoSans_500.otf */,
-				8858CBDD277B4C0D004B2FB6 /* MuseoSans_700.otf */,
-				8858CBE2277B4C0D004B2FB6 /* MuseoSans_900.otf */,
-				8858CBE5277B4C0E004B2FB6 /* MuseoSans-100.otf */,
-				8858CBDF277B4C0D004B2FB6 /* MuseoSans-100Italic.otf */,
-				8858CBE0277B4C0D004B2FB6 /* MuseoSans-300.otf */,
-				8858CBE4277B4C0E004B2FB6 /* MuseoSans-300Italic.otf */,
-				8858CBDC277B4C0D004B2FB6 /* MuseoSans-700Italic.otf */,
-				8858CBE1277B4C0D004B2FB6 /* MuseoSans-900Italic.otf */,
 				13B07FAE1A68108700A75B9A /* MyRNDemoApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MyRNDemoAppTests */,
@@ -232,26 +222,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		1FC13E0FF3C64DFCB2387199 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				9E8ED5CF5A2544D18CE294D2 /* DMMono-Italic.ttf */,
-				D2A69BF4E665407899DE16DF /* DMMono-Light.ttf */,
-				621FDF849D6E4F2D8EDC6D65 /* DMMono-LightItalic.ttf */,
-				C5D6449859A94427BD9DC4AB /* DMMono-Medium.ttf */,
-				8C533CB679F5414BA44C12E8 /* DMMono-MediumItalic.ttf */,
-				65ACC0B3E764499090D1BD9C /* DMMono-Regular.ttf */,
-				C7ABB5E1B22D45F999888DC9 /* DMSans-Bold.ttf */,
-				69F8E64571C049509462641F /* DMSans-BoldItalic.ttf */,
-				9EBE7751BC43475A8B26AB88 /* DMSans-Italic.ttf */,
-				DF357F20679B441FA06FC004 /* DMSans-Medium.ttf */,
-				9AD2A33C6BBF45F6B5E650CF /* DMSans-MediumItalic.ttf */,
-				C5A28F6D8B4E427C969C0725 /* DMSans-Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -347,16 +317,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8858CBE6277B4C0E004B2FB6 /* MuseoSans-700Italic.otf in Resources */,
-				8858CBE7277B4C0E004B2FB6 /* MuseoSans_700.otf in Resources */,
-				8858CBE8277B4C0E004B2FB6 /* MuseoSans_500_Italic.otf in Resources */,
-				8858CBE9277B4C0E004B2FB6 /* MuseoSans-100Italic.otf in Resources */,
-				8858CBEA277B4C0E004B2FB6 /* MuseoSans-300.otf in Resources */,
-				8858CBEB277B4C0E004B2FB6 /* MuseoSans-900Italic.otf in Resources */,
-				8858CBEC277B4C0E004B2FB6 /* MuseoSans_900.otf in Resources */,
-				8858CBED277B4C0E004B2FB6 /* MuseoSans_500.otf in Resources */,
-				8858CBEE277B4C0E004B2FB6 /* MuseoSans-300Italic.otf in Resources */,
-				8858CBEF277B4C0E004B2FB6 /* MuseoSans-100.otf in Resources */,
 				81AB9BB82411601600AC10FF /* BootSplash.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				A3BE9A346F9C4FAE9DD77819 /* DMMono-Italic.ttf in Resources */,
