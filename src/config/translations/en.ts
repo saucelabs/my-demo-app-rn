@@ -361,10 +361,6 @@ export default {
       label: 'About',
       testId: 'menu item about',
     },
-    reportABug: {
-      label: 'Report A Bug',
-      testId: 'menu item report a bug',
-    },
     catalog: {
       label: 'Catalog',
       testId: 'menu item catalog',

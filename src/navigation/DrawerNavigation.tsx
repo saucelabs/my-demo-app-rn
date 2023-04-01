@@ -12,7 +12,6 @@ import {
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
 // @ts-ignore
-import TestFairy from 'react-native-testfairy';
 import {Colors} from '../styles/Colors';
 import {ROUTES} from './Routes';
 import {resetStore, StoreContext} from '../store/Store';
@@ -101,10 +100,6 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {screen: ROUTES.DRAWING});
   const navigateToAbout = () =>
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {screen: ROUTES.ABOUT});
-  const navigateToReportABug = () => {
-    TestFairy.stop();
-    TestFairy.begin(process.env.TESTFAIRY_TOKEN);
-  };
   const navigateToVideo = () =>
     navigation.navigate(ROUTES.MENU_STACK_NAVIGATOR, {
       screen: ROUTES.VIDEO,
@@ -147,17 +142,6 @@ const DrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {
       testId: I18n.t('drawer.drawing.testId'),
       onPress: navigateToDrawing,
     },
-    ...(IS_IOS
-      ? [
-          {
-            borderBottom: IS_IOS,
-            icon: false,
-            label: I18n.t('drawer.reportABug.label'),
-            testId: I18n.t('drawer.reportABug.testId'),
-            onPress: navigateToReportABug,
-          },
-        ]
-      : []),
     {
       borderBottom: IS_IOS,
       icon: false,

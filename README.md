@@ -225,9 +225,6 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
 ## TODO
 
 - [x] TestIds
-- [x] TestFairy integration
-  - [x] Add TF SDK
-  - [] Add TF events, see [this](https://github.com/saucelabs/sample-app-mobile/pull/74) for an example
 - [x] Splash screen
 - [x] Android/iOS icons
 - [x] About screen
@@ -297,7 +294,6 @@ yet, see [here](https://github.com/react-native-cameraroll/react-native-cameraro
     - [x] react-native-safe-area-context
     - [x] react-native-screens
     - [x] react-native-signature-canvas
-    - [x] react-native-testfairy
     - [x] react-native-unimodules
     - [x] react-native-vector-icons
     - [x] react-native-version-number

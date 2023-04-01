@@ -354,9 +354,6 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.66.4)
   - React-runtimeexecutor (0.66.4):
     - React-jsi (= 0.66.4)
-  - React-TestFairy (2.54.0):
-    - React
-    - TestFairy (= 1.29.2)
   - ReactCommon/turbomodule/core (0.66.4):
     - DoubleConversion
     - glog
@@ -416,7 +413,6 @@ PODS:
     - React-RCTImage
   - RNVectorIcons (9.0.0):
     - React-Core
-  - TestFairy (1.29.2)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -483,7 +479,6 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
-  - React-TestFairy (from `../node_modules/react-native-testfairy`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - RNBootSplash (from `../node_modules/react-native-bootsplash`)
@@ -513,7 +508,6 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
-    - TestFairy
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -593,8 +587,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   React-runtimeexecutor:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
-  React-TestFairy:
-    :path: "../node_modules/react-native-testfairy"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
   rn-fetch-blob:
@@ -674,7 +666,6 @@ SPEC CHECKSUMS:
   React-RCTText: f8a21c3499ab322326290fa9b701ae29aa093aa5
   React-RCTVibration: e3ffca672dd3772536cb844274094b0e2c31b187
   React-runtimeexecutor: dec32ee6f2e2a26e13e58152271535fadff5455a
-  React-TestFairy: a65633f643cbd75af0e436e6a4ab1a0640d36c47
   ReactCommon: 57b69f6383eafcbd7da625bfa6003810332313c4
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   RNBootSplash: 5e82ba24a59a07315cbb2bb4855bb8d76fc7e802
@@ -687,10 +678,9 @@ SPEC CHECKSUMS:
   RNReanimated: da3860204e5660c0dd66739936732197d359d753
   RNScreens: 522705f2e5c9d27efb17f24aceb2bf8335bc7b8e
   RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
-  TestFairy: d3310cb5f17446302de0d1c8c1ac1e6518f5334a
   Yoga: e7dc4e71caba6472ff48ad7d234389b91dadc280
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 9a2722975131e0732a2a433f70b671be962aa64b
+PODFILE CHECKSUM: ae654be6273f464fd7e0ec79de17292401b66313
 
 COCOAPODS: 1.11.3
