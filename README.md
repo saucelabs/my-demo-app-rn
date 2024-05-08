@@ -1,6 +1,6 @@
 # Deprecation Notice
 
-THIS PROJECT IS DEPRECATED IN FAVOR OF THE NEW SAMPLE APP FOR REACT NATIVE.
+THIS PROJECT IS DEPRECATED IN FAVOR OF THE NEW DEMO NATIVE APPS
 THE NEW APPS CAN BE FOUND:
 
 [My Demo App - Android](https://github.com/saucelabs/my-demo-app-android)
